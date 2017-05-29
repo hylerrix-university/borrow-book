@@ -1,0 +1,143 @@
+<html>
+<head>
+    <title>scantest</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="lib/sha.js"></script>
+    <script type="text/javascript" src="lib.jr-qrcode.js"></script>
+    <script type="text/javascript">
+	    var jsapi_ticket_url = "https://wwwxinle.cn/chinesepcg/get_jsapi_ticket.php"
+	    var jsapi_ticket;
+
+	    // 获取 access_token
+	    (function () {
+			if (window.XMLHttpRequest) {
+		        // code for IE7+, Firefox, Chrome, Opera, Safari
+			    xmlhttp = new XMLHttpRequest();
+			} else {
+			    // code for IE6, IE5
+			    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.onreadystatechange = function () {
+    			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+    				// var responseText = JSON.parse(xmlhttp.responseText);
+    				var responseText = xmlhttp.responseText;
+    				// 获取到 access_token
+    				jsapi_ticket = JSON.parse(responseText).ticket;
+    			}
+    		}
+		    xmlhttp.open("GET", jsapi_ticket_url, false);
+		    xmlhttp.send();
+	    })();
+
+	    // 授权访问的当前页面的网页
+	    var url = location.href.split('#')[0];
+	    console.log(url);
+	    var createNonceStr = function () {
+		    return Math.random().toString(36).substr(2, 15);
+		};
+
+		var createTimestamp = function () {
+		    return parseInt(new Date().getTime() / 1000) + '';
+		};
+
+		var raw = function (args) {
+		    var keys = Object.keys(args);
+		    keys = keys.sort()
+		    var newArgs = {};
+		    keys.forEach(function (key) {
+		        newArgs[key.toLowerCase()] = args[key];
+		    });
+
+		    var string = '';
+		    for (var k in newArgs) {
+		        string += '&' + k + '=' + newArgs[k];
+		    }
+		    string = string.substr(1);
+		    return string;
+		};
+
+		/**
+		* @synopsis 签名算法 
+		*
+		* @param jsapi_ticket 用于签名的 jsapi_ticket
+		* @param url 用于签名的 url ，注意必须动态获取，不能 hardcode
+		*
+		* @returns
+		*/
+		var sign = function (jsapi_ticket, url) {
+		    var ret = {
+		        jsapi_ticket: jsapi_ticket,
+		        nonceStr: createNonceStr(),
+		        timestamp: createTimestamp(),
+		        url: url
+		    };
+
+		    var string = raw(ret);
+		        shaObj = new jsSHA(string, 'TEXT');
+		    ret.signature = shaObj.getHash('SHA-1', 'HEX');
+
+		    return ret;
+		};
+
+		jsapi_ticket = sign(jsapi_ticket, url);
+		console.log(jsapi_ticket);
+
+		wx.config({
+		    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+		    appId: 'wx1a474de918181499', // 必填，公众号的唯一标识
+		    timestamp: jsapi_ticket.timestamp, // 必填，生成签名的时间戳
+		    nonceStr: jsapi_ticket.nonceStr, // 必填，生成签名的随机串
+		    signature: jsapi_ticket.signature,// 必填，签名，见附录1
+		    jsApiList: ["checkJsApi", "scanQRCode"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+		});
+
+		// 通过ready接口处理成功验证
+		wx.ready(function(){
+		    // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+		    console.log("wx.ready");
+		});
+
+		// 通过error接口处理失败验证
+		wx.error(function(res){
+		    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+		    console.log("wx.error");
+		    alert("wx.error");
+		});
+
+		function scantest () {
+			console.log("scantest");
+			// 调起微信扫一扫接口
+			wx.scanQRCode({
+			    needResult: 1,
+			    // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+			    scanType: ["qrCode","barCode"], 
+			    // 可以指定扫二维码还是一维码，默认二者都有
+			    success: function (res) {
+			    	// 当 needResult 为 1 时，扫码返回的结果
+				    var result = res.resultStr;
+				    var message = document.getElementById("message");		    
+				    var imgBase64 = jrQrcode.getQrBase64(result, {
+					  padding       : 10,   // 二维码四边空白（默认为10px）
+					  width         : 256,  // 二维码图片宽度（默认为256px）
+					  height        : 256,  // 二维码图片高度（默认为256px）
+					  correctLevel  : QRErrorCorrectLevel.H,    // 二维码容错level（默认为高）
+					  reverse       : false,        // 反色二维码，二维码颜色为上层容器的背景颜色
+					  background    : "#ffffff",    // 二维码背景颜色（默认白色）
+					  foreground    : "#000000"     // 二维码颜色（默认黑色）
+					});
+
+					message.innerHTML = "<img src=\"" + imgBase64 + "\">"
+				}
+			});
+		}
+    </script>
+</head>
+<body>
+	<img src="public/qr.jpg">
+    <button onclick="scantest()" style="display: block;">扫一扫</button>
+    <div id="message">
+    	
+    </div>
+</body>
+</html>
