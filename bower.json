@@ -1,0 +1,22 @@
+{
+  "name": "lib",
+  "authors": [
+    "icorvoh <icorvoh@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sha": "https://github.com/Caligatio/jsSHA/blob/master/src/sha.js",
+    "jr-qrcode": "https://github.com/diamont1001/jrQrcode/blob/master/dist/jr-qrcode.js",
+    "jquery.min": "https://github.com/jquery/jquery/blob/3.2.1/dist/jquery.min.js"
+  }
+}
