@@ -1,4 +1,14 @@
-# 借阅系统
+# “无微不至”的借阅系统
+
+## 使用指南
+
+* 克隆项目至本地
+
+> git clone https://git.oschina.net/CreatShare/borrow-book.git
+
+* 使用 bower 进行前端依赖库的安装(使用 npm 安装 bower)
+
+> bower install
 
 ## 用户界面
 
