@@ -4,7 +4,7 @@
 
 * 请求地址
 
-https://corefure.cn/lib_api/book/finishBook.action
+https://corefuture.cn/lib_api/book/finishBook.action
 
 * 请求类型
 
@@ -63,7 +63,7 @@ book{
 
 * 请求地址:
 
-https://corefure.cn/lib_api/book/saveBook.action
+https://corefuture.cn/lib_api/book/saveBook.action
 
 * 请求类型
 
@@ -93,7 +93,7 @@ HTTP：POST
 
 * 请求地址
 
-https://corefure.cn/lib_api/stack/getAllStacks.action
+https://corefuture.cn/lib_api/stack/getAllStacks.action
 
 * 请求类型
 
@@ -150,7 +150,7 @@ categories:书库所有分类
 
 * 请求地址
 
-https://corefure.cn/lib_api/category/getCategories.action
+https://corefuture.cn/lib_api/category/getCategories.action
 
 * 请求类型
 
@@ -187,7 +187,7 @@ cName:分类名称
 
 * 请求地址
 
-https://corefure.cn/lib_api/category/getCategories.action
+https://corefuture.cn/lib_api/category/getCategories.action
 
 * 请求类型
 
@@ -250,7 +250,7 @@ book{
 
 * 请求地址
 
-https://corefure.cn/lib_api/book/searchBookExact.action
+https://corefuture.cn/lib_api/book/searchBookExact.action
 
 * 请求类型
 
@@ -311,7 +311,7 @@ book{
 
 * 请求地址
 
-https://corefure.cn/lib_api/book/searchBookNext.action
+https://corefuture.cn/lib_api/book/searchBookNext.action
 
 * 请求类型
 
@@ -370,7 +370,7 @@ book{
 
 * 请求地址
 
-https://corefure.cn/lib_api/book/searchBookByCid.action
+https://corefuture.cn/lib_api/book/searchBookByCid.action
 
 * 请求类型
 
@@ -453,7 +453,7 @@ book{
 
 * 请求地址
 
-https://corefure.cn/lib_api/book/getBookDetail.action
+https://corefuture.cn/lib_api/book/getBookDetail.action
 
 * 请求类型
 
@@ -604,7 +604,7 @@ relatedBooks:相关书籍
 
 * 请求地址
 
-https://corefure.cn/lib_api/book/getRecommderBooks.action
+https://corefuture.cn/lib_api/book/getRecommderBooks.action
 
 * 请求类型
 
