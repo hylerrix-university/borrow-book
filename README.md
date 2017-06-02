@@ -27,6 +27,14 @@
 
 > git clone https://git.oschina.net/CreatShare/borrow-book.git
 
+* 用 npm 构建环境
+
+```
+npm install
+```
+
 * 使用 bower 进行前端依赖库的安装(使用 npm 安装 bower)
 
-> bower install
+```
+bower install
+```
