@@ -6,6 +6,7 @@
 
 ## 任务进度
 
+- [X] 原型图
 - [ ] 用户注册
 
 > 场景.1: 用户被微信授权后跳转图书导航页。
@@ -35,6 +36,24 @@
 - [ ] 单元测试
 - [ ] 概要设计说明书
 - [ ] 需求规格说明书
+
+## 项目目录
+
+> 说明：(.gi) 寓意为 (使用 .gitignore 忽略上传)
+
+.
+├── README.md # 项目说明文档
+├── admin # 管理员界面文件夹
+├── bower.json # Bower 前端库依赖关系
+├── bower_components # Bower 前端依赖库(.gi)
+├── interface.md # 后端接口文档
+├── library.sql # 后端 SQL 源码
+├── node_modules # Node 安装模块(.gi)
+├── npm-debug.log # NPM 错误日志(.gi)
+├── package.json # Node 配置
+├── prototype # 原型图 HTML 版
+├── spec # 测试文件
+└── user # 用户界面文件夹
 
 ## 使用指南
 
