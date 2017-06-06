@@ -1,8 +1,12 @@
 # “无微不至”的借阅系统
 
-# 竞赛场景页
+## 竞赛场景页
 
 > http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1532
+
+## 项目简介
+
+> Jasmine 做单元测试，istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 javascript 的包依赖管理。
 
 ## 任务进度
 
@@ -48,11 +52,13 @@
 ├── bower_components # Bower 前端依赖库(.gi)
 ├── interface.md # 后端接口文档
 ├── jasmine # 单元测试文件
+├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── library.sql # 后端 SQL 源码
 ├── node_modules # Node 安装模块(.gi)
 ├── npm-debug.log # NPM 错误日志(.gi)
 ├── package.json # Node 配置
 ├── prototype # 原型图 HTML 版
+├── unit-test # 前端单元测试文件
 └── user # 用户界面文件夹
 
 ## 使用指南
