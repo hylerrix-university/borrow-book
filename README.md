@@ -108,14 +108,8 @@ open unit-test/index.html
 
 ### 查看 istanbul 测试报告
 
-1. 从文件中打开(具体目录视操作系统而定)
+从文件中打开(具体目录视操作系统而定)
 
 ```
-open open unit-test/coverage/Chrome\ 58.0.3029\ \(Mac\ OS\ X\ 10.12.5\)/index.html
-```
-
-2. 在命令行中查看
-
-```
-
+open unit-test/coverage/Chrome\ 58.0.3029\ \(Mac\ OS\ X\ 10.12.5\)/index.html
 ```

@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       js: {
         src: ['lib/module1.js', 'lib/module2.js', 'lib/plugin.js'],
         dest: 'dist/script.js'
-      }
+      },
       css: {
         src: ['style/normalize.css', 'style/base.css', 'style/theme.css'],
         dest: 'dist/screen.css'
@@ -29,10 +29,10 @@ module.exports = function(grunt) {
         sourceMapUrl: name+'.min.js.map'
       },
       target : {
-      expand: true,
-      cwd: 'js/origin',
-      src : '*.js',
-      dest : 'js/'
+        expand: true,
+        cwd: 'js/origin',
+        src : '*.js',
+        dest : 'js/'
       }
     },
 
@@ -59,15 +59,8 @@ module.exports = function(grunt) {
   });
 
   copy: { // 用于复制文件与目录
-    main: {
-      expand: true,
-      cwd: 'src/',
-      src: '**',
-      dest: 'dest/',
-      flatten: true,
-      filter: 'isFile',
-    },
-  },
+    
+  };
 
   // 从 node_modules 目录加载模块文件
   require('load-grunt-tasks')(grunt); // 替代 grunt.loadNpmTasks 语句
