@@ -4,9 +4,9 @@
 
 > http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1532
 
-## 项目简介
+## 开发简介
 
-> JsHint 做代码风格规范检测，Jasmine 做单元测试，istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 javascript 的包依赖管理。
+> JsHint 做代码风格规范检测，Jasmine 做单元测试，Istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 JavaScript 的包依赖管理。
 
 ## 任务进度
 
@@ -52,19 +52,17 @@
 ```
 .
 ├── README.md # 项目说明文档
-├── admin # 管理员界面文件夹
+├── app # 项目正式源码(管理员、用户界面及其逻辑)
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
+├── gruntfile.js # Grunt 构建流配置
 ├── interface.md # 后端接口文档
-├── jasmine # 单元测试文件
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── library.sql # 后端 SQL 源码
 ├── node_modules # Node 安装模块(.gi)
-├── npm-debug.log # NPM 错误日志(.gi)
 ├── package.json # Node 配置
 ├── prototype # 原型图 HTML 版
-├── unit-test # 前端单元测试文件
-└── user # 用户界面文件夹
+└── unit-test # 前端单元测试文件
 ```
 
 ## 使用指南
@@ -89,7 +87,11 @@ npm install
 需要使用的全局 npm 依赖库
 
 ```
-npm install phantomjs -g # 下载很慢，可以使用 cnpm 镜像源等下载方式
+npm install phantomjs -g # 下载很慢，推荐使用其他下载方式
+```
+
+```
+npm install -g yo
 ```
 
 ### 执行单元测试并查看结果
