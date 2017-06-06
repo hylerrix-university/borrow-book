@@ -1,0 +1,51 @@
+{
+  "name": "jasmine-core",
+  "homepage": "http://jasmine.github.io",
+  "authors": [
+    "slackersoft <gregg@slackersoft.net>"
+  ],
+  "description": "Official packaging of Jasmine's core files",
+  "keywords": [
+    "test",
+    "jasmine",
+    "tdd",
+    "bdd"
+  ],
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": "lib/jasmine-core/jasmine.js",
+  "ignore": [
+    "**/.*",
+    "dist",
+    "grunt",
+    "node_modules",
+    "pkg",
+    "release_notes",
+    "spec",
+    "src",
+    "Gemfile",
+    "Gemfile.lock",
+    "Rakefile",
+    "jasmine-core.gemspec",
+    "*.sh",
+    "*.py",
+    "Gruntfile.js",
+    "lib/jasmine-core.rb",
+    "lib/jasmine-core/boot/",
+    "lib/jasmine-core/spec",
+    "lib/jasmine-core/version.rb",
+    "lib/jasmine-core/*.py",
+    "sauce_connect.log"
+  ],
+  "version": "2.6.2",
+  "_release": "2.6.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.6.2",
+    "commit": "22cfca11c7bb351689b16c08b0b794f97ad9cd23"
+  },
+  "_source": "https://github.com/jasmine/jasmine.git",
+  "_target": "^2.6.2",
+  "_originalSource": "https://github.com/jasmine/jasmine.git",
+  "_direct": true
+}

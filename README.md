@@ -47,12 +47,12 @@
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
 ├── interface.md # 后端接口文档
+├── jasmine # 单元测试文件
 ├── library.sql # 后端 SQL 源码
 ├── node_modules # Node 安装模块(.gi)
 ├── npm-debug.log # NPM 错误日志(.gi)
 ├── package.json # Node 配置
 ├── prototype # 原型图 HTML 版
-├── spec # 测试文件
 └── user # 用户界面文件夹
 
 ## 使用指南

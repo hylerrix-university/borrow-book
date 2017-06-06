@@ -1,0 +1,11 @@
+{
+  "name": "jquery",
+  "_cacheHeaders": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index",
+  "_source": "https://github.com/jquery/jquery/",
+  "_target": "*",
+  "_originalSource": "https://github.com/jquery/jquery/",
+  "_direct": true
+}

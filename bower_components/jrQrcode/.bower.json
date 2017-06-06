@@ -1,0 +1,11 @@
+{
+  "name": "jrQrcode",
+  "_cacheHeaders": {
+    "Content-Type": "text/html; charset=utf-8"
+  },
+  "main": "index",
+  "_source": "https://github.com/diamont1001/jrQrcode",
+  "_target": "*",
+  "_originalSource": "https://github.com/diamont1001/jrQrcode",
+  "_direct": true
+}

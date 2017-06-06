@@ -15,8 +15,9 @@
     "tests"
   ],
   "dependencies": {
-    "sha": "https://github.com/Caligatio/jsSHA/blob/master/src/sha.js",
-    "jr-qrcode": "https://github.com/diamont1001/jrQrcode/blob/master/dist/jr-qrcode.js",
-    "jquery.min": "https://github.com/jquery/jquery/blob/3.2.1/dist/jquery.min.js"
+    "jquery": "https://github.com/jquery/jquery/",
+    "jrQrcode": "https://github.com/diamont1001/jrQrcode",
+    "jasmine-core": "https://github.com/jasmine/jasmine.git#^2.6.2",
+    "jsSHA": "https://github.com/Caligatio/jsSHA"
   }
 }
