@@ -45,6 +45,26 @@
 - [ ] 概要设计说明书
 - [ ] 需求规格说明书
 
+## 项目目录
+
+> 说明：(.gi) 寓意为 (使用 .gitignore 忽略上传)
+
+```
+.
+├── README.md # 项目说明文档
+├── app # 项目正式源码(管理员、用户界面及其逻辑)
+├── bower.json # Bower 前端库依赖关系
+├── bower_components # Bower 前端依赖库(.gi)
+├── gruntfile.js # Grunt 构建流配置
+├── interface.md # 后端接口文档
+├── karma.conf.js # Karma 自动化完成单元测试配置
+├── library.sql # 后端 SQL 源码
+├── node_modules # Node 安装模块(.gi)
+├── package.json # Node 配置
+├── prototype # 原型图 HTML 版
+└── unit-test # 前端单元测试文件
+```
+
 ## 前端页面及其命名约定
 
 ### 公共页面
@@ -80,26 +100,6 @@ app/admin/alter_right # 授权&验收
 app/admin/admin_information.html # 个人中心
 app/admin/admin_awards.html # 我的授权
 app/admin/admin_receipt.html # 我的验收
-```
-
-## 项目目录
-
-> 说明：(.gi) 寓意为 (使用 .gitignore 忽略上传)
-
-```
-.
-├── README.md # 项目说明文档
-├── app # 项目正式源码(管理员、用户界面及其逻辑)
-├── bower.json # Bower 前端库依赖关系
-├── bower_components # Bower 前端依赖库(.gi)
-├── gruntfile.js # Grunt 构建流配置
-├── interface.md # 后端接口文档
-├── karma.conf.js # Karma 自动化完成单元测试配置
-├── library.sql # 后端 SQL 源码
-├── node_modules # Node 安装模块(.gi)
-├── package.json # Node 配置
-├── prototype # 原型图 HTML 版
-└── unit-test # 前端单元测试文件
 ```
 
 ## 使用指南
