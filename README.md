@@ -45,6 +45,43 @@
 - [ ] 概要设计说明书
 - [ ] 需求规格说明书
 
+## 前端页面及其命名约定
+
+### 公共页面
+
+```
+app/call_us.html # 联系我们
+```
+
+### user 用户页面
+
+```
+app/user/first_register.html # 首次登陆
+app/user/books_navigation.html # 图书导航
+app/user/search_books.html # 书库搜书
+app/user/borrow_cart.html # 借阅书车
+app/user/personal_center.html # 个人中心
+app/user/book_detail.html # 书籍详情
+app/user/categories_detail.html # 类别详情
+app/user/user_information.html # 个人信息
+app/user/user_collection.html # 我的收藏
+app/user/user_reserve.html # 我的预订
+app/user/user_borrow.html # 借阅历史
+app/user/user_search.html # 搜索记录
+app/user/change_information.html # 修改信息
+```
+
+### admin 管理员页面
+
+```
+app/admin/admin_login # 登录界面
+app/admin/input_books # 录入书籍
+app/admin/alter_right # 授权&验收
+app/admin/admin_information.html # 个人中心
+app/admin/admin_awards.html # 我的授权
+app/admin/admin_receipt.html # 我的验收
+```
+
 ## 项目目录
 
 > 说明：(.gi) 寓意为 (使用 .gitignore 忽略上传)
