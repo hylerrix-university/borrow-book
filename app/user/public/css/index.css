@@ -58,18 +58,18 @@ img {
 }
 
 .mHeaderWrap {
-    margin: 0rem;
-    padding: 0rem;
+    margin: 0;
+    padding: 0;
     height: 1.5rem;
     width: 100%;
-    background-color: #fff;
     position: fixed;
+    text-align: center;
+    background-color: #fff;
 }
 
 .mHeaderWrap .mHeaderTitle {
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 /* 主体 */

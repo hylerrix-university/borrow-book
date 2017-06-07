@@ -39,12 +39,9 @@
 }
 
 .mRegisterWrap .mRegisterHeader {
-    background-color: #fff;
-}
-
-.mRegisterWrap .mRegisterHeader .mRegisterTitle {
     border: #bbb solid medium;
     text-align: center;
+    background-color: #fff;
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap {
@@ -69,8 +66,7 @@
     float: left;
 }
 
-.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInput {
-	height: auto;
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInputBox {
 	border: #bbb solid medium;
 	-webkit-flex: 1;
             flex: 1;
@@ -78,7 +74,7 @@
     background-color: #fff;
 }
 
-.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInput input {
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInputBox input {
     border: none;
     width: 100%;
     color: #14abea;;
@@ -89,17 +85,14 @@
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterAuthCode {
 	height: auto;
 	width: 5.2rem;
-    border: #bbb solid medium;
     display: inline-block;
-    float: relative;
-    left: 10rem;
-    right: 10rem;
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterAuthCode button {
-	height: auto;
+	height: 100%;
 	width: 5.2rem;
 	font-size: 1rem;
+    border-bottom: #bbb solid medium;
     background-color: #4CAF50; /* Green */
     text-align: center;
 }
@@ -117,7 +110,6 @@
 	font-size: 1rem;
     background-color: #4CAF50;
 }
-
 
 /* 以下取材于 @海投网 */
 

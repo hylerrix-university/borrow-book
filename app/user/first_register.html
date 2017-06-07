@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
     <title>借阅伴侣 - 补全信息</title>
     <link rel="stylesheet" type="text/css" href="public/css/index.css">
     <link rel="stylesheet" type="text/css" href="public/css/first_register.css">
@@ -8,9 +10,7 @@
 <body>
 
     <div class="userApp">
-        <div class="mHeaderWrap">
-            <div class="mHeaderTitle">借阅助手</div>
-        </div>
+        <div class="mHeaderWrap">借阅助手</div>
 
         <div class="mContentWrap">
             <div class="mUserInfoWrap">
@@ -31,14 +31,14 @@
                 <div class="mRegisterPrivacyWrap">
                     <div class="mRegisterItemWrap">
                         <div class="mRegisterPrivacyTitle">新密码</div>
-                        <div class="mRegisterPrivacyInput">
+                        <div class="mRegisterPrivacyInputBox">
                         	<input type="password" name="password" placeholder="请输入密码(6~13位)">
                         </div>
                     </div>
                     
                     <div class="mRegisterItemWrap">
                         <div class="mRegisterPrivacyTitle">重复密码</div>
-                        <div class="mRegisterPrivacyInput">
+                        <div class="mRegisterPrivacyInputBox">
                         	<input type="password" name="repassword" placeholder="请输入重复密码(6~13位)">
                         </div>
                     </div>
@@ -47,14 +47,14 @@
                 <div class="mRegisterPrivacyWrap">
                     <div class="mRegisterItemWrap">
                         <div class="mRegisterPrivacyTitle">身份证号</div>
-                        <div class="mRegisterPrivacyInput">
+                        <div class="mRegisterPrivacyInputBox">
                         	<input type="text" name="idcard" placeholder="请输入身份证号">
                         </div>
                     </div>
 
                     <div class="mRegisterItemWrap">
                         <div class="mRegisterPrivacyTitle">绑定手机</div>
-                        <div class="mRegisterPrivacyInput">
+                        <div class="mRegisterPrivacyInputBox">
                         	<input type="text" name="phone" placeholder="请输入手机号">
                         </div>
                         <div class="mRegisterAuthCode">
@@ -64,14 +64,16 @@
 
                     <div class="mRegisterItemWrap">
                         <div class="mRegisterPrivacyTitle">验证码</div>
-                        <div class="mRegisterPrivacyInput">
+                        <div class="mRegisterPrivacyInputBox">
                         	<input type="text" name="verifycode" placeholder="请输入您获得到的验证码">
                         </div>
                     </div>
                 </div>
 
                 <div class="mRegisterVerify">
-                	<button onclick=";"><a href="books_navigation.html" style="text-decoration: none">确认登录</a></button>
+                	<!-- <button onclick=";"> -->
+                        <a href="books_navigation.html" style="text-decoration: none">确认登录</a>
+                    <!-- </button> -->
                 </div>
             </div>
 
@@ -79,7 +81,7 @@
 
         <!-- 底部信息 -->
 		<div class="ft_menu">
-			<a href="javascript;">帮助中心</a>
+			<a href="#">帮助中心</a>
 		</div>
 
 		<div id="js_hud" class="toast_tips" style="display: block;">

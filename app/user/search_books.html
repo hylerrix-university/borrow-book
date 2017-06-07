@@ -1,18 +1,133 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>借阅伴侣 - 书库搜书</title>
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-    <link rel="stylesheet" type="text/css" href="public/css/mNavWrap.css">
+    <meta charset="utf-8">
+    <title>借阅伴侣 - 书库搜书</title>
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
     <link rel="stylesheet" type="text/css" href="public/css/search_books.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <script src="../../bower_components/requirejs/require.js" defer async="true"></script>
+    <script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
 </head>
 <body>
 
+    <div class="userApp">
+        <div class="mHeaderWrap">借阅助手</div>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+        <div class="mContentWrap">
+        	<div class="mSearchWrap">
+	        	<div class="mSearchSelectorWrap">
+	        		<select>
+					    <option value ="volvo" selected="selected">搜索类别</option>
+					    <option value ="saab">书名搜索</option>
+					    <option value="opel">全拼搜索</option>
+					    <option value="audi">首字母搜索</option>
+					</select>
+	        	</div>
+	        	<div class="mSearchInputBox">
+	        		<input type="text" name="search" placeholder="书库搜书">
+	        	</div>
+	        	<div class="mSearchIconWrap">
+	        	    <div class="mSearchIcon">
+	        	    	<!-- <button> -->
+	        	    	    搜索
+	        	    	<!-- </button> -->
+	        	    </div>
+	        	    <div class="mSearchIcon">
+	        	        <!-- <button> -->
+	        	            扫码
+	        	        <!-- </button> -->
+	        	    </div>
+	        	</div>
+	        </div>
+
+	        <br/><br/><br/><br/><br/><br/><br/>
+
+	        <div class="mSearchResultWrap">
+	        	<div class="mSearchHeader">搜索结果</div>
+	        	<div class="mBookIntroWrap">
+	        		<div class="mBookIntroItemWrap">
+	        			<div class="mBookIntroItemPhoto">
+	        				<img src="javascript:;">
+	        			</div>
+	        			<div class="mBookIntroItemBookName">
+	        				这是一本书的书名
+	        			</div>
+	        			<div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
+	        			<div class="mBookIntroItemBooklibraryCount">藏书：6666</div>
+	        		</div>
+	        	</div>
+	        </div>
+
+	        <div class="mSameCategory">
+	        	<div class="mBookIntroMiniWrap">
+	        		
+	        		<div class="mBookIntroMiniItemWrap">
+		        		<div class="mBookMiniPhoto">
+		        			<img src="javascript:;">
+		        		</div>
+		        		<div class="mBookMiniBookName">
+		        			书名
+		        		</div>
+		        		<div class="mBookMiniBookAuthor">
+		        			作者
+		        		</div>
+		        	</div>
+
+		        	<div class="mBookIntroMiniItemWrap">
+		        		<div class="mBookMiniPhoto">
+		        			<img src="javascript:;">
+		        		</div>
+		        		<div class="mBookMiniBookName">
+		        			书名
+		        		</div>
+		        		<div class="mBookMiniBookAuthor">
+		        			作者
+		        		</div>
+		        	</div>
+
+		        	<div class="mBookIntroMiniItemWrap">
+		        		<div class="mBookMiniPhoto">
+		        			<img src="javascript:;">
+		        		</div>
+		        		<div class="mBookMiniBookName">
+		        			书名
+		        		</div>
+		        		<div class="mBookMiniBookAuthor">
+		        			作者
+		        		</div>
+		        	</div>
+
+		        	<div class="mLoadSameCategories">
+		        		加载更多
+		        	</div>
+
+	        	</div>
+	        </div>
+
+	        <div class="mSearchHistoryMiniWrap">
+	        	<div class="mSearchHistoryMiniHeader">搜索记录(已加载 2/4 条，点击加载更多)</div>
+	        	<div class="mSearchHistoryRecordWrap">
+	        		<div class="mSearchHistoryRecordItem">
+	        			<div class="mSearchHistoryRecordContent">这是一本书的书名</div>
+	        			<div class="mSearchHistoryRecordPhoto">
+	        				<img src="javascript:;">
+	        			</div>
+
+	        			<div class="mSearchHistoryRecordContent">这是一本书</div>
+	        			<div class="mSearchHistoryRecordPhoto">
+	        				<img src="javascript:;">
+	        			</div>
+	        		</div>
+	        	</div>
+	        </div>
+        </div>
+        
+
+    </div>
+
+
+    <div class="mNavWrap">
+        <!-- 这里的底部导航栏将被 reauire.js 加载 -->
+    </div>
 </body>
 </html>
