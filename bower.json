@@ -15,9 +15,10 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "https://github.com/jquery/jquery/",
-    "jrQrcode": "https://github.com/diamont1001/jrQrcode",
+    "jquery": "https://github.com/jquery/jquery.git",
+    "jrQrcode": "https://github.com/diamont1001/jrQrcode.git",
     "jasmine-core": "https://github.com/jasmine/jasmine.git#^2.6.2",
-    "jsSHA": "https://github.com/Caligatio/jsSHA"
+    "jsSHA": "https://github.com/Caligatio/jsSHA.git",
+    "requirejs": "https://github.com/requirejs/requirejs.git"
   }
 }

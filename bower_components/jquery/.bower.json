@@ -1,11 +1,14 @@
 {
   "name": "jquery",
-  "_cacheHeaders": {
-    "Content-Type": "text/html; charset=utf-8"
+  "homepage": "https://github.com/jquery/jquery",
+  "version": "3.2.1",
+  "_release": "3.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.2.1",
+    "commit": "f71eeda0fac4ec1442e631e90ff0703a0fb4ac96"
   },
-  "main": "index",
-  "_source": "https://github.com/jquery/jquery/",
+  "_source": "https://github.com/jquery/jquery.git",
   "_target": "*",
-  "_originalSource": "https://github.com/jquery/jquery/",
-  "_direct": true
+  "_originalSource": "https://github.com/jquery/jquery.git"
 }

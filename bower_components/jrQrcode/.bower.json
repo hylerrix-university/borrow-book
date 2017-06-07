@@ -1,11 +1,14 @@
 {
   "name": "jrQrcode",
-  "_cacheHeaders": {
-    "Content-Type": "text/html; charset=utf-8"
+  "homepage": "https://github.com/diamont1001/jrQrcode",
+  "version": "1.1.0",
+  "_release": "1.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.1.0",
+    "commit": "435782b4423584800db473d56d8781ef10b23ea0"
   },
-  "main": "index",
-  "_source": "https://github.com/diamont1001/jrQrcode",
+  "_source": "https://github.com/diamont1001/jrQrcode.git",
   "_target": "*",
-  "_originalSource": "https://github.com/diamont1001/jrQrcode",
-  "_direct": true
+  "_originalSource": "https://github.com/diamont1001/jrQrcode.git"
 }

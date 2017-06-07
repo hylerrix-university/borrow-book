@@ -6,7 +6,7 @@
 
 ## 开发简介
 
-> JsHint 做代码风格规范检测，Jasmine 做单元测试，Istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 JavaScript 的包依赖管理。
+> JsHint 做代码风格规范检测，Jasmine 做单元测试，Istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 JavaScript 的包依赖管理，RequireJS 做 JS 的 AMD 模块规范开发，Webpack 最终打包整个项目文件。
 
 ## 任务进度
 
@@ -80,7 +80,7 @@ app/user/first_register.html # 首次登陆
 app/user/books_navigation.html # 图书导航
 app/user/search_books.html # 书库搜书
 app/user/borrow_cart.html # 借阅书车
-app/user/personal_center.html # 个人中心
+app/user/user_center.html # 个人中心
 app/user/book_detail.html # 书籍详情
 app/user/categories_detail.html # 类别详情
 app/user/user_information.html # 个人信息
@@ -97,7 +97,7 @@ app/user/change_information.html # 修改信息
 app/admin/admin_login # 登录界面
 app/admin/input_books # 录入书籍
 app/admin/alter_right # 授权&验收
-app/admin/admin_information.html # 个人中心
+app/admin/admin_center.html # 个人中心
 app/admin/admin_awards.html # 我的授权
 app/admin/admin_receipt.html # 我的验收
 ```
