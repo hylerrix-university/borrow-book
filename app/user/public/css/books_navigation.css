@@ -1,27 +1,3 @@
-/* 头部 */
-
-.mHeaderWrap {
-    margin: 0rem;
-    padding: 0rem;
-    height: 1.5rem;
-    width: 100%;
-    background-color: #fff;
-    position: fixed;
-}
-
-.mHeaderWrap .mHeaderTitle {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-/* 主体 */
-
-.mContentWrap {
-    padding: 2rem 0 0 0;
-    height: 100%;
-}
-
 /* 轮播图 */
 
 .mSlideShowWrap {
@@ -33,10 +9,9 @@
 }
 
 .mSlideShowWrap .mNewBooksSideBar {
-    margin: 0;
-    padding: 0;
     height: 5.6rem;
     width: 1.4rem;
+    border: #bbb solid medium;
     display: block;
     float: left;
     background-color: #fff;
@@ -56,6 +31,7 @@
     padding: 0;
     height: 5.6rem;
     width: auto;
+    border: #bbb solid medium;
     display: block;
     background-color: #fff;
 }
@@ -69,16 +45,14 @@
 .mAllStackWrap {
     margin: .5rem 0 3rem 0;
     padding: 0;
-    width: 100%;
-    display: block;
 }
 
 .mAllStackWrap .mStackHeader {
-    height: auto;
     background-color: #fff;
 }
 
 .mAllStackWrap .mStackHeader .mStackTitle {
+    border: #bbb solid medium;
     text-align: center;
 }
 
@@ -87,6 +61,7 @@
 .mAllStackWrap .mStackWrap {
     margin: .5rem 0 0 0;
     padding: 0;
+    display: -webkit-flex; /* Safari */
     display: flex;
 }
 
@@ -98,13 +73,15 @@
 
 .mAllStackWrap .mStackWrap .mStackCategoriesWrap {
     background-color: #fff;
-    flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
 }
 
-/* 每个 mStackCategorie 的链接属性 */
-.mStackCategoriesLink {
-    color: #0000ff;
+.mAllStackWrap .mStackWrap .mStackCategoriesWrap a {
     text-decoration: none;
+    background-color: #fff;
+    -webkit-flex: 1;
+            flex: 1;
 }
 
 .mAllStackWrap .mStackWrap .mStackCategoriesWrap .mStackCategorie {

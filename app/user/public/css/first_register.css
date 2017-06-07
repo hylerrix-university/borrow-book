@@ -1,0 +1,211 @@
+.mUserInfoWrap {
+    margin: 0;
+    padding: .5rem 0 .5rem 0;
+    height: 2rem;
+    width: 100%;
+    border: #bbb solid medium;
+    background-color: #fff; 
+}
+
+.mUserInfoWrap .mUserPhoto {
+    margin: 0 0 0 1rem;
+    padding: 0;
+    height: 2rem;
+    display: inline;
+    float: left;
+}
+
+.mUserInfoWrap .mUserPhoto img {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+}
+
+.mUserInfoWrap .mUserName {
+    margin: 0 0 0 3.5rem;
+    padding: 0;
+}
+
+.mUserInfoWrap .mUserWelcome {
+    margin: 0 0 0 3.5rem;
+    padding: 0;
+    font-size: .5rem;
+    color: #dbdbdb;
+}
+
+.mRegisterWrap {
+    margin: .5rem 0 0 0;
+    padding: 0;
+}
+
+.mRegisterWrap .mRegisterHeader {
+    background-color: #fff;
+}
+
+.mRegisterWrap .mRegisterHeader .mRegisterTitle {
+    border: #bbb solid medium;
+    text-align: center;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap {
+    margin: .5rem 0 0 0;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap {
+	display: -webkit-flex;
+    display: flex;
+	background-color: #fff;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyTitle {
+	height: auto;
+	width: 4.5rem;
+	border: #bbb solid medium;
+	-webkit-flex: initial;
+            flex: initial;
+    /* 最小宽度也是 4.5rem，这样不会被“获取验证码挤压” */
+    min-width: 4.5rem;
+	display: inline;
+    float: left;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInput {
+	height: auto;
+	border: #bbb solid medium;
+	-webkit-flex: 1;
+            flex: 1;
+    text-align: left;
+    background-color: #fff;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInput input {
+    border: none;
+    width: 100%;
+    color: #14abea;;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterAuthCode {
+	height: auto;
+	width: 5.2rem;
+    border: #bbb solid medium;
+    display: inline-block;
+    float: relative;
+    left: 10rem;
+    right: 10rem;
+}
+
+.mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterAuthCode button {
+	height: auto;
+	width: 5.2rem;
+	font-size: 1rem;
+    background-color: #4CAF50; /* Green */
+    text-align: center;
+}
+
+.mRegisterWrap .mRegisterVerify {
+	margin: .5rem 0 0 0;
+	padding: 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.mRegisterWrap .mRegisterVerify button {
+	height: auto;
+	width: 100%;
+	font-size: 1rem;
+    background-color: #4CAF50;
+}
+
+
+/* 以下取材于 @海投网 */
+
+.ft_menu {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center
+}
+
+.ft_menu a {
+    color: #fff
+}
+
+.toast_tips {
+    width: 120px;
+    height: 120px;
+    z-index: 20;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    font-size: 14px;
+    background: rgba(40,40,40,0.5)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#80282828',endcolorstr = '#80282828');
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-top: -60px;
+    margin-left: -60px
+}
+
+.toast_tips .tips_msg {
+    padding-top: 30px;
+    position: relative;
+    z-index: 2
+}
+
+.toast_tips .wrp_icon {
+    position: relative;
+    z-index: 2
+}
+
+.toast_tips .wrp_icon .icon {
+    display: inline-block
+}
+
+.toast_tips .tips_icon {
+    position: relative;
+    z-index: 2
+}
+
+.toast_tips .tips_title {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 98%;
+    padding: 0 10px;
+    color: #fff;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    z-index: 2
+}
+
+.toast_tips.hud_loading .tips_title {
+    display: none
+}
+
+.toast_tips.hud_texting .wrp_icon {
+    display: none
+}
+
+.toast_tips .vm_box {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle
+}
+
+.toast_tips .mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0);
+    z-index: 1
+}
+

@@ -1,15 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>借阅伴侣 - 补全信息</title>
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <title>借阅伴侣 - 补全信息</title>
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="public/css/first_register.css">
 </head>
 <body>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+    <div class="userApp">
+        <div class="mHeaderWrap">
+            <div class="mHeaderTitle">借阅助手</div>
+        </div>
+
+        <div class="mContentWrap">
+            <div class="mUserInfoWrap">
+                <div class="mUserPhoto">
+                    <img src="public/icorvoh.jpg">
+                </div>
+                <div class="mUserName">韩亦乐</div>
+                <div class="mUserWelcome">欢迎使用 借阅助手</div>
+            </div>
+
+            <div class="mRegisterWrap">
+                <div class="mRegisterHeader">
+                    <div class="mRegisterTitle">
+                        补全信息
+                    </div>
+                </div>
+
+                <div class="mRegisterPrivacyWrap">
+                    <div class="mRegisterItemWrap">
+                        <div class="mRegisterPrivacyTitle">新密码</div>
+                        <div class="mRegisterPrivacyInput">
+                        	<input type="password" name="password" placeholder="请输入密码(6~13位)">
+                        </div>
+                    </div>
+                    
+                    <div class="mRegisterItemWrap">
+                        <div class="mRegisterPrivacyTitle">重复密码</div>
+                        <div class="mRegisterPrivacyInput">
+                        	<input type="password" name="repassword" placeholder="请输入重复密码(6~13位)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mRegisterPrivacyWrap">
+                    <div class="mRegisterItemWrap">
+                        <div class="mRegisterPrivacyTitle">身份证号</div>
+                        <div class="mRegisterPrivacyInput">
+                        	<input type="text" name="idcard" placeholder="请输入身份证号">
+                        </div>
+                    </div>
+
+                    <div class="mRegisterItemWrap">
+                        <div class="mRegisterPrivacyTitle">绑定手机</div>
+                        <div class="mRegisterPrivacyInput">
+                        	<input type="text" name="phone" placeholder="请输入手机号">
+                        </div>
+                        <div class="mRegisterAuthCode">
+                            <button onclick=";">获取验证码</button>
+                        </div>
+                    </div>
+
+                    <div class="mRegisterItemWrap">
+                        <div class="mRegisterPrivacyTitle">验证码</div>
+                        <div class="mRegisterPrivacyInput">
+                        	<input type="text" name="verifycode" placeholder="请输入您获得到的验证码">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mRegisterVerify">
+                	<button onclick=";"><a href="books_navigation.html" style="text-decoration: none">确认登录</a></button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 底部信息 -->
+		<div class="ft_menu">
+			<a href="javascript;">帮助中心</a>
+		</div>
+
+		<div id="js_hud" class="toast_tips" style="display: block;">
+			<div id="js_hud_icon"></div>
+			<p id="js_hud_text" class="tips_title">⊙∀⊙</p>
+			<span class="vm_box"></span>
+		</div>
+    </div>
 </body>
 </html>
