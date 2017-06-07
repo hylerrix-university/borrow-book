@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>借阅伴侣 - 图书导航</title>
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <title>借阅伴侣 - 图书导航</title>
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="public/css/mNavWrap.css">
+    <link rel="stylesheet" type="text/css" href="public/css/books_navigation.css">
+    <script src="../../bower_components/requirejs/require.js" defer async="true"></script>
+    <script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
 </head>
 <body>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+    <div class="userApp">
+        <div class="mHeaderWrap">
+            <div class="mHeaderTitle">借阅助手</div>
+        </div>
+
+        <div class="mContentWrap">
+            
+            <div class="mSlideShowWrap">
+                <div class="mNewBooksSideBar">
+                   <div class="mSideBarTitle">新</div>
+                   <div class="mSideBarTitle">书</div>
+                   <div class="mSideBarTitle">推</div>
+                   <div class="mSideBarTitle">荐</div>
+                </div>
+                <div class="mCarousel">
+                    <img src="javascript:;" style="display: none">
+                    <img src="javascript:;" style="display: none">
+                </div>
+                <div class="nextSlid">
+                </div>
+            </div>
+
+            <div class="mAllStackWrap">
+                <div class="mStackHeader">
+                    <div class="mStackTitle">书城直通车</div>
+                </div>
+
+                <div class="mStackWrap">
+                    <div class="mStackSideBar">通信与计算机书库</div>
+                    <div class="mStackCategoriesWrap">
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">编程语言</div></a>
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">网站架构</div></a>
+                    </div>
+                </div>
+
+                <div class="mStackWrap">
+                    <div class="mStackSideBar">社会科学</div>
+                    <div class="mStackCategoriesWrap">
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">人口统计学</div></a>
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">心理史学</div></a>
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">传播学</div></a>
+                    </div>
+                </div>
+
+                <div class="mStackWrap">
+                    <div class="mStackSideBar">文艺书库</div>
+                    <div class="mStackCategoriesWrap">
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">音乐史</div></a>
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">影视学</div></a>
+                    </div>
+                </div>
+
+                <div class="mStackWrap">
+                    <div class="mStackSideBar">理学书库</div>
+                    <div class="mStackCategoriesWrap">
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">数学</div></a>
+                        <a class="mStackCategoriesLink" href="javascript:;"><div class="mStackCategorie">物理学</div></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mNavWrap">
+        <!-- 这里的底部导航栏将被 reauire.js 加载 -->
+    </div>
 </body>
 </html>
