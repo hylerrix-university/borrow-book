@@ -47,15 +47,6 @@
     padding: 0;
 }
 
-.mAllStackWrap .mStackHeader {
-    background-color: #fff;
-}
-
-.mAllStackWrap .mStackHeader .mStackTitle {
-    border: #bbb solid medium;
-    text-align: center;
-}
-
 /* 具体书库 */
 
 .mAllStackWrap .mStackWrap {
