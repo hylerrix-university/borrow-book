@@ -292,3 +292,43 @@
     width: .8rem;
     height: .8rem;
 }
+
+/* 填充列表 */
+
+.mListWrap {
+    margin: .5rem 0 0 0;
+}
+
+.mListWrap a {
+    text-decoration: none;
+}
+
+.mListWrap .mListItem {
+    border: #bbb solid medium;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* 确定归还等按钮 */
+
+.mButtonWrap {
+    margin: .5rem 0 0 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    display: flex;
+}
+
+.mButtonWrap button {
+    height: auto;
+    width: auto;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    border: #bbb solid medium;
+    /* 很关键：将默认的select选择框样式清除 */
+    /*font-size: 1rem;*/
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    flex: 1;
+}

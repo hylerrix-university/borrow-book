@@ -1,0 +1,22 @@
+.mBorrowQRCodeWrap {
+    margin: .5rem 0 0 0;
+    padding: .5rem .5rem .5rem .5rem;
+    display: flex;
+}
+
+.mBorrowQRCodeWrap .mBorrowQRCode {
+    width: 11rem;
+    height: 11rem;
+    flex: 1;
+    text-align: center;
+}
+
+.mBorrowQRCodeWrap .mBorrowQRCode img {
+    width: 11rem;
+    height: 11rem;
+    background-color: #fff;
+}
+
+.mBorrowCartFooter {
+    margin: 0 0 3rem 0;
+}

@@ -2,7 +2,9 @@
 
 ## 竞赛场景页
 
-> http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1532
+> * [第六届“中国软件杯”大学生软件设计大赛赛题](http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1532)
+
+> * [“无微不至”的借读伴侣作品提交须知](http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1562)
 
 ## 开发简介
 
