@@ -2,16 +2,51 @@
 <html>
 <head>
     <meta charset="utf-8">
-	<title>借阅伴侣 - 个人中心</title>
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <title>借阅伴侣 - 个人中心</title>
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="public/css/user_center.css">
+    <script src="../../bower_components/requirejs/require.js" defer async="true"></script>
+    <script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
 </head>
 <body>
+    <div class="userApp">
+        <div class="mHeaderWrap">借阅助手</div>
 
+        <div class="mContentWrap">
+            <div class="mUserInfoWrap">
+                <div class="mUserPhoto">
+                    <img src="public/icorvoh.jpg">
+                </div>
+                <div class="mUserName">韩亦乐</div>
+                <div class="mUserWelcome">欢迎使用 借阅助手</div>
+            </div>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+            <div class="mListWrap">
+                <div class="mListItem">
+                    <a href="javascript:;">我的收藏</a>
+                </div>
+                <div class="mListItem">
+                    <a href="javascript:;">我的预订</a>
+                </div>
+                <div class="mListItem">
+                    <a href="javascript:;">借阅历史</a>
+                </div>
+                <div class="mListItem">
+                    <a href="javascript:;">搜索记录</a>
+                </div>
+            </div>
+
+            <div class="mListWrap">
+                <div class="mListItem">
+                    <a href="javascript:;">联系我们</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mNavWrap">
+        <!-- 这里的底部导航栏将被 reauire.js 加载 -->
+    </div>
 </body>
 </html>
