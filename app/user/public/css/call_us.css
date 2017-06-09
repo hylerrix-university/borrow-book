@@ -1,0 +1,26 @@
+.mDeveloperIntroWrap {
+    margin: .5rem 0 0 0;
+    background-color: #fff;
+    border: #bbb solid medium;
+    display: flex;
+}
+
+.mDeveloperIntroWrap .mDeveloperGroupPhoto {
+	margin: .5rem 0 .5rem .5rem;
+    flex: 1;
+}
+
+.mDeveloperIntroWrap .mDeveloperGroupPhoto img {
+    height: 4rem;
+    width: 8rem;
+}
+
+.mDeveloperIntroWrap .mDevelopeCharacter {
+    margin: .5rem .5rem .5rem 0;
+    font-size: .5rem;
+    flex: 1;
+}
+
+.mDeveloperLocation {
+	text-align: center;
+}

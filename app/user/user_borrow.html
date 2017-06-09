@@ -2,15 +2,76 @@
 <html>
 <head>
     <meta charset="utf-8">
-	<title>借阅伴侣 - 我的借阅</title>
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <title>借阅伴侣 - 借阅历史</title>
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="public/css/public.css">
 </head>
 <body>
+    <div class="userApp">
+        <div class="mHeaderReturnWrap">
+            <div class="mHeaderLeftReturn"><a href="user_center.html">返回</a></div>
+            <div class="mHeaderTitle">借阅历史</div>
+        </div>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+        <div class="mContentWrap">
+            <div class="mTitleHeader">本页已加载借阅信息：2 条<span>总计借阅次数：3 次</span></div>
+
+            <div class="mTitleHeader">第三次<span>正在借阅</span></div>
+
+            <div class="mBookIntroWrap">
+                <a href="book_detail.html">
+                    <div class="mBookIntroItemWrap">
+                        <div class="mBookIntroItemPhoto">
+                            <img src="public/icorvoh.jpg">
+                        </div>
+                        <div class="mBookIntroCharacterWrap">
+                            <div class="mBookIntroItemBookName">这是一本书的书名</div>
+                            <div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
+                            <div class="mBookIntroItemBookCount">数量：2</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mTitleHeader">第二次<span>完整归还</span></div>
+
+            <div class="mBookIntroWrap">
+                <a href="book_detail.html">
+                    <div class="mBookIntroItemWrap">
+                        <div class="mBookIntroItemPhoto">
+                            <img src="public/icorvoh.jpg">
+                        </div>
+                        <div class="mBookIntroCharacterWrap">
+                            <div class="mBookIntroItemBookName">这是一本书的书名</div>
+                            <div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
+                            <div class="mBookIntroItemBookCount">数量：1</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mBookIntroWrap">
+                <a href="book_detail.html">
+                    <div class="mBookIntroItemWrap">
+                        <div class="mBookIntroItemPhoto">
+                            <img src="public/icorvoh.jpg">
+                        </div>
+                        <div class="mBookIntroCharacterWrap">
+                            <div class="mBookIntroItemBookName">这是一本书的书名</div>
+                            <div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
+                            <div class="mBookIntroItemBookCount">数量：1</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="mPaging">
+                <div class="mPagingLeft"><button>去尾页</button></div>
+                <div class="mPagingContent"><button>第 1 页, 共 1 页</button></div>
+                <div class="mPagingRight"><button>下一页</button></div>
+            </div>
+            
+        </div>
+    </div>
 </body>
 </html>

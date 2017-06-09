@@ -212,18 +212,9 @@
     font-size: .8rem;
 }
 
-/* 藏书量 */
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBooklibraryCount {
-    margin: 0 0 0 0;
+.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookCount {
+    margin: 0 0.4rem 0 0;
     display: inline;
-    font-size: .8rem;
-}
-
-/* 数量 */
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookSaveCount {
-    margin: 0 .4rem 0 0;
-    display: inline;
-    float: right; 
     font-size: .8rem;
 }
 
