@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>借阅伴侣 - 搜索记录</title>
+    <meta charset="utf-8">
+	<title>借阅伴侣 - 我的收藏</title>
 	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="public/css/public.css">
 </head>
 <body>
+    <div class="userApp">
+        <div class="mHeaderReturnWrap">
+            <div class="mHeaderLeftReturn"><a href="user_center.html">返回</a></div>
+            <div class="mHeaderTitle">搜索记录</div>
+        </div>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+        <div class="mContentWrap">
+            <div class="mTitleHeader">本页已加载搜索记录：4 条<span>总计收藏书籍：3 本</span></div>
+
+            <div class="mWechatRecordWrap">
+                    <div class="mWechatRecordLeftItemWrap">
+                        <div class="mWechatRecordLeftPhoto">
+                            <img src="public/anonymity.jpg">
+                        </div>
+                        <div class="mWechatRecordLeftContent">2017.06.04 日，您搜索了：</div>
+                    </div>
+
+                    <div class="mWechatRecordRightItemWrap">
+                        <a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书</div></a>
+                        <div class="mWechatRecordRightPhoto">
+                            <img src="public/icorvoh.jpg">
+                        </div>
+                    </div>
+
+                    <div class="mWechatRecordLeftItemWrap">
+                        <div class="mWechatRecordLeftPhoto">
+                            <img src="public/anonymity.jpg">
+                        </div>
+                        <div class="mWechatRecordLeftContent">2017.01.01 日，您搜索了：</div>
+                    </div>
+
+                    <div class="mWechatRecordRightItemWrap">
+                        <a href="search_books.html"><div class="mWechatRecordRightContent">韩亦乐</div></a>
+                        <div class="mWechatRecordRightPhoto">
+                            <img src="public/icorvoh.jpg">
+                        </div>
+                    </div>
+                </div>
+
+            <div class="mPaging">
+                <div class="mPagingLeft"><button>去尾页</button></div>
+                <div class="mPagingContent"><button>第 1 页, 共 1 页</button></div>
+                <div class="mPagingRight"><button>下一页</button></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
