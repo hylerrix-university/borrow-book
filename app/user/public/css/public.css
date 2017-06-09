@@ -116,6 +116,16 @@
     font-size: .5rem;
 }
 
+.mTitleHeader button {
+    height: auto;
+    width: 100%;
+    background-color: #4CAF50;
+    font-size: .8rem;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
 /* 个人账号简介 */
 
 .mUserInfoWrap {

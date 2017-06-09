@@ -2,15 +2,63 @@
 <html>
 <head>
     <meta charset="utf-8">
-	<title>借阅伴侣 - 个人信息</title>
-	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <title>借阅伴侣 - 个人信息</title>
+    <link rel="stylesheet" type="text/css" href="public/css/index.css">
+    <link rel="stylesheet" type="text/css" href="public/css/public.css">
+    <link rel="stylesheet" type="text/css" href="public/css/user_information.css">
 </head>
 <body>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+    <div class="userApp">
+        <div class="mHeaderReturnWrap">
+            <div class="mHeaderLeftReturn"><a href="user_center.html">返回</a></div>
+            <div class="mHeaderTitle">个人信息</div>
+        </div>
+
+        <div class="mContentWrap">
+            <div class="mUserInfoWrap">
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">头像</div>
+                    <div class="mUserInfoItemRightContent">
+                        <img src="public/icorvoh.jpg">
+                    </div>
+                </div>
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">姓名</div>
+                    <div class="mUserInfoItemRightContent">韩亦乐</div>
+                </div>
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">借阅</div>
+                    <div class="mUserInfoItemRightContent">3 次</div>
+                </div>
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">收藏</div>
+                    <div class="mUserInfoItemRightContent">3 本</div>
+                </div>
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">预订</div>
+                    <div class="mUserInfoItemRightContent">3 本</div>
+                </div>
+            </div>
+
+            <div class="mUserInfoWrap">
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">修改密码</div>
+                    <div class="mUserInfoItemRightContent"></div>
+                </div>
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">绑定手机</div>
+                    <div class="mUserInfoItemRightContent">18829533255</div>
+                </div>
+                <div class="mUserInfoItemWrap">
+                    <div class="mUserInfoItemLeftTitle">绑定手机</div>
+                    <div class="mUserInfoItemRightContent">610528xxxxxxxx0011</div>
+                </div>
+            </div>
+
+            <div class="mTitleHeader"><button onclick=";">退出登录</button></div>
+        </div>
+    </div>
+
 </body>
 </html>

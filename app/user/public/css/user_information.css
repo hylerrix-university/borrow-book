@@ -1,0 +1,35 @@
+.mUserInfoWrap {
+	margin: .5rem 0 0 0;
+	padding: 0;
+	height: 2rem;
+	width: 100%;
+    background-color: #fff;
+    height: auto;
+    border: none;
+}
+
+.mUserInfoWrap .mUserInfoItemWrap {
+    border: #bbb solid medium;
+    height: 100%;
+    display: flex;
+}
+
+.mUserInfoWrap .mUserInfoItemWrap .mUserInfoItemLeftTitle {
+	margin: .1rem 0 .1rem .5rem;
+	font-size: 1rem;
+	display: inline-block;
+	flex: 1;
+}
+
+.mUserInfoWrap .mUserInfoItemWrap .mUserInfoItemRightContent {
+	font-size: 1rem;
+	display: inline-block;
+	flex: 1;
+	text-align: right;
+}
+
+.mUserInfoWrap .mUserInfoItemWrap .mUserInfoItemRightContent img {
+	margin: .1rem;
+	height: 2rem;
+	width: 2rem;
+}
