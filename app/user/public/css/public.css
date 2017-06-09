@@ -4,9 +4,7 @@
     border: 0;
 }
 
-.mHeaderWrap {
-    margin: 0;
-    padding: 0;
+.mHeaderHomeWrap {
     height: 1.5rem;
     width: 100%;
     position: fixed;
@@ -14,9 +12,26 @@
     background-color: #fff;
 }
 
-.mHeaderWrap .mHeaderTitle {
-    margin: 0;
-    padding: 0;
+.mHeaderReturnWrap {
+    height: 1.5rem;
+    width: 100%;
+    position: fixed;
+    background-color: #fff;
+    display: flex;
+}
+
+.mHeaderReturnWrap .mHeaderLeftReturn {
+    display: inline-block;
+    text-align: center;
+    border: #bbb solid medium;
+    background-color: #4CAF50;
+    flex: 1;
+}
+
+.mHeaderReturnWrap .mHeaderTitle {
+    display: inline-block;
+    text-align: center;
+    flex: 7;
 }
 
 /* 主体 */
@@ -206,94 +221,200 @@
 
 .mSameCategoryWrap {
     margin: .5rem 0 .5rem 0;
-}
-
-.mSameCategoryWrap .mBookIntroMiniWrap {
-    margin: .5rem 0 0 0;
-    padding: .5rem 1rem 0 .8rem;
-    background-color: #fff;
-}
-
-.mSameCategoryWrap .mBookIntroMiniWrap {
-    margin: .5rem 0 0 0;
-    border: #bbb solid medium;
     padding: .5rem 0 .5rem 0;
+    background-color: #fff;
+    border: #bbb solid medium;
     display: flex;
 }
 
-.mSameCategoryWrap .mBookIntroMiniWrap .mBookIntroMiniItemWrap {
+.mSameCategoryWrap .mBookIntroMiniItemWrap {
     text-align: center;
     display: inline-block;
     flex: 1;
 }
 
-.mSameCategoryWrap .mBookIntroMiniWrap .mBookIntroMiniItemWrap .mBookMiniPhoto {
+.mSameCategoryWrap .mBookIntroMiniItemWrap .mBookMiniPhoto {
     display: block;
 }
 
-.mSameCategoryWrap .mBookIntroMiniWrap .mBookIntroMiniItemWrap .mBookMiniPhoto img {
+.mSameCategoryWrap .mBookIntroMiniItemWrap .mBookMiniPhoto img {
     height: 4rem;
     width: 3rem;
 }
 
-.mSameCategoryWrap .mBookIntroMiniWrap .mBookIntroMiniItemWrap .mBookMiniBookName {
+.mSameCategoryWrap .mBookIntroMiniItemWrap .mBookMiniBookName {
     text-align: center;
     font-size: .4rem;
     display: block;
 }
 
-.mSameCategoryWrap .mBookIntroMiniWrap .mBookIntroMiniItemWrap .mBookMiniBookAuthor {
+.mSameCategoryWrap .mBookIntroMiniItemWrap .mBookMiniBookAuthor {
     text-align: center;
     font-size: .4rem;
     display: block;
 }
 
-/* 搜索记录 */
+/* 相关书籍 */
 
-.mSearchHistoryWrap {
-    margin: .5rem 0 3rem 0;
-}
-
-.mSearchHistoryWrap .mSearchHistoryHeader {
-    border: #bbb solid medium;
+.mBookRelativeWrap {
+    margin: .5rem 0 .5rem 0;
+    padding: .5rem 1rem 0 .8rem;
     background-color: #fff;
+    border: #bbb solid medium;
+    display: flex;
+}
+
+.mBookRelativeWrap .mBookRelativeItemWrap {
     text-align: center;
+    display: inline-block;
+    flex: 1;
 }
 
-.mSearchHistoryWrap .mSearchHistoryHeader span {
+.mBookRelativeWrap .mBookRelativeItemWrap .mBookMiniPhoto {
+    text-align: center;
     display: block;
-    font-size: .5rem;
 }
 
-.mSearchHistoryWrap .mSearchHistoryRecordWrap {
-
+.mBookRelativeWrap .mBookRelativeItemWrap .mBookMiniPhoto img {
+    height: 4rem;
+    width: 3rem;
 }
 
-.mSearchHistoryWrap .mSearchHistoryRecordWrap .mSearchHistoryRecordItem {
+.mBookRelativeWrap .mBookRelativeItemWrap .mBookMiniBookName {
+    text-align: center;
+    font-size: .4rem;
+    display: block;
+}
+
+.mBookRelativeWrap .mBookRelativeItemWrap .mBookMiniBookAuthor {
+    text-align: center;
+    font-size: .4rem;
+    display: block;
+}
+
+/* 模仿微信聊天形式的记录组件 */
+
+.mWechatRecordWrap {
+    margin: .5rem 0 0rem 0;
+}
+
+/* 左边（对方的/机器人的） */
+
+.mWechatRecordWrap .mWechatRecordLeftItemWrap {
     margin: .1rem 0 0 0;
-    padding: .1rem 0 .1rem 0;
+    padding: .1rem .2rem .1rem .2rem;
+    text-align: left;
+    font-size: .8rem;
+    display: block;
+}
+
+.mWechatRecordWrap .mWechatRecordLeftItemWrap .mWechatRecordLeftPhoto {
+    width: .8rem;
+    height: .8rem;
+    display: inline-block;
+}
+
+.mWechatRecordWrap .mWechatRecordLeftItemWrap .mWechatRecordLeftPhoto img {
+    width: .8rem;
+    height: .8rem;
+}
+
+.mWechatRecordWrap .mWechatRecordLeftItemWrap .mWechatRecordLeftContent {
+    margin: 0;
+    padding: 0 .4rem 0 .4rem;
+    display: inline-block;
+    background-color: #ffffff;
+    border-radius: .1rem;
+}
+
+/* 右边（自己的） */
+
+.mWechatRecordWrap .mWechatRecordRightItemWrap {
+    margin: .1rem 0 0 0;
+    padding: .1rem .2rem .1rem .2rem;
     text-align: right;
     font-size: .8rem;
     display: block;
+    clear: right;
+}
+
+.mWechatRecordWrap .mWechatRecordRightItemWrap .mWechatRecordRightContent {
+    margin: 0;
+    padding: 0 .4rem 0 .4rem;
+    display: inline-block;
+    background-color: #8dfa69;
+    border-radius: .1rem;
+}
+
+.mWechatRecordWrap .mWechatRecordRightItemWrap .mWechatRecordRightPhoto {
+    width: .8rem;
+    height: .8rem;
+    display: inline-block;
+}
+
+.mWechatRecordWrap .mWechatRecordRightItemWrap .mWechatRecordRightPhoto img {
+    width: .8rem;
+    height: .8rem;
+}
+
+/* 分页组件 */
+
+.mPaging {
+    margin: .5rem 0 0 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+}
+
+.mPaging .mPagingLeft {
+    display: inline-block;
+    flex: 1;
+}
+
+.mPaging .mPagingLeft button {
     border: #bbb solid medium;
+    height: auto;
+    width: 100%;
+    background-color: #4CAF50;
+    font-size: .8rem;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
-.mSearchHistoryWrap .mSearchHistoryRecordWrap .mSearchHistoryRecordItem .mSearchHistoryRecordContent {
+.mPaging .mPagingContent {
     display: inline-block;
+    flex: 1;
 }
 
-.mSearchHistoryWrap .mSearchHistoryRecordWrap .mSearchHistoryRecordItem .mSearchHistoryRecordPhoto {
-    width: .8rem;
-    height: .8rem;
+.mPaging .mPagingContent button {
+    border: #bbb solid medium;
+    height: auto;
+    width: 100%;
+    background-color: #ffffff;
+    font-size: .8rem;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+.mPaging .mPagingRight {
     display: inline-block;
+    flex: 1;
 }
 
-.mSearchHistoryWrap .mSearchHistoryRecordWrap .mSearchHistoryRecordItem .mSearchHistoryRecordPhoto img {
-    width: .8rem;
-    height: .8rem;
+.mPaging .mPagingRight button {
+    border: #bbb solid medium;
+    height: auto;
+    width: 100%;
+    background-color: #4CAF50;
+    font-size: .8rem;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
-/* 填充列表 */
+/* 菜单列表 */
 
 .mListWrap {
     margin: .5rem 0 0 0;
@@ -326,9 +447,12 @@
     background-color: #4CAF50;
     border: #bbb solid medium;
     /* 很关键：将默认的select选择框样式清除 */
-    /*font-size: 1rem;*/
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
     flex: 1;
 }
+
+/* 带有返回按钮的头部 */
+
+.mHeader

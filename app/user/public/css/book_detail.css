@@ -1,0 +1,113 @@
+.mBookDetailTotalWrap {
+	margin: 0 .5rem 0 .5rem;
+	padding: 0;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap {
+    margin: 0;
+    padding: .5rem .5rem .5rem .5rem;
+    background-color: #fff;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap {
+    display: flex;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap .mBookDetailPhoto {
+	margin: 0 -3.5rem 0 1.5rem;
+    flex: 1;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap .mBookDetailPhoto img {
+    height: 6rem;
+    width: 4rem;
+    -moz-background-size: cover; /*for Firefox*/
+    -webkit-background-size: cover; /*for Google Chrome、Safari*/
+    -o-background-size: cover; /*for Opera*/
+    background-size: cover; /*for IE*/
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap .mBookDetailCharacterWrap {
+    flex: 1;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap .mBookDetailCharacterTitleItem {
+	font-style: italic;
+	font-size: .8rem;
+	font-weight: bold;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap .mBookDetailCharacterItem {
+	font-size: .6rem;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailInfoWrap .mBookDetailCharacterItem span {
+	font-size: .6rem;
+	float: right;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailOtherWraps {
+    margin: .5rem 0 0 0;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailOtherWraps .mBookDetailBelongTo {
+    text-align: center;
+    font-size: .6rem;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailOtherWraps .mBookDetailPartWrap {
+    margin: .5rem 0 0 0;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailOtherWraps .mBookDetailPartWrap .mBookDetailHeaderTitle {
+    border: #bbb solid medium;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailOtherWraps .mBookDetailPartWrap .mBookDetailCatalog {
+    font-size: .6rem;
+    text-align: center;
+}
+
+.mBookDetailTotalWrap .mBookDetailWrap .mBookDetailOtherWraps .mBookDetailPartWrap .mBookDetailIntro {
+    font-size: .6rem;
+    text-indent: 1.2rem;
+}
+
+/* 书籍评价 */
+
+.mBookCommentWrap {
+	margin: .5rem 0 0rem 0;
+    padding: 0 .5rem 0 .5rem;
+}
+
+.mCommentInputWrap {
+    margin: .5rem 0 0 0;
+    height: 1.5rem;
+    width: 100%;
+    display: flex;
+}
+
+.mCommentInputWrap input {
+    height: 100%;
+    width: 100%;
+    flex: 4;
+}
+
+.mCommentInputWrap .mCommentSendWrap {
+    flex: 1;
+    display: inline-block;
+    height: 1.5rem;
+    width: 100%;
+}
+
+.mCommentInputWrap .mCommentSendWrap button {
+    height: 100%;
+    width: 100%;
+    background-color: #4CAF50;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+

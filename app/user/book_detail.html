@@ -4,13 +4,130 @@
     <meta charset="utf-8">
 	<title>借阅伴侣 - 书籍详情</title>
 	<link rel="stylesheet" type="text/css" href="public/css/index.css">
-	<script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-	<script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="public/css/public.css">
+	<link rel="stylesheet" type="text/css" href="public/css/book_detail.css">
 </head>
 <body>
 
-	<div class="mNavWrap">
-		<!-- 这里的底部导航栏将被 reauire.js 加载 -->
-	</div>
+	<div class="userApp">
+        <div class="mHeaderReturnWrap">
+            <div class="mHeaderLeftReturn"><a href="books_navigation.html">返回</a></div>
+            <div class="mHeaderTitle">借阅助手</div>
+        </div>
+
+        <div class="mContentWrap">
+            <div class="mBookDetailTotalWrap">
+                <div class="mBookDetailWrap">
+                	<div class="mBookDetailInfoWrap">
+                		<div class="mBookDetailPhoto">
+                			<img src="public/icorvoh.jpg">
+                		</div>
+                		<div class="mBookDetailCharacterWrap">
+                			<div class="mBookDetailCharacterTitleItem">这是一本书的书名</div>
+                			<div class="mBookDetailCharacterItem">作者：<span>韩亦乐</span></div>
+                			<div class="mBookDetailCharacterItem">出版社：<span>人民邮电</span></div>
+                			<div class="mBookDetailCharacterItem">ISBN：<span>9787121227615</span></div>
+                			<div class="mBookDetailCharacterItem">藏书量(本)：<span>6666</span></div>
+                			<div class="mBookDetailCharacterItem">当前可借(本)：<span>2333</span></div>
+                		</div>
+                	</div>
+                	<div class="mBookDetailOtherWraps">
+                		<div class="mBookDetailBelongTo">所属类别：文艺书库 > 影视学</div>
+                		<div class="mBookDetailPartWrap">
+                	        <div class="mBookDetailHeaderTitle">目录</div>
+                			<div class="mBookDetailCatalog">第一章：失乐园</div>
+                			<div class="mBookDetailCatalog">第二章：复乐园</div>
+                		</div>
+                	    <div class="mBookDetailPartWrap">
+                	    	<div class="mBookDetailHeaderTitle">简介</div>
+                	    	<div class="mBookDetailIntro">有趣的灵魂终会相遇。</div>
+                	    </div>
+                	</div>
+                </div>
+
+            	<div class="mButtonWrap">
+            		<button>预定书本</button>
+            		<button>收藏本书</button>
+            		<button>加入书车</button>
+            	</div>
+            </div>
+
+            <div class="mTitleHeader">相关书籍<span>已推荐 3 本书</span></div>
+
+            <div class="mBookRelativeWrap">
+            	
+            	<div class="mBookRelativeItemWrap">
+            	    <a href="book_detail.html">
+	            		<div class="mBookMiniPhoto">
+	            			<img src="public/icorvoh.jpg">
+	            		</div>
+	            		<div class="mBookMiniBookName">这是一本书</div>
+	            		<div class="mBookMiniBookAuthor">韩亦乐</div>
+            		</a>
+            	</div>
+
+            	<div class="mBookRelativeItemWrap">
+            	    <a href="book_detail.html">
+	            		<div class="mBookMiniPhoto">
+	            			<img src="public/icorvoh.jpg">
+	            		</div>
+	            		<div class="mBookMiniBookName">这是一本书</div>
+	            		<div class="mBookMiniBookAuthor">韩亦乐</div>
+                    </a>
+            	</div>
+
+            	<div class="mBookRelativeItemWrap">
+            	    <a href="book_detail.html">
+	            		<div class="mBookMiniPhoto">
+	            			<img src="public/icorvoh.jpg">
+	            		</div>
+	            		<div class="mBookMiniBookName">这是一本书</div>
+	            		<div class="mBookMiniBookAuthor">韩亦乐</div>
+                    </a>
+            	</div>
+            </div>
+
+            <div class="mTitleHeader">书籍评价<span>已加载 5 条评论</span></div>
+
+            <div class="mBookCommentWrap">
+		    	<div class="mWechatRecordWrap">
+		    		<div class="mWechatRecordLeftItemWrap">
+		    			<div class="mWechatRecordLeftPhoto">
+		    				<img src="public/icorvoh.jpg">
+		    			</div>
+		    			<a href="search_books.html"><div class="mWechatRecordLeftContent">好看</div></a>
+		    		</div>
+
+		    		<div class="mWechatRecordRightItemWrap">
+		    			<a href="search_books.html"><div class="mWechatRecordRightContent">引人深思</div></a>
+		    			<div class="mWechatRecordRightPhoto">
+		    				<img src="public/icorvoh.jpg">
+		    			</div>
+		    		</div>
+
+		    		<div class="mWechatRecordLeftItemWrap">
+		    			<div class="mWechatRecordLeftPhoto">
+		    				<img src="public/icorvoh.jpg">
+		    			</div>
+		    			<a href="search_books.html"><div class="mWechatRecordLeftContent">希望有下一部</div></a>
+		    		</div>
+		        </div>
+
+		        <div class="mPaging">
+		        	<div class="mPagingLeft"><button>去尾页</button></div>
+		        	<div class="mPagingContent"><button>第 1 页, 共 2 页</button></div>
+		        	<div class="mPagingRight"><button>下一页</button></div>
+		        </div>
+		    </div>
+
+		    <div class="mCommentInputWrap">
+	        	<input type="text" name="comment"/ placeholder="我要评论">
+	        	<div class="mCommentSendWrap">
+	        		<button>发布</button>
+	        	</div>
+	        </div>
+
+        </div>
+    </div>
 </body>
 </html>
