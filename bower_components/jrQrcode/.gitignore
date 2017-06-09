@@ -1,9 +1,0 @@
-*.class
-
-*.log
-project.properties
-project.properties.git
-.git/
-
-node_modules/
-coverage/
