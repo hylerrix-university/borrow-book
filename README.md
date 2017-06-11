@@ -87,7 +87,7 @@ app/user/change_information.html # 修改信息
 ```
 app/admin/admin_login # 登录界面
 app/admin/input_books # 录入书籍
-app/admin/alter_right # 授权&验收
+app/admin/alter_right # 授权验收
 app/admin/admin_center.html # 个人中心
 app/admin/admin_awards.html # 我的授权
 app/admin/admin_receipt.html # 我的验收

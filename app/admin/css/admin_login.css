@@ -300,7 +300,7 @@ button.btn_inline,input.btn_inline {
     display: inline-block;
     width: 17px;
     height: 17px;
-    background: url("login_tick.png") 0 0 no-repeat;
+    background: url("../images/login_tick.png") 0 0 no-repeat;
     -webkit-background-size: 17px 39px;
     background-size: 17px 39px
 }
@@ -311,7 +311,7 @@ button.btn_inline,input.btn_inline {
 }
 
 .cells_checkbox .frm_select:checked+.icon_selected_wrp .icon_selected {
-    background: url("login_tick.png") 0 -44px no-repeat;
+    background: url("../images/login_tick.png") 0 -44px no-repeat;
     -webkit-background-size: 17px 39px;
     background-size: 17px 39px;
     -webkit-background-position: 0 -22px;
@@ -670,7 +670,7 @@ html,body {
     padding: 40px 15px
 }
 
-.cell_form .wx_login_tit {
+.cell_form .wx_../images/login_tit {
     text-align: center
 }
 
@@ -693,7 +693,7 @@ html,body {
     min-height: 350px;
     height: 100%;
     position: relative;
-    background: url(bg.jpg) no-repeat 0 0;
+    background: url(../images/bg.jpg) no-repeat 0 0;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center
