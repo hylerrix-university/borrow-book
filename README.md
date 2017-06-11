@@ -64,12 +64,6 @@
 
 ## 前端页面及其命名约定
 
-### 公共页面
-
-```
-app/call_us.html # 联系我们
-```
-
 ### user 用户页面
 
 ```
@@ -86,6 +80,7 @@ app/user/user_reserve.html # 我的预订
 app/user/user_borrow.html # 借阅历史
 app/user/user_search.html # 搜索记录
 app/user/change_information.html # 修改信息
+app/user/call_us.html # 联系我们
 ```
 
 ### admin 管理员页面
@@ -97,6 +92,7 @@ app/admin/alter_right # 授权验收
 app/admin/admin_center.html # 个人中心
 app/admin/admin_awards.html # 我的授权
 app/admin/admin_receipt.html # 我的验收
+app/admin/call_us.html # 联系我们
 ```
 
 ## 使用指南

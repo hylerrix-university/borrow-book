@@ -10,7 +10,7 @@ function load_nav_content () {
             </div>\
         </a>\
         \
-        <a href=\"admin_receipt.html\">\
+        <a href=\"alter_right.html\">\
             <div class=\"mNavInnerWrap\">\
                 <img class=\"mNavInnerLogo\" src=\"#\">\
                 <div class=\"mNavInnerTitle\">授权验收</div>\
@@ -58,7 +58,7 @@ function fill_nav_img () {
     // 导航栏的四个页面地址
     var navSrcArr = [
         "input_books.html",
-        "admin_receipt.html",
+        "alter_right.html",
         "admin_center.html"
     ];
     var activeIndex = navSrcArr.indexOf(currentPageName);

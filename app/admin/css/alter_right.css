@@ -1,0 +1,60 @@
+.mSearchHeaderWrap {
+    height: 1.5rem;
+    width: 100%;
+    background-color: #fff;
+    border: #bbb solid medium;
+    display: flex;  /* 当时设置 flex 布局之后，子元素的 float、clear、vertical-align 的属性将会失效 */
+    position: fixed;
+}
+
+.mSearchHeaderWrap .mSearchSelectorWrap {
+    height: 1.5rem;
+    width: 4.8rem;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.mSearchHeaderWrap .mSearchSelectorWrap select {
+    margin: 0;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+    padding: 0 14px 0 0;
+    height: 1.5rem;
+    width: 4.8rem;
+    display: inline-block;
+    font-size: 1rem;
+    /* 很关键：将默认的select选择框样式清除 */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    /* 在选择框的最右侧中间显示小箭头图片 */
+    background: url("../images/arrow.png") no-repeat scroll right center transparent;
+}
+
+.mSearchHeaderWrap .mSearchInputBox {
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: inline-block;
+}
+
+.mSearchHeaderWrap .mSearchInputBox input {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #000;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.mSearchHeaderWrap .mSearchIconWrap {
+    display: flex;
+}
+
+.mSearchHeaderWrap .mSearchIconWrap .mSearchIcon {
+	height: 100%;
+	width: 2rem;
+	font-size: 1rem;
+    display: inline-block;
+    flex: 1;
+}
