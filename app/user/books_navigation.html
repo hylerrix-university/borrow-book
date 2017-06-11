@@ -6,11 +6,9 @@
     <link rel="stylesheet" type="text/css" href="public/css/index.css">
     <link rel="stylesheet" type="text/css" href="public/css/public.css">
     <link rel="stylesheet" type="text/css" href="public/css/books_navigation.css">
-    <script src="../../bower_components/requirejs/require.js" defer async="true"></script>
-    <script src="../../bower_components/requirejs/require.js" data-main="public/js/index.js"></script>
+    <script type="text/javascript" src="public/js/load_nav_bar.js"></script>
 </head>
 <body>
-
     <div class="userApp">
         <div class="mHeaderHomeWrap">借阅助手</div>
 
@@ -73,7 +71,11 @@
     </div>
 
     <div class="mNavWrap">
-        <!-- 这里的底部导航栏将被 reauire.js 加载 -->
+        <script>
+            load_nav_content();
+            fill_nav_img();
+        </script>
     </div>
+    
 </body>
 </html>
