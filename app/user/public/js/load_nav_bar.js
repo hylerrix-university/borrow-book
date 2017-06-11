@@ -30,8 +30,6 @@ function load_nav_content () {
                 <div class=\"mNavInnerTitle\">个人中心</div>\
             </div>\
         </a>\
-        \
-        <div class=\"clear\"></div>\
     ";
 };
 
