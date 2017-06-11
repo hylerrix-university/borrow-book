@@ -27,7 +27,7 @@
        -moz-appearance: none;
             appearance: none;
     /* 在选择框的最右侧中间显示小箭头图片 */
-    background: url("../arrow.png") no-repeat scroll right center transparent;
+    background: url("../images/arrow.png") no-repeat scroll right center transparent;
 }
 
 .mSearchHeaderWrap .mSearchInputBox {
