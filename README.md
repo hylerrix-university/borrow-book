@@ -43,17 +43,23 @@
 ```
 .
 ├── README.md # 项目说明文档
-├── app # 项目正式源码(管理员、用户界面及其逻辑)
+├── app # 前端项目正式源码
+│   ├── admin # 管理员界面
+│   └── user # 用户界面
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
+│   └── 相关配置详见 [bower.json](./bower.json)
 ├── gruntfile.js # Grunt 构建流配置
 ├── interface.md # 后端接口文档
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── library.sql # 后端 SQL 源码
 ├── node_modules # Node 安装模块(.gi)
+│   └── 相关配置详见 [package.json](./package.json)
 ├── package.json # Node 配置
 ├── prototype # 原型图 HTML 版
-└── unit-test # 前端单元测试文件
+├── unit-test # 前端单元测试
+├── .yo-rc.json # Yo 隐藏文件
+└── .gitignore # Git 版本管理忽略信息说明文件
 ```
 
 ## 前端页面及其命名约定
