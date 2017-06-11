@@ -10,6 +10,8 @@
 
 > JsHint 做代码风格规范检测，Jasmine 做单元测试，Istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 JavaScript 的包依赖管理，RequireJS 做 JS 的 AMD 模块规范开发，Webpack 最终打包整个项目文件。
 
+* [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
+
 ## 任务场景
 
 * 首次登陆
@@ -50,7 +52,6 @@
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
 ├── gruntfile.js # Grunt 构建流配置
-├── interface.md # 后端接口文档
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── library.sql # 后端 SQL 源码
 ├── node_modules # Node 安装模块(.gi)
