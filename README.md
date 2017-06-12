@@ -8,7 +8,7 @@
 
 ## 开发简介
 
-> JsHint 做代码风格规范检测，Jasmine 做单元测试，Istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 JavaScript 的包依赖管理，RequireJS 做 JS 的 AMD 模块规范开发，Webpack 最终打包整个项目文件。
+> Eslint 做代码风格规范检测，Jasmine 做单元测试，Istanbul 检查单元测试代码覆盖率，Karma 自动化完成单元测试，Grunt 启动 Karma 统一项目管理，Yeoman 最后封装成一个项目原型模板，NPM 做 Node.js 的包依赖管理，Bower 做 JavaScript 的包依赖管理，RequireJS 做 JS 的 AMD 模块规范开发，Webpack 最终打包整个项目文件。
 
 * [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
 
@@ -105,43 +105,35 @@ app/admin/call_us.html # 联系我们
 ### 使用 bower 安装项目依赖的前端库
 
 ```
-npm install -g bower
+sudo npm install -g bower
 bower install
 ```
 
 ### 使用 npm 构建环境
 
 ```
-npm install
+sudo npm install
 ```
 
 需要使用的全局 npm 依赖库
 
 ```
-npm install phantomjs -g # 下载很慢，推荐使用其他下载方式
+sudo npm install phantomjs -g # 下载很慢，推荐使用其他下载方式
 ```
 
 ```
-npm install -g yo
+sudo npm install -g yo
 ```
 
 ### 执行单元测试并查看结果
 
-1. 使用 karma(请定制相关配置 karma.conf.js)
+1. 使用 karma 自动化测试(请定制相关配置 karma.conf.js)
 
 ```
 karma start karma.conf.js
 ```
 
-2. 直接使用通过 bower 安装的 jasmine 依赖库 
-
-```
-open unit-test/index.html
-```
-
-### 查看 istanbul 测试报告
-
-从文件中打开(具体目录视操作系统而定)
+2. 在浏览器中查看自动化测试结果(具体目录视操作系统而定)
 
 ```
 open unit-test/coverage/Chrome\ 58.0.3029\ \(Mac\ OS\ X\ 10.12.5\)/index.html
