@@ -14,26 +14,26 @@
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap {
-	display: -webkit-flex;
+    display: -webkit-flex;
     display: flex;
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyTitle {
-	height: auto;
-	width: 4.5rem;
-	border: #bbb solid medium;
-	-webkit-flex: initial;
+    height: auto;
+    width: 4.5rem;
+    border: #bbb solid medium;
+    -webkit-flex: initial;
             flex: initial;
     /* 最小宽度也是 4.5rem，这样不会被“获取验证码挤压” */
     min-width: 4.5rem;
-	display: inline;
+    display: inline;
     float: left;
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterPrivacyInputBox {
-	border: #bbb solid medium;
-	-webkit-flex: 1;
+    border: #bbb solid medium;
+    -webkit-flex: 1;
             flex: 1;
     text-align: left;
     background-color: #fff;
@@ -48,31 +48,31 @@
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterAuthCode {
-	height: auto;
-	width: 5.2rem;
+    height: auto;
+    width: 5.2rem;
     display: inline-block;
 }
 
 .mRegisterWrap .mRegisterPrivacyWrap .mRegisterItemWrap .mRegisterAuthCode button {
-	height: 100%;
-	width: 5.2rem;
-	font-size: 1rem;
+    height: 100%;
+    width: 5.2rem;
+    font-size: 1rem;
     border-bottom: #bbb solid medium;
     background-color: #4CAF50; /* Green */
     text-align: center;
 }
 
-.mRegisterWrap .mRegisterVerify {
-	margin: .5rem 0 0 0;
-	padding: 0;
+.mRegisterVerify {
+    margin: .5rem 0 0 0;
+    padding: 0;
     text-align: center;
     background-color: #fff;
 }
 
-.mRegisterWrap .mRegisterVerify button {
-	height: auto;
-	width: 100%;
-	font-size: 1rem;
+.mRegisterVerify button {
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
     background-color: #4CAF50;
 }
 
