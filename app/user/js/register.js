@@ -35,13 +35,13 @@ function verifyLogin () {
     var tips = "";
     var flag = 1; // 1 代表判断通过
 
-    if (!checkPassword(password)) flag = 0, tips = "不符合正确的密码格式(6~13位)";
-    if (!checkRePassword(rePassword)) flag = 0, tips = "不符合正确的重复密码格式(6~13位)";
-    if (!compareTwoPassWord(password, rePassword)) flag = 0, tips = "密码与重复密码不一致";
-    if (!checkIDCard(IDCard)) flag = 0, tips = "不符合正确的身份证号格式";
-    if (!checkPhone(phone)) flag = 0, tips = "请输入正确的手机号(只支持 11 位数字)";
-    if (!checkAuthCodeInput(userAuthCode)) flag = 0, tips = "不符合正确的验证码格式(6 位数字)";
     if (!checkAuthCodeValidity(authCode, userAuthCode)) flag = 0, tips = "验证码不匹配";
+    if (!checkAuthCodeInput(userAuthCode)) flag = 0, tips = "不符合正确的验证码格式(6 位数字)";
+    if (!checkPhone(phone)) flag = 0, tips = "请输入正确的手机号(只支持 11 位数字)";
+    if (!checkIDCard(IDCard)) flag = 0, tips = "不符合正确的身份证号格式";
+    if (!compareTwoPassWord(password, rePassword)) flag = 0, tips = "密码与重复密码不一致";
+    if (!checkRePassword(rePassword)) flag = 0, tips = "不符合正确的重复密码格式(6~13位)";
+    if (!checkPassword(password)) flag = 0, tips = "不符合正确的密码格式(6~13位)";
 
     // 输入有错误
     if (!flag) {

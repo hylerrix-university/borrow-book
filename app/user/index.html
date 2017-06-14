@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>借阅伴侣</title>
+    <meta charset="utf-8">
+	<title>借阅伴侣 - 管理员平台</title>
+	<link rel="stylesheet" type="text/css" href="css/user_login.css">
+	<script src="js/user_login.js"></script>
 </head>
-<body>
-	这只是个首页，之后讲此页变成链接一切的页面(依据cookie判断是否已经登录)
-	<pre>
-	.
-	├── book_detail.html
-	├── books_navigation.html
-	├── borrow_cart.html
-	├── call_us.html
-	├── categories_detail.html
-	├── change_information.html
-	├── css
-	│   ├── book_detail.css
-	│   ├── books_navigation.css
-	│   ├── borrow_cart.css
-	│   ├── call_us.css
-	│   ├── first_register.css
-	│   ├── index.css
-	│   ├── public.css
-	│   ├── search_books.css
-	│   └── user_information.css
-	├── first_register.html
-	├── images
-	│   ├── anonymity.jpg
-	│   ├── arrow.png
-	│   ├── bg.jpg
-	│   ├── icorvoh.jpg
-	│   └── qr.jpg
-	├── index.html
-	├── js
-	│   ├── index.js
-	│   └── load_nav_bar.js
-	├── search_books.html
-	├── user_borrow.html
-	├── user_center.html
-	├── user_collection.html
-	├── user_information.html
-	├── user_reserve.html
-	├── user_search.html
-	└── webpack
-	</pre>
+<body id="login" class="zh_CN page_login">
+	<div class="wx_login">
+		<!-- 主要界面 -->
+		<div class="con">
+			<div class="page_hd">
+				<div class="page_tit">
+					借阅伴侣 - 你的贴心图书助手
+				</div>
+			</div>
+
+			<div id="js_form_login" class="login_form cell_form ">
+				<!-- 账号密码框 -->
+				<div class="frm_ctrl login_main">
+					<div class="cells cells_split login_input">
+			            <div class="cell">
+			            	<div class="cell_bd cell_primary">
+			            		<input type="text" placeholder="手机号(11 位数字，未注册用户请先从公众号登录并补全信息)" id="js_input_username" class="frm_input" name="username">
+			            	</div>
+			            </div>            
+			            <div class="cell">
+			            	<div class="cell_bd cell_primary">
+			            		<input type="password" placeholder="密码(6~13 位)" class="frm_input" id="js_input_password" name="password">                
+			            	</div>            
+			            </div>            
+			            <div id="js_div_imgcode" class="cell frm_vcode_cell" style="display:none">                                
+			            	<div class="cell_bd cell_primary">
+			            		<input type="text" placeholder="验证码" class="frm_input" id="js_input_imgcode" name="imgcode">
+			            	</div>                
+			            	<div class="cell_ft frm_vimg_wrp">
+			            		<img id="js_img_code" class="imgcode" src="">
+			            	</div>                
+			            	<a href="javascript:;" id="js_btn_changeimg" class="imgcode_link">换一张</a>            
+			            </div>          
+			        </div>
+				</div>
+
+				<!-- 记住我 -->
+				<div class="cells_split cells_form cells_select cells_checkbox remember_info">
+					<label class="cell frm_select_label" for="js_input_remember">
+						<input type="checkbox" class="frm_select" name="checkbox1" id="js_input_remember" checked="checked">
+						<div class="cell_hd icon_selected_wrp">
+							<i class="icon_selected"></i>
+							<em class="icon_arrow"></em>
+						</div>
+						<div class="cell_bd cell_primary">
+							<p class="mt_v">记住我</p>
+						</div>
+					</label>
+				</div>
+
+				<!-- 登陆按钮 -->
+				<div class="btn_outer">
+					<button onclick="userLogin();" class="btn btn_login" id="js_btn_submit">登录</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- 底部信息 -->
+		<div class="ft_menu">
+			<a href="http://kf.qq.com/touch/scene_product.html?scene_id=kf19">帮助中心</a>
+		</div>
+
+		<div id="js_hud" class="toast_tips" style="display: none;">
+			<div id="js_hud_icon"></div>
+			<p id="js_hud_text" class="tips_title">账号密码错误(未注册用户请先从公众号登录并补全信息。)</p>
+			<span class="vm_box"></span>
+		</div>
+	</div>
 </body>
 </html>

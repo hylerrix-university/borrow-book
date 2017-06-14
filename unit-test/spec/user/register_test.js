@@ -1,5 +1,5 @@
-describe("注册界面前端单元测试", function () {
-    describe("验证新密码", function () {
+describe("用户第一次微信登录补全信息界面前端单元测试", function () {
+    describe("验证新密码格式", function () {
         it("密码不能为空", function () {
             var password = "";
             var output = checkPassword(password);
@@ -29,7 +29,7 @@ describe("注册界面前端单元测试", function () {
         });
     });
 
-    describe("验证重复密码", function () {
+    describe("验证重复密码格式", function () {
         it("重复密码不能为空", function () {
             var rePassword = "";
             var output = checkRePassword(rePassword);
@@ -70,7 +70,7 @@ describe("注册界面前端单元测试", function () {
         });
     })
 
-    describe("验证身份证号", function () {
+    describe("验证身份证号格式", function () {
         it("身份证号不能为空", function () {
             var IDCard = "";
             var output = checkIDCard(IDCard);
@@ -107,7 +107,7 @@ describe("注册界面前端单元测试", function () {
         });
     });
 
-    describe("验证手机", function () {
+    describe("验证手机格式", function () {
         it("手机号不能为空", function () {
             var phone = "";
             var output = checkPhone(phone);
@@ -137,7 +137,7 @@ describe("注册界面前端单元测试", function () {
         });
     });
 
-    describe("验证用户输入的手机验证码", function () {
+    describe("验证用户输入的手机验证码格式", function () {
     	it("验证码不能为空", function () {
             var userAuthCode = "";
             var output = checkAuthCodeInput(userAuthCode);
