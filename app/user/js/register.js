@@ -1,28 +1,3 @@
-function getAuthCode () {
-    // 获取电话信息
-    var phone = document.getElementsByTagName("input")[3].value;
-    // 获取隐藏存放验证码的标签
-    var mAuthCodeWrap = document.getElementsByClassName("mAuthCodeWrap")[0];
-    // 获取提示框 js_hud 和其文本信息框 tips_title
-    var js_hud = document.getElementById("js_hud");
-    var tips_title = document.getElementsByClassName("tips_title")[0];
-    var authCode = "123456";
-    var tips = "";
-
-    if (!checkPhone(phone)) {
-        js_hud.style.display = "block";
-        tips = "请输入正确的手机号(只支持 11 位数字)";
-        window.setTimeout(function () {
-            js_hud.style.display = "none";
-        }, 1500);
-        tips_title.innerHTML = tips;
-    }
-
-    // 将从服务器上获得到的验证码隐藏到 HTML 中
-    mAuthCodeWrap.innerHTML = authCode;
-    return authCode;
-}
-
 function verifyLogin () {
     var password = document.getElementsByTagName("input")[0].value;
     var rePassword = document.getElementsByTagName("input")[1].value;
@@ -60,8 +35,33 @@ function verifyLogin () {
     js_hud.style.display = "block";
     // 1.5 s 后跳转页面(缺少一个存 cookie 过程)
     window.setTimeout(function () {
-        location.href='books_navigation.html';
+        location.href = 'books_navigation.html';
     }, 1500);
+}
+
+function getAuthCode () {
+    // 获取电话信息
+    var phone = document.getElementsByTagName("input")[3].value;
+    // 获取隐藏存放验证码的标签
+    var mAuthCodeWrap = document.getElementsByClassName("mAuthCodeWrap")[0];
+    // 获取提示框 js_hud 和其文本信息框 tips_title
+    var js_hud = document.getElementById("js_hud");
+    var tips_title = document.getElementsByClassName("tips_title")[0];
+    var authCode = "123456";
+    var tips = "";
+
+    if (!checkPhone(phone)) {
+        js_hud.style.display = "block";
+        tips = "请输入正确的手机号(只支持 11 位数字)";
+        window.setTimeout(function () {
+            js_hud.style.display = "none";
+        }, 1500);
+        tips_title.innerHTML = tips;
+    }
+
+    // 将从服务器上获得到的验证码隐藏到 HTML 中
+    mAuthCodeWrap.innerHTML = authCode;
+    return authCode;
 }
 
 function checkPassword (password) {
