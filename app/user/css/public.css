@@ -124,6 +124,8 @@
     -webkit-appearance: none;
        -moz-appearance: none;
             appearance: none;
+    padding-left: calc(50% - 3.2rem);
+    display: flex;
 }
 
 /* 个人账号简介 */

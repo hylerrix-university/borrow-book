@@ -90,14 +90,12 @@
 }
 
 .mCommentInputWrap input {
-    height: 100%;
-    width: 100%;
     flex: 4;
 }
 
 .mCommentInputWrap .mCommentSendWrap {
     flex: 1;
-    display: inline-block;
+    display: flex;
     height: 1.5rem;
     width: 100%;
 }
