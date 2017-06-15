@@ -8,19 +8,19 @@
 
 ## 开发简介
 
-> Bower 做 JavaScript 的包依赖管理
-> ESLint 做代码风格规范检测
-> Grunt 启动 Karma 统一项目管理
-> Istanbul 检查单元测试代码覆盖率
-> Jasmine 做单元测试
-> JQuery 封装 DOM 操作
-> JSDoc 规范代码注释风格
-> Karma 自动化完成单元测试
-> NPM 做 Node.js 的包依赖管理
-> Webpack 最终打包整个项目文件
-> Yeoman 最后封装成一个项目原型模板
+* Bower 做 JavaScript 的包依赖管理
+* ESLint 做代码风格规范检测
+* Grunt 启动 Karma 统一项目管理(未实现)
+* Istanbul 检查单元测试代码覆盖率
+* Jasmine 做单元测试
+* JQuery 封装 DOM 操作
+* JSDoc 规范代码注释风格(未实现)
+* Karma 自动化完成单元测试
+* NPM 做 Node.js 的包依赖管理
+* Webpack 最终打包整个项目文件(未实现)
+* Yeoman 最后封装成一个项目原型模板(未实现)
 
-* [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
+> [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
 
 ## 任务场景
 

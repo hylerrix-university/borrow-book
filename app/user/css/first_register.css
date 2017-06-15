@@ -90,8 +90,7 @@
 }
 
 .toast_tips {
-    width: 120px;
-    height: 120px;
+    width: 5rem;
     z-index: 20;
     box-sizing: border-box;
     text-align: center;
@@ -130,7 +129,7 @@
 }
 
 .toast_tips .tips_title {
-    font-size: 16px;
+    font-size: .7rem;
     display: inline-block;
     vertical-align: middle;
     max-width: 98%;

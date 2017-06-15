@@ -26,17 +26,17 @@ function verifyLogin () {
         // 1.5 s 后隐藏提示块
         window.setTimeout(function () {
             js_hud.style.display = "none";
-        }, 1500);
+        }, 2000);
         return false;
     }
 
     // 验证成功，跳转页面
-    tips_title.innerHTML = "登录成功，正在跳转...";
+    tips_title.innerHTML = "录入信息成功，欢迎使用借阅助手，正在跳转中...";
     js_hud.style.display = "block";
     // 1.5 s 后跳转页面(缺少一个存 cookie 过程)
     window.setTimeout(function () {
         location.href = 'books_navigation.html';
-    }, 1500);
+    }, 2000);
 }
 
 function getAuthCode () {
@@ -55,7 +55,7 @@ function getAuthCode () {
         tips = "请输入正确的手机号(只支持 11 位数字)";
         window.setTimeout(function () {
             js_hud.style.display = "none";
-        }, 1500);
+        }, 2000);
         tips_title.innerHTML = tips;
     }
 
@@ -125,4 +125,14 @@ function checkAuthCodeInput (userAuthCode) {
 function checkAuthCodeValidity (authCode, userAuthCode) {
     if (authCode !== userAuthCode) return false;
     return true;
+}
+
+function helpCenter () {
+    var js_hud = document.getElementById("js_hud");
+    var tips_title = document.getElementsByClassName("tips_title")[0];
+    tips_title.innerHTML = "如有其它问题请联系管理员 icorvoh@qq.com ";
+    js_hud.style.display = "block";
+    window.setTimeout(function () {
+        js_hud.style.display = "none";
+    }, 2000);
 }
