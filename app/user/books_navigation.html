@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/books_navigation.css">
     <script type="text/javascript" src="js/load_nav_bar.js"></script>
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/getAllStacks.js"></script>
 </head>
 <body>
     <div class="userApp">
@@ -36,38 +38,18 @@
             <div class="mAllStackWrap">
                 <div class="mTitleHeader">书城直通车</div>
 
-                <div class="mStackWrap">
+                <div class="mTitleHeader" id="loading">正在加载，请稍后。。。</div>
+
+                <!-- 这里将被 ajax 加载 -->
+
+                <!-- <div class="mStackWrap">
                     <div class="mStackSideBar">通信与计算机书库</div>
                     <div class="mStackCategoriesWrap">
                         <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">编程语言</div></a>
                         <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">网站架构</div></a>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="mStackWrap">
-                    <div class="mStackSideBar">社会科学</div>
-                    <div class="mStackCategoriesWrap">
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">人口统计学</div></a>
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">心理史学</div></a>
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">传播学</div></a>
-                    </div>
-                </div>
-
-                <div class="mStackWrap">
-                    <div class="mStackSideBar">文艺书库</div>
-                    <div class="mStackCategoriesWrap">
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">音乐史</div></a>
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">影视学</div></a>
-                    </div>
-                </div>
-
-                <div class="mStackWrap">
-                    <div class="mStackSideBar">理学书库</div>
-                    <div class="mStackCategoriesWrap">
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">数学</div></a>
-                        <a class="mStackCategoriesLink" href="categories_detail.html"><div class="mStackCategorie">物理学</div></a>
-                    </div>
-                </div>
             </div>
 
         </div>

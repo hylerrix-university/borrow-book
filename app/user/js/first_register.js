@@ -1,3 +1,10 @@
+function getInfo () {
+    $.get("https://wwwxinle.cn/Book/public/index.php/index/User/getInfo", function (data, status) {
+        var data = JSON.parse(data);
+        alert(data);
+    });
+}
+
 function verifyLogin () {
     var password = document.getElementsByTagName("input")[0].value;
     var rePassword = document.getElementsByTagName("input")[1].value;
@@ -136,3 +143,5 @@ function helpCenter () {
         js_hud.style.display = "none";
     }, 2000);
 }
+
+// loadWechatUserInfo();
