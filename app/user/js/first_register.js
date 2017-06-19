@@ -1,24 +1,25 @@
+var userInfo;
+
 function getInfo () {
     $.get("https://wwwxinle.cn/Book/public/index.php/index/User/getInfo", function (data, status) {
-        var data = JSON.parse(data);
-        alert(data);
+        // 一次循环获取 JSON 里的第一个元素内容(不知道名字的情况下)
+        userInfo = data;
+        for (var obj in data) {
+            $(".mUserName").text(data[obj]["nickname"]);
+            $("img:first").attr("src", data[obj]["headimgurl"]);
+        }
     });
 }
 
 function verifyLogin () {
-    var password = document.getElementsByTagName("input")[0].value;
-    var rePassword = document.getElementsByTagName("input")[1].value;
-    var IDCard = document.getElementsByTagName("input")[2].value;
-    var phone = document.getElementsByTagName("input")[3].value;
-    var userAuthCode = document.getElementsByTagName("input")[4].value;
-    var tips_title = document.getElementsByClassName("tips_title")[0];
-    var authCode = document.getElementsByClassName("mAuthCodeWrap")[0].innerHTML;
-    var js_hud = document.getElementById("js_hud");
-    var tips = "";
+    var password = $("input:eq(0)").val();
+    var rePassword = $("input:eq(1)").val();
+    var IDCard = $("input:eq(2)").val();
+    var phone = $("input:eq(3)").val();
+    var authCode = $("input:eq(4)").val();
     var flag = 1; // 1 代表判断通过
 
-    if (!checkAuthCodeValidity(authCode, userAuthCode)) flag = 0, tips = "验证码不匹配";
-    if (!checkAuthCodeInput(userAuthCode)) flag = 0, tips = "不符合正确的验证码格式(6 位数字)";
+    if (!checkAuthCode(authCode)) flag = 0, tips = "不符合正确的验证码格式(6 位数字)";
     if (!checkPhone(phone)) flag = 0, tips = "请输入正确的手机号(只支持 11 位数字)";
     if (!checkIDCard(IDCard)) flag = 0, tips = "不符合正确的身份证号格式";
     if (!compareTwoPassWord(password, rePassword)) flag = 0, tips = "密码与重复密码不一致";
@@ -27,44 +28,62 @@ function verifyLogin () {
 
     // 输入有错误
     if (!flag) {
-        // 向提示块中填写相应提示并显示
-        tips_title.innerHTML = tips;
-        js_hud.style.display = "block";
-        // 1.5 s 后隐藏提示块
-        window.setTimeout(function () {
-            js_hud.style.display = "none";
-        }, 2000);
+        showTips(tips);
         return false;
     }
 
+    // 发送数据
+    doRegister(password, rePassword, IDCard, phone, authCode);
+
     // 验证成功，跳转页面
-    tips_title.innerHTML = "录入信息成功，欢迎使用借阅助手，正在跳转中...";
-    js_hud.style.display = "block";
-    // 1.5 s 后跳转页面(缺少一个存 cookie 过程)
+    showTips("验证成功，跳转页面");
     window.setTimeout(function () {
-        location.href = 'books_navigation.html';
+       window.location = 'books_navigation.html';
     }, 2000);
+}
+
+function doRegister (password, rePassword, IDCard, phone, authCode) {
+    var data_post = {
+        "password": password,
+        "rePassword": rePassword,
+        "IDCard": IDCard,
+        "phone": phone,
+        "authCode": authCode
+    };
+
+    $.post("https://wwwxinle.cn/Book/public/index.php/index/User/insert", data_post, function (data, status) {
+        alert(JSON.stringfiy(data));
+    });
 }
 
 function getAuthCode () {
     // 获取电话信息
-    var phone = document.getElementsByTagName("input")[3].value;
+    var phone = $("input:eq(3)").val();
     // 获取隐藏存放验证码的标签
-    var mAuthCodeWrap = document.getElementsByClassName("mAuthCodeWrap")[0];
-    // 获取提示框 js_hud 和其文本信息框 tips_title
-    var js_hud = document.getElementById("js_hud");
-    var tips_title = document.getElementsByClassName("tips_title")[0];
-    var authCode = "123456";
-    var tips = "";
+    var mAuthCodeWrap = $(".mAuthCodeWrap:first");
+    var authCode = "";
 
+    // 验证手机格式
     if (!checkPhone(phone)) {
-        js_hud.style.display = "block";
-        tips = "请输入正确的手机号(只支持 11 位数字)";
-        window.setTimeout(function () {
-            js_hud.style.display = "none";
-        }, 2000);
-        tips_title.innerHTML = tips;
+        showTips("请输入正确的手机号(只支持 11 位数字)");
+        return;
     }
+
+    // 一次循环获取 JSON 里的第一个元素内容(不知道名字的情况下)
+    for (var obj in userInfo) {
+        var data_post = {
+            "nickname": userInfo[obj]["nickname"],
+            "tel": phone
+        };
+        $.post("https://wwwxinle.cn/Book/public/index.php/index/User/sendCode", data_post, function (data, status) {
+            data = JSON.parse(data);
+            if(data["success"] === true) {
+                showTips("验证成功，请查收并填写验证码");
+            } else {
+                showTips("您的请求过于频繁或手机号填写错误");
+            };
+        });
+    };
 
     // 将从服务器上获得到的验证码隐藏到 HTML 中
     mAuthCodeWrap.innerHTML = authCode;
@@ -122,25 +141,24 @@ function checkPhone (phone) {
     return true;
 }
 
-function checkAuthCodeInput (userAuthCode) {
-    if (userAuthCode === "") return false;
-    if (userAuthCode.length !== 6) return false;
-    if (userAuthCode.match(/[^\d]/g)) return false;
-    return true;
-}
-
-function checkAuthCodeValidity (authCode, userAuthCode) {
-    if (authCode !== userAuthCode) return false;
+function checkAuthCode (authCode) {
+    if (authCode === "") return false;
+    if (authCode.length !== 6) return false;
+    if (authCode.match(/[^\d]/g)) return false;
     return true;
 }
 
 function helpCenter () {
-    var js_hud = document.getElementById("js_hud");
-    var tips_title = document.getElementsByClassName("tips_title")[0];
-    tips_title.innerHTML = "如有其它问题请联系管理员 icorvoh@qq.com ";
-    js_hud.style.display = "block";
+    showTips("如有其它问题请联系管理员 icorvoh@qq.com");
+}
+
+function showTips (tips) {
+    // 获取提示框 js_hud 和其文本信息框 tips_title
+    $(".tips_title:first").text(tips);
+    $("#js_hud").css("display", "block");
+    // 1.5 s 后跳转页面(缺少一个存 cookie 过程)
     window.setTimeout(function () {
-        js_hud.style.display = "none";
+       $("#js_hud").css("display", "none");
     }, 2000);
 }
 
