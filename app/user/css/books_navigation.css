@@ -34,10 +34,35 @@
     border: #bbb solid medium;
     display: block;
     background-color: #fff;
+    display: flex;
 }
 
-.mSlideShowWrap .nextSlid {
-    ;
+.mSlideShowWrap .mCarousel .imgBox {
+    display: inline-block;
+    flex: 9;
+}
+
+.mSlideShowWrap .mCarousel .imgBox img {
+    height: 5.6rem;
+    width: 100%;
+}
+
+.mSlideShowWrap .mCarousel .nextSlid {
+    width: 1rem;
+    background-color: #4CAF50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mSlideShowWrap .mCarousel .nextSlid button {
+    height: 100%;
+    background-color: #4CAF50;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
 }
 
 /* 书库 */

@@ -79,3 +79,28 @@ function fill_nav_img () {
     	mNavInnerTitle.className += " mNavInnerTitleAvtive";
     };
 };
+
+// 轮播新书推荐, index 是这一张图片的位置
+
+function nextSlid (index) {
+    var imgList = document.getElementsByTagName("img");
+    var nextSlidBtn = document.getElementById("nextSlidBtn");
+    
+    // 隐藏这一张图片
+    imgList[index].style.display = "none";
+    // 显示下一张图片，超出范围则显示第一张
+    if (index < imgList.length - 5) {
+        imgList[index + 1].style.display = "block";
+        // console.log(nextSlidBtn.onclick);
+        nextSlidBtn.onclick = function () {
+            nextSlid(index + 1);
+        }
+    } else {
+        imgList[0].style.display = "block";
+        // console.log(nextSlidBtn.onclick);
+        nextSlidBtn.onclick = function () {
+            nextSlid(0);
+        }
+    }
+    // console.log(imgList);
+}
