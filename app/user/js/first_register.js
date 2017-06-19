@@ -45,14 +45,14 @@ function verifyLogin () {
 function doRegister (password, rePassword, IDCard, phone, authCode) {
     var data_post = {
         "password": password,
-        "rePassword": rePassword,
-        "IDCard": IDCard,
-        "phone": phone,
-        "authCode": authCode
+        "password1": rePassword,
+        "identity": IDCard,
+        "tel": phone,
+        "checkCode": authCode
     };
 
     $.post("https://wwwxinle.cn/Book/public/index.php/index/User/insert", data_post, function (data, status) {
-        alert(JSON.stringfiy(data));
+        alert(data);
     });
 }
 
