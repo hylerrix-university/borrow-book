@@ -1,38 +1,3 @@
-// 加载从 html 里抽离出来的导航栏
-
-function load_nav_content () {
-    var mNavWrap = document.getElementsByClassName("mNavWrap")[0];
-    mNavWrap.innerHTML = "\
-        <a href=\"books_navigation.html\">\
-            <div class=\"mNavInnerWrap\">\
-                <img class=\"mNavInnerLogo\" src=\"#\">\
-                <div class=\"mNavInnerTitle\">图书导航</div>\
-            </div>\
-        </a>\
-        \
-        <a href=\"search_books.html\">\
-            <div class=\"mNavInnerWrap\">\
-                <img class=\"mNavInnerLogo\" src=\"#\">\
-                <div class=\"mNavInnerTitle\">书库搜书</div>\
-            </div>\
-        </a>\
-        \
-        <a href=\"borrow_cart.html\">\
-            <div class=\"mNavInnerWrap\">\
-                <img class=\"mNavInnerLogo\" src=\"#\">\
-                <div class=\"mNavInnerTitle\">借阅书车</div>\
-            </div>\
-        </a>\
-        \
-        <a href=\"user_center.html\">\
-            <div class=\"mNavInnerWrap\">\
-                <img class=\"mNavInnerLogo\" src=\"#\">\
-                <div class=\"mNavInnerTitle\">个人中心</div>\
-            </div>\
-        </a>\
-    ";
-};
-
 // 填充导航栏图片并按当前条件电量图片和下方文字
 function fill_nav_img () {
     var mNavInnerLogo = document.getElementsByClassName("mNavInnerLogo");

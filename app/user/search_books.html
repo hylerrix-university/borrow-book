@@ -16,166 +16,96 @@
         <div class="mHeaderHomeWrap">借阅助手</div>
 
         <div class="mContentWrap">
-        	<div class="mSearchHeaderWrap">
-	        	<div class="mSearchSelectorWrap">
-	        		<select>
-					    <option value ="volvo" selected="selected">搜索类别</option>
-					    <option value ="saab">书名搜索</option>
-					    <option value="opel">全拼搜索</option>
-					    <option value="audi">首字母搜索</option>
-					</select>
-	        	</div>
-	        	<div class="mSearchInputBox">
-	        		<input type="text" name="search" placeholder="书库搜书">
-	        	</div>
-	        	<div class="mSearchIconWrap">
-	        	    <div class="mSearchIcon">
-	        	    	    <a href="javascript:;">搜索</a>
-	        	    </div>
-	        	    <div class="mSearchIcon">
-	        	            <a href="javascript:;">扫码</a>
-	        	    </div>
-	        	</div>
-	        </div>
+            <div class="mSearchHeaderWrap">
+                <div class="mSearchSelectorWrap">
+                    <select>
+                        <option value ="volvo" selected="selected">搜索类别</option>
+                        <option value ="saab">书名搜索</option>
+                        <option value="opel">全拼搜索</option>
+                        <option value="audi">首字母搜索</option>
+                    </select>
+                </div>
+                <div class="mSearchInputBox">
+                    <input type="text" name="search" placeholder="书库搜书">
+                </div>
+                <div class="mSearchIconWrap">
+                    <div class="mSearchIcon">
+                            <a href="javascript:;">搜索</a>
+                    </div>
+                    <div class="mSearchIcon">
+                            <a href="javascript:;">扫码</a>
+                    </div>
+                </div>
+            </div>
 
-	        <div class="mSearchResultWrap">
-	        	<div class="mTitleHeader">搜索结果</div>
-	        	<div class="mBookIntroWrap">
-	        	    <a href="book_detail.html">
-	        		    <div class="mBookIntroItemWrap">
-		        			<div class="mBookIntroItemPhoto">
-		        				<img src="images/icorvoh.jpg">
-		        			</div>
-		        			<div class="mBookIntroCharacterWrap">
-		        				<div class="mBookIntroItemBookName">这是一本书的书名</div>
-			        			<div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-			        			<div class="mBookIntroItemBookCount">藏书：6666</div>
-		        			</div>
-	        		    </div>
-	        		</a>
-	        	</div>
+            <div class="mSearchResultWrap">
+                <div class="mTitleHeader" style="display: none;">未检测到您的搜索<span>请在上方进行搜索</span></div>
+                <div class="mTitleHeader">搜索结果<span></span></div>
+                <!-- 这里将被 ajax 填充搜索结果 -->
+            </div>
 
-	        	<div class="mBookIntroWrap">
-	        		<a href="book_detail.html">
-		        		<div class="mBookIntroItemWrap">
-		        			<div class="mBookIntroItemPhoto">
-		        				<img src="images/icorvoh.jpg">
-		        			</div>
-		        			<div class="mBookIntroCharacterWrap">
-		        				<div class="mBookIntroItemBookName">这是一本书的书名</div>
-			        			<div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-			        			<div class="mBookIntroItemBookCount">藏书：6666</div>
-		        			</div>
-		        		</div>
-	        	    </a>
-	        	</div>
+            <a href="categories_detail.html"><div class="mTitleHeader">同类书籍<span></span></div></a>
+            <div class="mSameCategoryWrap">
+                <!-- 这里将被 ajax 填充同类书籍信息 -->
+            </div>
 
-	        	<div class="mBookIntroWrap">
-	        		<a href="book_detail.html">
-		        		<div class="mBookIntroItemWrap">
-		        			<div class="mBookIntroItemPhoto">
-		        				<img src="images/icorvoh.jpg">
-		        			</div>
-		        			<div class="mBookIntroCharacterWrap">
-		        				<div class="mBookIntroItemBookName">这是一本书的书名</div>
-			        			<div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-			        			<div class="mBookIntroItemBookCount">藏书：6666</div>
-		        			</div>
-		        		</div>
-	        	    </a>
-	        	</div>
+            <a href="user_search.html"><div class="mTitleHeader">搜索记录<span>(已加载 2 条，点击加载更多(单条记录可单独点击))</span></div></a>
 
-	        	<div class="mBookIntroWrap">
-	        		<a href="book_detail.html">
-		        		<div class="mBookIntroItemWrap">
-		        			<div class="mBookIntroItemPhoto">
-		        				<img src="images/icorvoh.jpg">
-		        			</div>
-		        			<div class="mBookIntroCharacterWrap">
-		        				<div class="mBookIntroItemBookName">这是一本书的书名</div>
-			        			<div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-			        			<div class="mBookIntroItemBookCount">藏书：6666</div>
-		        			</div>
-		        		</div>
-	        	    </a>
-	        	</div>
-	        </div>
+            <div class="mWechatRecordWrap">
+                <div class="mWechatRecordRightItemWrap">
+                    <a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书的书名</div></a>
+                    <div class="mWechatRecordRightPhoto">
+                        <img src="images/icorvoh.jpg">
+                    </div>
+                </div>
 
-	        <div class="mTitleHeader">同类书籍<span>(已加载 3 条，点击加载更多)</span></div>
-	        <div class="mSameCategoryWrap">
-    	    	<div class="mBookIntroMiniItemWrap">
-    	    		<a href="book_detail.html">
-		        		<div class="mBookMiniPhoto">
-		        			<img src="images/icorvoh.jpg">
-		        		</div>
-		        		<div class="mBookMiniBookName">
-		        			书名：这是一本书
-		        		</div>
-		        		<div class="mBookMiniBookAuthor">
-		        			作者：韩亦乐
-		        		</div>
-	        		</a>
-	        	</div>
+                <div class="mWechatRecordRightItemWrap">
+                    <a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书</div></a>
+                    <div class="mWechatRecordRightPhoto">
+                        <img src="images/icorvoh.jpg">
+                    </div>
+                </div>
+            </div>
 
-	        	<div class="mBookIntroMiniItemWrap">
-	        		<a href="book_detail.html">
-		        		<div class="mBookMiniPhoto">
-		        			<img src="images/icorvoh.jpg">
-		        		</div>
-		        		<div class="mBookMiniBookName">
-		        			书名：这是一本书
-		        		</div>
-		        		<div class="mBookMiniBookAuthor">
-		        			作者：韩亦乐
-		        		</div>
-	        		</a>
-	        	</div>
-
-	        	<div class="mBookIntroMiniItemWrap">
-	        		<a href="book_detail.html">
-		        		<div class="mBookMiniPhoto">
-		        			<img src="images/icorvoh.jpg">
-		        		</div>
-		        		<div class="mBookMiniBookName">
-		        			书名：这是一本书
-		        		</div>
-		        		<div class="mBookMiniBookAuthor">
-		        			作者：韩亦乐
-		        		</div>
-	        		</a>
-	        	</div>
-	        </div>
-
-	        <a href="user_search.html"><div class="mTitleHeader">搜索记录<span>(已加载 2 条，点击加载更多)</span></div></a>
-
-        	<div class="mWechatRecordWrap">
-        		<div class="mWechatRecordRightItemWrap">
-        			<a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书的书名</div></a>
-        			<div class="mWechatRecordRightPhoto">
-        				<img src="images/icorvoh.jpg">
-        			</div>
-        		</div>
-
-        		<div class="mWechatRecordRightItemWrap">
-        			<a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书</div></a>
-        			<div class="mWechatRecordRightPhoto">
-        				<img src="images/icorvoh.jpg">
-        			</div>
-        		</div>
-        	</div>
-
-        	<!-- 用来拓展下方外边距 -->
-        	<div class="mSearchFooter"></div>
+            <!-- 用来拓展下方外边距 -->
+            <div class="mSearchFooter"></div>
         </div>
 
     </div>
 
 
     <div class="mNavWrap">
+        <a href="books_navigation.html">
+            <div class="mNavInnerWrap">
+                <img class="mNavInnerLogo" src="#">
+                <div class="mNavInnerTitle">图书导航</div>
+            </div>
+        </a>
+        
+        <a href="search_books.html">
+            <div class="mNavInnerWrap">
+                <img class="mNavInnerLogo" src="#">
+                <div class="mNavInnerTitle">书库搜书</div>
+            </div>
+        </a>
+        
+        <a href="borrow_cart.html">
+            <div class="mNavInnerWrap">
+                <img class="mNavInnerLogo" src="#">
+                <div class="mNavInnerTitle">借阅书车</div>
+            </div>
+        </a>
+        
+        <a href="user_center.html">
+            <div class="mNavInnerWrap">
+                <img class="mNavInnerLogo" src="#">
+                <div class="mNavInnerTitle">个人中心</div>
+            </div>
+        </a>
         <script>
-            load_nav_content();
             fill_nav_img();
         </script>
     </div>
 </body>
 </html>
+
