@@ -4,6 +4,8 @@ function getSearchBook () {
     $("#searchBody .mSameCategoryWrap").children().remove();
     // 进行搜索
     var keyword = $("input:first").val();
+    // 记录搜索历史
+    recordSearch(keyword);
     var searchWay = $("select:first").find("option:selected").val();
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBook";
     var data = {
@@ -83,6 +85,16 @@ function searchSameCategory (cId) {
         }
     });
 };
+
+function recordSearch (keyword) {
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/System/insertRecord";
+    var data = {
+        "keyword": keyword
+    };
+    $.post(post_url, data, function (data, status) {
+        console.log(data);
+    })
+}
 
 function getRecommderBooks () {
     var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
