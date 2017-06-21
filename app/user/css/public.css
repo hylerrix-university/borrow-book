@@ -211,12 +211,12 @@
 
 .mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookAuthor {
     display: inline-block;
-    width: 6rem;
 }
 
 .mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookCount {
     margin: 0 0.4rem 0 0;
     display: inline;
+    float: right;
 }
 
 /* 同类书籍 */
