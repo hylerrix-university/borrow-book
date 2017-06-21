@@ -11,43 +11,17 @@ function getCategoryBookById (cId) {
         // 本次获取的相关类别的书籍数量(<=3)
         var count = data["count"];
         var next = data["next"];
-        console.log(next);
         var booksArr = data["books"];
         // 如果没有数据，提示消息并退出
         if (count === 0) {
-            $(".mTitleHeader:eq(0)").after("<div class=\"mTitleHeader\">该类书籍暂时没有相关结果</div>");
-            $(".mTitleHeader:eq(0)").hide();
+            $(".mTitleHeader:eq(0)").show();
+            $(".mTitleHeader:eq(0)").text("该类书籍暂时没有相关结果");
             return;
         }
-        $(".mTitleHeader:eq(0)").text("已成功加载下列书籍");
+        // “点击加载更多”按钮是否出现及其绑定函数
+        handleNextButton(next);
         // 开始填充数据
-        for (var i = 0; i < booksArr.length; i++) {
-            var templeteDiv = "\
-                <div class=\"mBookIntroWrap\">\
-                    <a href=\"book_detail.html\">\
-                        <div class=\"mBookIntroItemWrap\">\
-                            <div class=\"mBookIntroItemPhoto\">\
-                                <img src=\"" + booksArr[i]["imgurl"] + "\">\
-                            </div>\
-                            <div class=\"mBookIntroCharacterWrap\">\
-                                <div class=\"mBookIntroItemBookName\">" + booksArr[i]["bName"] + "</div>\
-                                <div class=\"mBookIntroItemBookAuthor\">作者：" + booksArr[i]["author"] + "</div>\
-                                <div class=\"mBookIntroItemBookCount\">藏书：" + booksArr[i]["count"] + "</div>\
-                            </div>\
-                        </div>\
-                    </a>\
-                </div>\
-            ";
-            $(".mButtonWrap").before(templeteDiv);
-        }
-
-        // 判断是否有 next 值，有的话给“点击加载更多”按钮绑定事件
-        if (next) {
-            $(".mButtonWrap").show();
-            $(".mButtonWrap button").click(function() {
-                getMoreCategoryBook(next);
-            });
-        }
+        renderCategoryBook(booksArr);
     });
 };
 
@@ -74,42 +48,48 @@ function getMoreCategoryBook(next) {
         data = JSON.parse(data);
         var booksArr = data["books"];
         var next = data["next"];
-
-        // 再次判断是否有 next 值，有的话给“点击加载更多”按钮绑定事件
-        if (next) {
-            $(".mButtonWrap").show();
-            $(".mButtonWrap button").unbind();
-            $(".mButtonWrap button").click(function() {
-                getMoreCategoryBook(next);
-            });
-        } else {
-            $(".mButtonWrap").hide();
-            var titleDiv = "<div class=\"mTitleHeader\">已全部加载</div>";
-            $(".mButtonWrap").after(titleDiv);
-            return;
-        }
-
+        // “点击加载更多”按钮是否出现及其绑定函数
+        handleNextButton(next);
         // 开始填充数据
-        for (var i = 0; i < booksArr.length; i++) {
-            var templeteDiv = "\
-                <div class=\"mBookIntroWrap\">\
-                    <a href=\"book_detail.html\">\
-                        <div class=\"mBookIntroItemWrap\">\
-                            <div class=\"mBookIntroItemPhoto\">\
-                                <img src=\"" + booksArr[i]["imgurl"] + "\">\
-                            </div>\
-                            <div class=\"mBookIntroCharacterWrap\">\
-                                <div class=\"mBookIntroItemBookName\">" + booksArr[i]["bName"] + "</div>\
-                                <div class=\"mBookIntroItemBookAuthor\">作者：" + booksArr[i]["author"] + "</div>\
-                                <div class=\"mBookIntroItemBookCount\">藏书：" + booksArr[i]["count"] + "</div>\
-                            </div>\
-                        </div>\
-                    </a>\
-                </div>\
-            ";
-            $(".mButtonWrap").before(templeteDiv);
-        }
+        renderCategoryBook(booksArr);
     });
+}
+
+function renderCategoryBook (booksArr) {
+    for (var i = 0; i < booksArr.length; i++) {
+        var templeteDiv = "\
+            <div class=\"mBookIntroWrap\">\
+                <a href=\"book_detail.html\">\
+                    <div class=\"mBookIntroItemWrap\">\
+                        <div class=\"mBookIntroItemPhoto\">\
+                            <img src=\"" + booksArr[i]["imgurl"] + "\">\
+                        </div>\
+                        <div class=\"mBookIntroCharacterWrap\">\
+                            <div class=\"mBookIntroItemBookName\">" + booksArr[i]["bName"] + "</div>\
+                            <div class=\"mBookIntroItemBookAuthor\">作者：" + booksArr[i]["author"] + "</div>\
+                            <div class=\"mBookIntroItemBookCount\">藏书：" + booksArr[i]["count"] + "</div>\
+                        </div>\
+                    </div>\
+                </a>\
+            </div>\
+        ";
+        $(".mButtonWrap").before(templeteDiv);
+    }
+}
+
+function handleNextButton (next) {
+    if (next) {
+        $(".mButtonWrap").show();
+        $(".mButtonWrap button").unbind();
+        $(".mButtonWrap button").click(function() {
+            getMoreCategoryBook(next);
+        });
+    } else {
+        $(".mButtonWrap").hide();
+        var titleDiv = "<div class=\"mTitleHeader\">已全部加载</div>";
+        $(".mButtonWrap").after(titleDiv);
+        return;
+    }
 }
 
 setCategoryName(1);

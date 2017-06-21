@@ -1,7 +1,8 @@
 var userInfo;
 
 function getInfo () {
-    $.get("https://wwwxinle.cn/Book/public/index.php/index/User/getInfo", function (data, status) {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/getInfo";
+    $.get(get_url, function (data, status) {
         // 一次循环获取 JSON 里的第一个元素内容(不知道名字的情况下)
         userInfo = data;
         for (var obj in data) {
@@ -50,8 +51,10 @@ function doRegister (password, rePassword, IDCard, phone, authCode) {
         "tel": phone,
         "checkCode": authCode
     };
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/insert";
 
-    $.post("https://wwwxinle.cn/Book/public/index.php/index/User/insert", data_post, function (data, status) {
+    $.post(post_url, data_post, function (data, status) {
+        data = JSON.stringify(data);
         alert(data);
     });
 }
@@ -75,7 +78,8 @@ function getAuthCode () {
             "nickname": userInfo[obj]["nickname"],
             "tel": phone
         };
-        $.post("https://wwwxinle.cn/Book/public/index.php/index/User/sendCode", data_post, function (data, status) {
+        var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/sendCode";
+        $.post(post_url, data_post, function (data, status) {
             data = JSON.parse(data);
             if(data["success"] === true) {
                 showTips("验证成功，请查收并填写验证码");
