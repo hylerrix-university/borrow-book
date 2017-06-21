@@ -24,13 +24,13 @@ function getBookDetail () {
             $(".mBookDetailHeaderTitle:eq(1)").before(catalogDiv);
         }
         $(".mBookDetailIntro").text(bookDetail["summary"]);
-        // 推荐书籍
+        // 同类书籍
         var relatedBooks = data["relatedBooks"]["books"];
         $(".mTitleHeader:eq(0) span").text("已加载 " + relatedBooks.length + " 本书籍");
         for (var i = 0; i < relatedBooks.length; i++) {
             var relatedBookDiv = "\
                 <div class=\"mBookRelativeItemWrap\">\
-                    <a href=\"book_detail.html\">\
+                    <a bId=\"" + relatedBooks[i]["bId"] + "\">\
                         <div class=\"mBookMiniPhoto\">\
                             <img src=\"" + relatedBooks[i]["imgurl"] + "\">\
                         </div>\
@@ -41,6 +41,17 @@ function getBookDetail () {
             ";
             $(".mBookRelativeWrap").append(relatedBookDiv);
         }
+        // 给每个同类书籍绑定相应的点击事件
+        bindSameCateEvent();
+    });
+}
+
+function bindSameCateEvent() {
+    $(".mBookRelativeItemWrap a").each(function () {
+        $(this).click(function () {
+            var bId = $(this).attr("bId");
+            window.location.href = "book_detail.html?bId=" + bId;
+        });
     });
 }
 

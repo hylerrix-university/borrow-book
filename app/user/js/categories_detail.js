@@ -95,7 +95,6 @@ function bindCateBookEvent() {
     $(".mBookIntroWrap a").each(function () {
         $(this).click(function () {
             var bId = $(this).attr("bId");
-            console.log(bId);
             window.location.href = "book_detail.html?bId=" + bId;
         });
     });
