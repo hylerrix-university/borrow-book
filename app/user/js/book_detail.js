@@ -1,4 +1,6 @@
-function getBookDetail (bId) {
+function getBookDetail () {
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getBookDetail";
     var data = {
         "bId": bId
@@ -42,5 +44,4 @@ function getBookDetail (bId) {
     });
 }
 
-var bId = "AVxoaoAWoMlguXEb9gRB";
-getBookDetail(bId);
+getBookDetail();

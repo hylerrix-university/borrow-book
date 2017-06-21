@@ -10,6 +10,20 @@ function renderCategoryDetail() {
 
 renderCategoryDetail();
 
+function setCategoryName (cId) {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getCategories";
+    $.get(get_url, function (data, status) {
+        // 获取书籍类别的名字
+        data = JSON.parse(data);
+        for (var i = 0; i < data.length; i++) {
+            if (data[i]["cId"] == cId) {
+                $(".mHeaderTitle:eq(0)").text("“" + data[i]["cName"] + "”类书籍");
+                break;
+            }
+        }
+    });
+}
+
 function getCategoryBookById (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBookByCid";
     var post_data = {
@@ -34,22 +48,10 @@ function getCategoryBookById (cId) {
         handleNextButton(next);
         // 开始填充数据
         renderCategoryBook(booksArr);
+        // 绑定每本书的点击事件
+        bindCateBookEvent();
     });
 };
-
-function setCategoryName (cId) {
-    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getCategories";
-    $.get(get_url, function (data, status) {
-        // 获取书籍类别的名字
-        data = JSON.parse(data);
-        for (var i = 0; i < data.length; i++) {
-            if (data[i]["cId"] == cId) {
-                $(".mHeaderTitle:eq(0)").text("“" + data[i]["cName"] + "”类书籍");
-                break;
-            }
-        }
-    });
-}
 
 function getMoreCategoryBook(next) {
     var post_data = {
@@ -71,7 +73,7 @@ function renderCategoryBook (booksArr) {
     for (var i = 0; i < booksArr.length; i++) {
         var templeteDiv = "\
             <div class=\"mBookIntroWrap\">\
-                <a href=\"book_detail.html\">\
+                <a bId=\"" + booksArr[i]["bId"] + "\">\
                     <div class=\"mBookIntroItemWrap\">\
                         <div class=\"mBookIntroItemPhoto\">\
                             <img src=\"" + booksArr[i]["imgurl"] + "\">\
@@ -87,6 +89,16 @@ function renderCategoryBook (booksArr) {
         ";
         $(".mButtonWrap").before(templeteDiv);
     }
+}
+
+function bindCateBookEvent() {
+    $(".mBookIntroWrap a").each(function () {
+        $(this).click(function () {
+            var bId = $(this).attr("bId");
+            console.log(bId);
+            window.location.href = "book_detail.html?bId=" + bId;
+        });
+    });
 }
 
 function handleNextButton (next) {
