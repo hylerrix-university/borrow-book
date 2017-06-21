@@ -1,3 +1,15 @@
+function renderCategoryDetail() {
+    // 从 url 中获取 cId
+    var urlArgs = window.location.search;
+    var cId = urlArgs.split("=")[1];
+    // 设置页面头部类别信息
+    setCategoryName(cId);
+    // 获取并渲染书籍信息
+    getCategoryBookById(cId);
+}
+
+renderCategoryDetail();
+
 function getCategoryBookById (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBookByCid";
     var post_data = {
@@ -31,7 +43,7 @@ function setCategoryName (cId) {
         // 获取书籍类别的名字
         data = JSON.parse(data);
         for (var i = 0; i < data.length; i++) {
-            if (data[i]["cId"] === cId) {
+            if (data[i]["cId"] == cId) {
                 $(".mHeaderTitle:eq(0)").text("“" + data[i]["cName"] + "”类书籍");
                 break;
             }
@@ -91,6 +103,3 @@ function handleNextButton (next) {
         return;
     }
 }
-
-setCategoryName(1);
-getCategoryBookById(1);

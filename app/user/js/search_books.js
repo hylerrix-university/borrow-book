@@ -1,8 +1,7 @@
 function getSearchBook () {
     // 清除曾经搜的书渲染出的多余 DOM
-    clearSearchBody();
-    // 同类书籍搜索
-    searchSameCategory(1);
+    $("#searchBody .mSearchResultWrap").children().remove();
+    $("#searchBody .mSameCategoryWrap").children().remove();
     // 进行搜索
     var keyword = $("input:first").val();
     var searchWay = $("select:first").find("option:selected").val();
@@ -43,16 +42,13 @@ function getSearchBook () {
                 </div>\
             ";
             $(".mSearchResultWrap:first").append(templeteDiv);
+            // 填充同类书籍
+            searchSameCategory(booksArr[0]["cId"]);
         }
         $(".mTitleHeader:first").hide();
         $("#searchBody").show();
     });
 };
-
-function clearSearchBody () {
-    $("#searchBody .mSearchResultWrap").children().remove();
-    $("#searchBody .mSameCategoryWrap").children().remove();
-}
 
 function searchSameCategory (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBookByCid";
