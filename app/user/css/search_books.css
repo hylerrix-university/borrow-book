@@ -59,8 +59,16 @@
     flex: 1;
 }
 
+.mSearchHeaderWrap .mSearchIconWrap .mSearchIcon button {
+    height: 100%;
+    width: 100%;
+    background-color: #4CAF50;
+    font-size: .8rem;
+    display: flex;
+}
+
 .mSearchResultWrap {
-    margin: 2.2rem 0 0 0;
+    margin: .5rem 0 0 0;
 }
 
 .mSearchHistoryWrap {

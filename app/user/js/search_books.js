@@ -1,16 +1,27 @@
-function searchBook (keyword) {
+function getSearchBook () {
+    // 清除曾经搜的书渲染出的多余 DOM
+    clearSearchBody();
+    // 同类书籍搜索
+    searchSameCategory(1);
+    // 进行搜索
+    var keyword = $("input:first").val();
+    var searchWay = $("select:first").find("option:selected").val();
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBook";
     var data = {
         "rows": 10,
         "keyword": keyword,
-        "way": 0
+        "way": searchWay
     };
     $.post(post_url, data, function (data, status) {
         data = JSON.parse(data);
+        if (data["count"] === 0) {
+            // 搜索结果不存在
+            $(".mTitleHeader:first").show();
+            $("#searchBody").hide();
+            return;
+        }
         var booksArr = data["books"];
         for (var i = 0; i < booksArr.length; i++) {
-            // 隐藏“请在上方进行搜索”的相关提示
-            $(".mTitleHeader:eq(0)").css("display", "none");
             // 显示搜索提示
             $(".mTitleHeader:eq(1)").css("display", "block");
             $(".mTitleHeader:eq(1) span").text("（您本次搜索的是：" + keyword + "）");
@@ -33,8 +44,15 @@ function searchBook (keyword) {
             ";
             $(".mSearchResultWrap:first").append(templeteDiv);
         }
+        $(".mTitleHeader:first").hide();
+        $("#searchBody").show();
     });
 };
+
+function clearSearchBody () {
+    $("#searchBody .mSearchResultWrap").children().remove();
+    $("#searchBody .mSameCategoryWrap").children().remove();
+}
 
 function searchSameCategory (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBookByCid";
@@ -65,10 +83,36 @@ function searchSameCategory (cId) {
                     </a>\
                 </div>\
             ";
-            $(".mSameCategoryWrap:first").append(templeteDiv);
+            $(".mSameCategoryWrap:eq(0)").append(templeteDiv);
         }
     });
 };
 
-searchBook("大型网站系统与Java中间件开发实践");
-searchSameCategory(1);
+function getRecommderBooks () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
+    $.get(get_url, function (data, status) {
+        data = JSON.parse(data);
+        // 开始填充数据
+        var booksArr = data["books"];
+        for (var i = 0; i < booksArr.length; i++) {
+            var templeteDiv = "\
+                <div class=\"mBookIntroMiniItemWrap\">\
+                    <a href=\"book_detail.html\">\
+                        <div class=\"mBookMiniPhoto\">\
+                            <img src=\"" + booksArr[i]["imgurl"] + "\">\
+                        </div>\
+                        <div class=\"mBookMiniBookName\">\
+                            " + booksArr[i]["bName"] + "\
+                        </div>\
+                        <div class=\"mBookMiniBookAuthor\">\
+                            作者：" + booksArr[i]["author"] + "\
+                        </div>\
+                    </a>\
+                </div>\
+            ";
+            $(".mSameCategoryWrap:eq(1)").append(templeteDiv);
+        }
+    });
+}
+
+getRecommderBooks();

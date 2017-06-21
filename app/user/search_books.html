@@ -19,10 +19,9 @@
             <div class="mSearchHeaderWrap">
                 <div class="mSearchSelectorWrap">
                     <select>
-                        <option value ="volvo" selected="selected">搜索类别</option>
-                        <option value ="saab">书名搜索</option>
-                        <option value="opel">全拼搜索</option>
-                        <option value="audi">首字母搜索</option>
+                        <option value ="0" selected="selected">书名搜索</option>
+                        <option value="1">全拼搜索</option>
+                        <option value="2">首字母搜索</option>
                     </select>
                 </div>
                 <div class="mSearchInputBox">
@@ -30,26 +29,32 @@
                 </div>
                 <div class="mSearchIconWrap">
                     <div class="mSearchIcon">
-                            <a href="javascript:;">搜索</a>
+                            <button onclick="getSearchBook()">搜索</a>
                     </div>
                     <div class="mSearchIcon">
-                            <a href="javascript:;">扫码</a>
+                            <button onclick=";">扫码</a>
                     </div>
                 </div>
             </div>
 
-            <div class="mSearchResultWrap">
-                <div class="mTitleHeader" style="display: none;">未检测到您的搜索<span>请在上方进行搜索</span></div>
+            <div class="mTitleHeader" style="margin: 2.2rem 0 0 0">未检测到您的搜索或搜索结果不存在<span>请在上方进行搜索</span></div>
+
+            <div id="searchBody" style="display: none; margin: 2.2rem 0 0 0">
                 <div class="mTitleHeader">搜索结果<span></span></div>
-                <!-- 这里将被 ajax 填充搜索结果 -->
+                <div class="mSearchResultWrap">
+                    <!-- 这里将被 ajax 填充搜索结果 -->
+                </div>
+
+                <a href="categories_detail.html"><div class="mTitleHeader">相关书籍<span></span></div></a>
+                <div class="mSameCategoryWrap">
+                    <!-- 这里将被 ajax 填充同类书籍信息 -->
+                </div>
             </div>
 
-            <a href="categories_detail.html"><div class="mTitleHeader">同类书籍<span></span></div></a>
+            <div class="mTitleHeader">推荐书籍<span>根据您最近的搜索偏向推荐</span></div>
             <div class="mSameCategoryWrap">
-                <!-- 这里将被 ajax 填充同类书籍信息 -->
+                <!-- 这里将被 ajax 填充推荐书籍信息 -->
             </div>
-
-            <div class="mTitleHeader">相关书籍</div>
 
             <a href="user_search.html"><div class="mTitleHeader">搜索记录<span>(已加载 2 条，点击加载更多(单条记录可单独点击))</span></div></a>
 
