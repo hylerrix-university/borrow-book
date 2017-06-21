@@ -45,3 +45,17 @@ function bindStackEvent() {
 }
 
 getAllStacks();
+
+function getRecommendBooks () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
+    $.get(get_url, function (data, status) {
+        data = JSON.parse(data);
+        // 开始填充数据
+        var booksArr = data["books"];
+        for (var i = 0; i < 3; i++) {
+            $(".mCarousel img").attr("src", booksArr[i]["imgurl"]);
+        }
+    });
+}
+
+getRecommendBooks();
