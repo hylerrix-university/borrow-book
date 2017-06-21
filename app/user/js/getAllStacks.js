@@ -1,6 +1,5 @@
 function getAllStacks () {
     $.get("https://wwwxinle.cn/Book/public/index.php/index/Book/getAllStacks", function(data, status){
-        console.log("Data: " + data + "\nStatus: " + status);
         // 将获取到的数据 json 化
         data = JSON.parse(data);
         

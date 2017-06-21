@@ -54,8 +54,7 @@ function doRegister (password, rePassword, IDCard, phone, authCode) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/insert";
 
     $.post(post_url, data_post, function (data, status) {
-        data = JSON.stringify(data);
-        alert(data);
+        // 成功
     });
 }
 
@@ -82,7 +81,7 @@ function getAuthCode () {
         $.post(post_url, data_post, function (data, status) {
             data = JSON.parse(data);
             if(data["success"] === true) {
-                showTips("验证成功，请查收并填写验证码");
+                showTips("请注意查收并填写验证码");
             } else {
                 showTips("您的请求过于频繁或手机号填写错误");
             };
