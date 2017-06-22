@@ -5,6 +5,8 @@
 	<title>借阅伴侣 - 搜索记录</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/user_search.js"></script>
 </head>
 <body>
     <div class="userApp">
@@ -14,37 +16,23 @@
         </div>
 
         <div class="mContentWrap">
-            <div class="mTitleHeader">本页已加载搜索记录：4 条<span>总计收藏书籍：3 本</span></div>
+            <div class="mTitleHeader"></div>
 
-            <div class="mTitleHeader"><button>一键清空搜索记录</button></div>
+            <div class="mTitleHeader"><button onclick="deleteAllRecord()">一键清空搜索记录</button></div>
 
             <div class="mWechatRecordWrap">
                     <div class="mWechatRecordLeftItemWrap">
                         <div class="mWechatRecordLeftPhoto">
                             <img src="images/anonymity.jpg">
                         </div>
-                        <div class="mWechatRecordLeftContent">2017.06.04 日，您搜索了：</div>
-                    </div>
-
-                    <div class="mWechatRecordRightItemWrap">
-                        <a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书</div></a>
-                        <div class="mWechatRecordRightPhoto">
-                            <img src="images/icorvoh.jpg">
-                        </div>
+                        <div class="mWechatRecordLeftContent"></div>
                     </div>
 
                     <div class="mWechatRecordLeftItemWrap">
                         <div class="mWechatRecordLeftPhoto">
                             <img src="images/anonymity.jpg">
                         </div>
-                        <div class="mWechatRecordLeftContent">2017.01.01 日，您搜索了：</div>
-                    </div>
-
-                    <div class="mWechatRecordRightItemWrap">
-                        <a href="search_books.html"><div class="mWechatRecordRightContent">韩亦乐</div></a>
-                        <div class="mWechatRecordRightPhoto">
-                            <img src="images/icorvoh.jpg">
-                        </div>
+                        <div class="mWechatRecordLeftContent"></div>
                     </div>
                 </div>
         </div>

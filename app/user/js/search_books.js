@@ -118,7 +118,7 @@ function getAllRecord () {
         }
         $(".mTitleHeader:eq(4) span").text("(已加载 " + dataLength + " 条搜索记录)");
         // 从最近的搜索历史开始显示 dataLength 个
-        for (var i = data.length -1; i > data.length - dataLength; i--) {
+        for (var i = data.length - 1; i >= data.length - dataLength; i--) {
             var templeteDiv = "\
                 <div class=\"mWechatRecordRightItemWrap\">\
                     <a href=\"search_books.html\">\

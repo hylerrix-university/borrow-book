@@ -454,3 +454,26 @@
             appearance: none;
     flex: 1;
 }
+
+/* 紧跟在一条书本信息下方的删除按钮 */
+.mDeleteButton {
+    margin: 0 0 0 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    display: flex;
+}
+
+.mDeleteButton button {
+    height: auto;
+    width: auto;
+    font-size: .6rem;
+    background-color: red;
+    border: #bbb solid medium;
+    /* 很关键：将默认的select选择框样式清除 */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    flex: 1;
+}
+
