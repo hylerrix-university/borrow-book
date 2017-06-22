@@ -31,6 +31,7 @@ function deleteAllRecord () {
         $(".mTitleHeader:eq(0)").text("总计 " + 0 + " 条搜索记录");
         $(".mWechatRecordLeftContent:eq(0)").text("您已成功清除所有搜索记录");
         $(".mWechatRecordLeftContent:eq(1)").text("期待您的再次搜索");
+        $(".mWechatRecordRightItemWrap").remove();
     });
 }
 

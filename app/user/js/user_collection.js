@@ -1,4 +1,4 @@
-function selectCollect () {
+ionfunction selectCollect () {
 	var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/selectCollect";
 	$.get(get_url, function (data, status) {
         console.log(data);
