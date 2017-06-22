@@ -1,0 +1,7 @@
+function getAllRecord () {
+
+}
+
+function 
+
+getAllRecord();

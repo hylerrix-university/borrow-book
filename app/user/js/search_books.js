@@ -2,6 +2,8 @@ function getSearchBook () {
     // 清除曾经搜的书渲染出的多余 DOM
     $("#searchBody .mSearchResultWrap").children().remove();
     $("#searchBody .mSameCategoryWrap").children().remove();
+    $(".mWechatRecordWrap").children().remove();
+    $(".mTitleHeader:last").hide();
     // 进行搜索
     var keyword = $("input:first").val();
     var searchWay = $("select:first").find("option:selected").val();
@@ -13,13 +15,15 @@ function getSearchBook () {
     };
     $.post(post_url, data, function (data, status) {
         data = JSON.parse(data);
+        // 再次读取并填充搜索历史
+        getAllRecord();
         if (data["count"] === 0) {
             // 搜索结果不存在
             $(".mTitleHeader:first").show();
             $("#searchBody").hide();
             return;
         }
-        // 记录搜索历史
+        // 记录本次搜索信息
         recordSearch(keyword);
         var booksArr = data["books"];
         for (var i = 0; i < booksArr.length; i++) {
@@ -52,6 +56,7 @@ function getSearchBook () {
     });
 };
 
+// 获取相关书籍，跟本次搜索有关
 function searchSameCategory (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBookByCid";
     var data = {
@@ -92,10 +97,44 @@ function recordSearch (keyword) {
         "keyword": keyword
     };
     $.post(post_url, data, function (data, status) {
-        alert(data);
+        // 本次搜索信息保存成功
     });
 }
 
+function getAllRecord () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/System/getRecord";
+    $.get(get_url, function (data, status) {
+        // length 用来控制显示出来的条数
+        var dataLength = data.length;
+        if (dataLength === 0) {
+            $(".mTitleHeader:eq(4) span").text("您还没有搜索过，请进行搜索");
+            return;
+        }
+        // 如果数据超过 7 条
+        if (dataLength > 7) {
+            // 显示“点击加载更多按钮”
+            $(".mTitleHeader:last").show();
+            dataLength = 7;
+        }
+        $(".mTitleHeader:eq(4) span").text("(已加载 " + dataLength + " 条搜索记录)");
+        // 从最近的搜索历史开始显示 dataLength 个
+        for (var i = data.length -1; i > data.length - dataLength; i--) {
+            var templeteDiv = "\
+                <div class=\"mWechatRecordRightItemWrap\">\
+                    <a href=\"search_books.html\">\
+                        <div class=\"mWechatRecordRightContent\">" + data[i]["value"] + "</div>\
+                    </a>\
+                    <div class=\"mWechatRecordRightPhoto\">\
+                        <img src=\"images/icorvoh.jpg\">\
+                    </div>\
+                </div>\
+            ";
+            $(".mWechatRecordWrap:first").append(templeteDiv);
+        }
+    });
+}
+
+// 获取推荐书籍，跟用户有关
 function getRecommderBooks () {
     var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
     $.get(get_url, function (data, status) {
@@ -123,4 +162,6 @@ function getRecommderBooks () {
     });
 }
 
+// 读取并填充搜索历史
+getAllRecord();
 getRecommderBooks();

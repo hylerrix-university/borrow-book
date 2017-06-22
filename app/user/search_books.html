@@ -37,7 +37,7 @@
                 </div>
             </div>
 
-            <div class="mTitleHeader" style="margin: 2.2rem 0 0 0">未检测到您的搜索或搜索结果不存在<span>请在上方进行搜索</span></div>
+            <div class="mTitleHeader" style="margin: 2.2rem 0 0 0; color: red">未检测到您的搜索或搜索结果不存在<span>请在上方进行搜索</span></div>
 
             <div id="searchBody" style="display: none; margin: 2.2rem 0 0 0">
                 <div class="mTitleHeader">搜索结果<span></span></div>
@@ -56,28 +56,18 @@
                 <!-- 这里将被 ajax 填充推荐书籍信息 -->
             </div>
 
-            <a href="user_search.html"><div class="mTitleHeader">搜索记录<span>(已加载 2 条，点击加载更多(单条记录可单独点击))</span></div></a>
+            <div class="mTitleHeader">搜索记录<span></span></div>
 
             <div class="mWechatRecordWrap">
-                <div class="mWechatRecordRightItemWrap">
-                    <a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书的书名</div></a>
-                    <div class="mWechatRecordRightPhoto">
-                        <img src="images/icorvoh.jpg">
-                    </div>
-                </div>
-
-                <div class="mWechatRecordRightItemWrap">
-                    <a href="search_books.html"><div class="mWechatRecordRightContent">这是一本书</div></a>
-                    <div class="mWechatRecordRightPhoto">
-                        <img src="images/icorvoh.jpg">
-                    </div>
-                </div>
+                <!-- 这里将被动态填充搜索记录 -->
+            </div>
+            <div class="mTitleHeader" style="display: none">
+                <button onclick="window.location.href = 'user_search.html'">点击加载更多</button>
             </div>
 
             <!-- 用来拓展下方外边距 -->
             <div class="mSearchFooter"></div>
         </div>
-
     </div>
 
 

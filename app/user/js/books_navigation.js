@@ -44,18 +44,16 @@ function bindStackEvent() {
     });
 }
 
-getAllStacks();
-
-function getRecommendBooks () {
-    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
+// 获得新书推荐信息并填充相应数据
+function getNewBooks () {
+    var get_url = "";
     $.get(get_url, function (data, status) {
         data = JSON.parse(data);
-        // 开始填充数据
-        var booksArr = data["books"];
-        for (var i = 0; i < 3; i++) {
-            $(".mCarousel img").attr("src", booksArr[i]["imgurl"]);
-        }
+        console.log(data);
     });
 }
 
-getRecommendBooks();
+// getNewBooks();
+
+getAllStacks();
+
