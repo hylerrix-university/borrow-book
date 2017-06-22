@@ -9,13 +9,13 @@
 ## 开发简介
 
 * Bower 做 JavaScript 的包依赖管理
-* ESLint 做代码风格规范检测
+* ESLint 做代码风格规范检测(未实现)
 * Grunt 启动 Karma 统一项目管理(未实现)
-* Istanbul 检查单元测试代码覆盖率
-* Jasmine 做单元测试
+* Istanbul 检查单元测试代码覆盖率(有问题)
+* Jasmine 做单元测试(有问题)
 * JQuery 封装 DOM 操作
 * JSDoc 规范代码注释风格(未实现)
-* Karma 自动化完成单元测试
+* Karma 自动化完成单元测试(有问题)
 * NPM 做 Node.js 的包依赖管理
 * Webpack 最终打包整个项目文件(未实现)
 * Yeoman 最后封装成一个项目原型模板(未实现)
