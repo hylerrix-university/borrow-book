@@ -59,10 +59,41 @@ function bindSameCateEvent() {
 function judgeBook () {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addCollect";
     $.post(post_url, function (data, status) {
-        console.log(data);
+        
     });
 }
 
+// 预订书籍
+function scheduleBook () {
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/scheduleBook";
+    var data = {
+        "bId": bId
+    };
+    $.post(post_url, data, function (data, status) {
+        // 预订书籍成功，改变相应状态
+        $(".mButtonWrap button:eq(0)").hide();
+        $(".mButtonWrap button:eq(1)").show();
+    });
+}
+
+// 取消预订
+function cancelScheduleBook () {
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/cancelScheduleBook";
+    var data = {
+        "bId": bId
+    };
+    $.post(post_url, data, function (data, status) {
+        // 取消收藏成功，改变相应状态
+        $(".mButtonWrap button:eq(1)").hide();
+        $(".mButtonWrap button:eq(0)").show();
+    });
+}
+
+// 添加收藏
 function addCollect () {
     var urlArgs = window.location.search;
     var bId = urlArgs.split("=")[1];
@@ -72,16 +103,12 @@ function addCollect () {
     };
     $.post(post_url, data, function (data, status) {
         // 加入收藏成功，改变相应状态
-        $(".mButtonWrap button:eq(1)").css("background-color", "red");
-        $(".mButtonWrap button:eq(1)").text("取消收藏");
-        // 清除其它事件并绑定新的点击事件
-        $(".mButtonWrap button:eq(1)").unbind();
-        $(".mButtonWrap button:eq(1)").click(function () {
-            cancelCollect();
-        });
+        $(".mButtonWrap button:eq(2)").hide();
+        $(".mButtonWrap button:eq(3)").show();
     });
 }
 
+// 取消收藏
 function cancelCollect () {
     var urlArgs = window.location.search;
     var bId = urlArgs.split("=")[1];
@@ -91,12 +118,8 @@ function cancelCollect () {
     };
     $.post(post_url, data, function (data, status) {
         // 取消收藏成功，改变相应状态
-        $(".mButtonWrap button:eq(1)").css("background-color", "#4CAF50");
-        $(".mButtonWrap button:eq(1)").text("收藏本书");
-        $(".mButtonWrap button:eq(1)").unbind();
-         $(".mButtonWrap button:eq(1)").click(function () {
-            addCollect();
-        });
+        $(".mButtonWrap button:eq(3)").hide();
+        $(".mButtonWrap button:eq(2)").show();
     });
 }
 

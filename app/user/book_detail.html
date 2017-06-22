@@ -46,9 +46,12 @@
                 </div>
 
                 <div class="mButtonWrap">
-                    <button>预定本书</button>
+                    <button onclick="scheduleBook()">预定本书</button>
+                    <button onclick="cancelScheduleBook()" style="display: none; background-color: red">取消预订</button>
                     <button onclick="addCollect()">收藏本书</button>
+                    <button onclick="cancelCollect()" style="display: none; background-color: red">取消收藏</button>
                     <button>加入书车</button>
+                    <button style="display: none; background-color: red">移出书车</button>
                 </div>
             </div>
 
