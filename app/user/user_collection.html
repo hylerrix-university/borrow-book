@@ -5,6 +5,8 @@
 	<title>借阅伴侣 - 我的收藏</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/user_collectino.js"></script>
 </head>
 <body>
     <div class="userApp">
@@ -14,40 +16,10 @@
         </div>
 
         <div class="mContentWrap">
-            <div class="mTitleHeader">您总共有 2 条收藏信息</div>
+            <div class="mTitleHeader"><!-- 您总共有 2 条收藏信息 --></div>
 
             <div class="mBookIntroWrap">
-                <a href="book_detail.html">
-                    <div class="mBookIntroItemWrap">
-                        <div class="mBookIntroItemPhoto">
-                            <img src="images/icorvoh.jpg">
-                        </div>
-                        <div class="mBookIntroCharacterWrap">
-                            <div class="mBookIntroItemBookName">这是一本书的书名</div>
-                            <div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-                            <div class="mBookIntroItemBookCount">藏书：6666</div>
-                        </div>
-                    </div>
-                </a>
-                <div class="mDeleteButton">
-                    <button>删除</button>
-                </div>
-
-                <a href="book_detail.html">
-                    <div class="mBookIntroItemWrap">
-                        <div class="mBookIntroItemPhoto">
-                            <img src="images/icorvoh.jpg">
-                        </div>
-                        <div class="mBookIntroCharacterWrap">
-                            <div class="mBookIntroItemBookName">这是一本书的书名</div>
-                            <div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-                            <div class="mBookIntroItemBookCount">藏书：6666</div>
-                        </div>
-                    </div>
-                </a>
-                <div class="mDeleteButton">
-                    <button>删除</button>
-                </div>
+                <!-- 这里将被 ajax 动态填充数据 -->
             </div>
             
         </div>
