@@ -26,21 +26,22 @@
                         </div>
                         <div class="mBookDetailCharacterWrap">
                             <div class="mBookDetailCharacterTitleItem"></div>
-                            <div class="mBookDetailCharacterItem">作者：<span></span></div>
-                            <div class="mBookDetailCharacterItem">出版社：<span></span></div>
-                            <div class="mBookDetailCharacterItem">ISBN：<span></span></div>
-                            <div class="mBookDetailCharacterItem">藏书量(本)：<span></span></div>
-                            <div class="mBookDetailCharacterItem">当前可借(本)：<span></span></div>
+                            <div class="mBookDetailCharacterItem">作者：<span>正在加载...</span></div>
+                            <div class="mBookDetailCharacterItem">出版社：<span>正在加载...</span></div>
+                            <div class="mBookDetailCharacterItem">ISBN：<span>正在加载...</span></div>
+                            <div class="mBookDetailCharacterItem">藏书量(本)：<span>正在加载...</span></div>
+                            <div class="mBookDetailCharacterItem">当前可借(本)：<span>正在加载...</span></div>
                         </div>
                     </div>
                     <div class="mBookDetailOtherWraps">
                         <div class="mBookDetailBelongTo"></div>
                         <div class="mBookDetailPartWrap">
                             <div class="mBookDetailHeaderTitle">目录</div>
+                            <div class="mBookDetailCatalog">正在加载...</div>
                         </div>
                         <div class="mBookDetailPartWrap">
                             <div class="mBookDetailHeaderTitle">简介</div>
-                            <div class="mBookDetailIntro">有趣的灵魂终会相遇。</div>
+                            <div class="mBookDetailIntro">正在加载...</div>
                         </div>
                     </div>
                 </div>
@@ -50,8 +51,8 @@
                     <button onclick="cancelScheduleBook()" style="display: none; background-color: red">取消预订</button>
                     <button onclick="addCollect()">收藏本书</button>
                     <button onclick="cancelCollect()" style="display: none; background-color: red">取消收藏</button>
-                    <button>加入书车</button>
-                    <button style="display: none; background-color: red">移出书车</button>
+                    <button onclick="addShopping()">加入书车</button>
+                    <button onclick="cancelShopping()" style="display: none; background-color: red">移出书车</button>
                 </div>
             </div>
 
@@ -61,9 +62,9 @@
                 <!-- 这里将被 ajax 动态填充数据 -->
             </div>
 
-            <div class="mTitleHeader">书籍评价<span>已加载 5 条评论</span></div>
+            <!-- <div class="mTitleHeader">书籍评价<span>已加载 5 条评论</span></div> -->
 
-            <div class="mBookCommentWrap">
+            <!-- <div class="mBookCommentWrap">
                 <div class="mWechatRecordWrap">
                     <div class="mWechatRecordLeftItemWrap">
                         <div class="mWechatRecordLeftPhoto">
@@ -88,14 +89,14 @@
                 </div>
 
                 <div class="mTitleHeader"><button>点击加载更多</button></div>
-            </div>
+            </div> -->
 
-            <div class="mCommentInputWrap">
+            <!-- <div class="mCommentInputWrap">
                 <input type="text" name="comment"/ placeholder="我要评论">
                 <div class="mCommentSendWrap">
                     <button>发布</button>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

@@ -19,6 +19,8 @@ function getBookDetail () {
         $(".mBookDetailBelongTo").text("所属类别：" + bookDetail["sName"] + " > " + bookDetail["cName"]);
         var catalog = bookDetail["catalog"];
         var catalogArr = catalog.split("\n");
+        // 清除目录中的“正在加载”
+        $(".mBookDetailCatalog:eq(0)").remove();
         for (var i = 0; i < catalogArr.length; i++) {
             var catalogDiv = "<div class=\"mBookDetailCatalog\">" + catalogArr[i] + "</div>";
             $(".mBookDetailHeaderTitle:eq(1)").before(catalogDiv);
@@ -57,10 +59,10 @@ function bindSameCateEvent() {
 
 // 判断书籍是否已经被用户预订、收藏或加入书车并绑定相应事件
 function judgeBook () {
-    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addCollect";
-    $.post(post_url, function (data, status) {
+    // var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addCollect";
+    // $.post(post_url, function (data, status) {
         
-    });
+    // });
 }
 
 // 预订书籍
@@ -120,6 +122,36 @@ function cancelCollect () {
         // 取消收藏成功，改变相应状态
         $(".mButtonWrap button:eq(3)").hide();
         $(".mButtonWrap button:eq(2)").show();
+    });
+}
+
+// 加入书车
+function addShopping () {
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addShopping";
+    var data = {
+        "bId": bId
+    };
+    $.post(post_url, data, function (data, status) {
+        // 加入书车成功，改变相应状态
+        $(".mButtonWrap button:eq(4)").hide();
+        $(".mButtonWrap button:eq(5)").show();
+    });
+}
+
+// 移出书车
+function cancelShopping () {
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/cancelShopping";
+    var data = {
+        "bId": bId
+    };
+    $.post(post_url, data, function (data, status) {
+        // 加入书车成功，改变相应状态
+        $(".mButtonWrap button:eq(5)").hide();
+        $(".mButtonWrap button:eq(4)").show();
     });
 }
 

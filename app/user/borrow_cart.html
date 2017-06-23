@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/borrow_cart.css">
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="js/load_nav_bar.js"></script>
+    <script type="text/javascript" src="js/borrow_cart.js"></script>
 </head>
 <body>
 
@@ -14,34 +16,22 @@
         <div class="mHeaderHomeWrap">借阅助手</div>
 
         <div class="mContentWrap">
-            <div class="mTitleHeader">已选择 2 本，还可以选 0 本</div>
+            <div class="mTitleHeader"><!-- 已选择 2 本<span>还可以选 0 本</span> --></div>
 
             <div class="mBookIntroWrap">
-                <div class="mBookIntroItemWrap">
-                    <div class="mBookIntroItemPhoto">
-                        <img src="images/icorvoh.jpg">
-                    </div>
-                    <div class="mBookIntroCharacterWrap">
-                        <div class="mBookIntroItemBookName">这是一本书的书名</div>
-                        <div class="mBookIntroItemBookAuthor">作者：韩亦乐</div>
-                        <div class="mBookIntroItemBookCount">数量：1</div>
-                    </div>
-                    <div class="mDeleteButton">
-                        <button>移出书车</button>
-                    </div>
-                </div>
+                <!-- 这里将被 ajax 动态填充书车书籍信息 -->
             </div>
 
-            <div class="mTitleHeader">借阅二维码<span>(请联系管理员进行授权)</span></div>
+            <div class="mTitleHeader" style="display: none">借阅二维码<span>(请联系管理员进行授权)</span></div>
 
-            <div class="mBorrowQRCodeWrap">
+            <div class="mBorrowQRCodeWrap" style="display: none">
                 <div class="mBorrowQRCode">
                    <img src="images/qr.jpg">
                 </div>
             </div>
 
-            <div class="mButtonWrap">
-                <button onclick=";">清空书车</button>
+            <div class="mButtonWrap" style="display: none">
+                <button onclick="cancelAllShopping();">清空书车</button>
                 <button onclick=";">确定借阅</button>
             </div>
 
