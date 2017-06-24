@@ -45,15 +45,60 @@ function bindStackEvent() {
 }
 
 // 获得新书推荐信息并填充相应数据
-function getNewBooks () {
-    var get_url = "";
+function getNewBookRecommend () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getNewBookRecommend";
     $.get(get_url, function (data, status) {
         data = JSON.parse(data);
-        console.log(data);
+        var booksArr = data["books"];
+        for (var i = 0; i < booksArr.length; i++) {
+            $(".imgBox img:eq(" + i + ")").attr("bId", booksArr[i]["bId"]);
+            $(".imgBox img:eq(" + i + ")").attr("src", booksArr[i]["imgurl"]);
+            if (booksArr[i]["bName"].length >= 15) {
+                $(".mCarouselBookName:eq(" + i + ")").text(booksArr[i]["bName"].substring(0, 15) + "...");
+            } else {
+                $(".mCarouselBookName:eq(" + i + ")").text(booksArr[i]["bName"]);
+            }
+        }
+        // 绑定轮播图内容点击事件
+        bindCarouselEvent();
     });
 }
 
-// getNewBooks();
+// 自动轮播新书
+function turnCarousel (nextIndex) {
+    // 将下一个轮播内容展现出来
+    $(".imgBox:eq(" + nextIndex%3 + ")").show();
+    // 隐藏其它的轮播图内容
+    if (nextIndex%3 === 1) {
+        // 下一个是第二个
+        $(".imgBox:eq(" + 0 + ")").hide();
+        $(".imgBox:eq(" + 2 + ")").hide();
+    } else if (nextIndex%3 === 2) {
+        // 下一个是第三个
+        $(".imgBox:eq(" + 0 + ")").hide();
+        $(".imgBox:eq(" + 1 + ")").hide();
+    } else if (nextIndex%3 === 0) {
+        // 下一个是第一个
+        $(".imgBox:eq(" + 1 + ")").hide();
+        $(".imgBox:eq(" + 2 + ")").hide();
+    }
+}
 
+// 绑定轮播图内容点击事件
+function bindCarouselEvent () {
+    $(".imgBox img").each(function () {
+        $(this).click(function () {
+            var bId = $(this).attr("bId");
+            window.location.href = "book_detail.html?bId=" + bId;
+        });
+    });
+}
+
+var carouseIndex = 0;
+setInterval(function () {
+    turnCarousel(carouseIndex);
+    carouseIndex++;
+}, 2500);
+getNewBookRecommend();
 getAllStacks();
 
