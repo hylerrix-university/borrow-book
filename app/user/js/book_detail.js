@@ -29,8 +29,10 @@ function getBookDetail () {
         $(".mBookDetailIntro").text(bookDetail["summary"]);
         // 同类书籍
         var relatedBooks = data["relatedBooks"]["books"];
-        $(".mTitleHeader:eq(0) span").text("已加载 " + relatedBooks.length + " 本书籍");
-        for (var i = 0; i < relatedBooks.length; i++) {
+        var relatedLength = relatedBooks.length;
+        if (relatedLength > 3) relatedLength = 3;
+        $(".mTitleHeader:eq(0) span").text("已加载 " + relatedLength + " 本书籍");
+        for (var i = 0; i < relatedLength; i++) {
             var relatedBookDiv = "\
                 <div class=\"mBookRelativeItemWrap\">\
                     <a bId=\"" + relatedBooks[i]["bId"] + "\">\

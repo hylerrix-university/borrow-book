@@ -154,11 +154,33 @@ function getAllRecord () {
     });
 }
 
+function isRecommd () {
+    var isRecommdFlag;
+    $.ajaxSetup({ 
+        async : false 
+    });
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/getRecommendSwitch";
+    $.get(get_url, function (data, status) {
+        if (data[0]["recommend"] == "0") {
+            // 用户关闭了推荐功能
+            isRecommdFlag = 0;
+        } else {
+            isRecommdFlag = 1;
+        }
+    });
+    return isRecommdFlag;
+}
+
 // 获取推荐书籍，跟用户有关
 function getRecommderBooks () {
+    // 如果用户关闭了推荐功能
+    if (isRecommd()) {
+        $(".mTitleHeader:eq(3)").hide();
+        return;
+    }
     var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
     $.get(get_url, function (data, status) {
-        if (!data) {
+        if (!data["books"]) {
             // 不存在推荐书籍时
             $(".mTitleHeader:eq(3) span").text("暂无推荐，每日凌晨两点准时更新");
             return;
