@@ -12,7 +12,7 @@ function getAllRecord () {
         for (var i = data.length; i > 0; i--) {
             var templeteDiv = "\
                 <div class=\"mWechatRecordRightItemWrap\">\
-                    <a href=\"search_books.html\">\
+                    <a keyword=\"" + data[i - 1]["value"] + "\" way=\"" + data[i - 1]["way"] + "\" >\
                         <div class=\"mWechatRecordRightContent\">" + data[i - 1]["value"] + "</div>\
                     </a>\
                     <div class=\"mWechatRecordRightPhoto\">\
@@ -21,7 +21,18 @@ function getAllRecord () {
                 </div>";
             $(".mWechatRecordWrap").append(templeteDiv);
         }
+        bindRecordEvent();
     });
+}
+
+function bindRecordEvent () {
+    $(".mWechatRecordRightItemWrap a").each(function () {
+        $(this).click(function () {
+            var keyword = $(this).attr("keyword");
+            var way = $(this).attr("way");
+            window.location.href = "search_books.html?keyword=" + keyword + "&way=" + way;
+        });
+    })
 }
 
 function deleteAllRecord () {

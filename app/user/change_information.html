@@ -6,6 +6,8 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/first_register.css">
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/change_infomation.js"></script>
 </head>
 <body>
     <div class="userApp">
@@ -65,11 +67,17 @@
                     </div>
 
                     <div class="mTitleHeader">
-		            	<button>确认修改</button>
+		            	<button onclick="updateInfo()">确认修改</button>
 		            </div>
 	            </div>
 
 	        </div>
+        </div>
+
+        <div id="js_hud" class="toast_tips" style="display: none;">
+            <div id="js_hud_icon"></div>
+            <p id="js_hud_text" class="tips_title">⊙∀⊙</p>
+            <span class="vm_box"></span>
         </div>
     </div>
 	

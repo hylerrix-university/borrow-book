@@ -1,3 +1,24 @@
+// 页面加载时根据 url 参数搜索一次
+function getSearchBookByURL () {
+    var urlArgs = window.location.search;
+    if (!urlArgs) return;
+    var argStr = urlArgs.substring(1); // 去掉第一个问号
+    var argArr = argStr.split("&");
+    var keyword;
+    var way;
+    argArr.forEach(function (element) {
+        // 获取 keyword
+        if (element.indexOf("keyword") !== -1) keyword = element.split("=")[1];
+        // 获取 way
+        if (element.indexOf("way") !== -1) way = element.split("=")[1];
+    });
+    $("input:first").val(decodeURI(keyword));
+    // 将该记录设置成“书名搜索”方式
+    $("select:first option:eq(" + parseInt(way) + ")").attr("selected", "selected");
+    // 进行搜索
+    getSearchBook();
+}
+
 function getSearchBook () {
     // 清除曾经搜的书渲染出的多余 DOM
     $("#searchBody .mSearchResultWrap").children().remove();
@@ -5,25 +26,28 @@ function getSearchBook () {
     $(".mTitleHeader:last").hide();
     // 进行搜索
     var keyword = $("input:first").val();
-    var searchWay = $("select:first").find("option:selected").val();
+    var way = $("select:first").find("option:selected").val();
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBook";
     var data = {
         "rows": 10,
         "keyword": keyword,
-        "way": searchWay
+        "way": way
     };
+    console.log(way);
     $.post(post_url, data, function (data, status) {
         // 搜索成功，再次读取搜索历史
         getAllRecord();
         data = JSON.parse(data);
-        if (data["count"] === 0) {
+        if (data["count"] === 0 || data == "false") {
             // 搜索结果不存在
             $(".mTitleHeader:first").show();
             $("#searchBody").hide();
             return;
         }
         // 记录本次搜索信息
-        recordSearch(keyword);
+        var way = $("select option:selected").attr("value");
+        recordSearch(keyword, way);
+        console.log(data);
         var booksArr = data["books"];
 
         for (var i = 0; i < booksArr.length; i++) {
@@ -108,10 +132,11 @@ function bindBookClickEvent () {
     });
 }
 
-function recordSearch (keyword) {
+function recordSearch (keyword, way) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/System/insertRecord";
     var data = {
-        "keyword": keyword
+        "keyword": keyword,
+        "way": way
     };
     $.post(post_url, data, function (data, status) {
         // 本次搜索信息保存成功
@@ -139,7 +164,7 @@ function getAllRecord () {
         for (var i = data.length - 1; i >= data.length - dataLength; i--) {
             var templeteDiv = "\
                 <div class=\"mWechatRecordRightItemWrap\">\
-                    <a f_id=\"" + data[i]["f_id"] + "\">\
+                    <a f_id=\"" + data[i]["f_id"] + "\" way=\"" + data[i]["way"] + "\">\
                         <div class=\"mWechatRecordRightContent\">" + data[i]["value"] + "</div>\
                     </a>\
                     <div class=\"mWechatRecordRightPhoto\">\
@@ -174,18 +199,18 @@ function isRecommd () {
 // 获取推荐书籍，跟用户有关
 function getRecommderBooks () {
     // 如果用户关闭了推荐功能
-    if (isRecommd()) {
+    if (!isRecommd()) {
         $(".mTitleHeader:eq(3)").hide();
         return;
     }
     var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getRecommderBooks";
     $.get(get_url, function (data, status) {
-        if (!data["books"]) {
+        data = JSON.parse(data);
+        if (data["count"] == 0 || !data || data["books"] == null) {
             // 不存在推荐书籍时
             $(".mTitleHeader:eq(3) span").text("暂无推荐，每日凌晨两点准时更新");
             return;
         }
-        data = JSON.parse(data);
         if (data["books"] === null) return;
         $(".mSameCategoryWrap:eq(1)")
         // 开始填充数据
@@ -217,16 +242,18 @@ function getRecommderBooks () {
 function bindRecordEvent () {
     $(".mWechatRecordRightItemWrap a").each(function () {
         $(this).click(function () {
-            var a = $(this).find("div").get(0);
-            $("input:first").val(a.innerHTML);
+            var recordContent = $(this).find("div").get(0);
+            $("input:first").val(recordContent.innerHTML);
             // 将该记录设置成“书名搜索”方式
-            $("select:first option:first").attr("selected", "selected");
+            $("select:first option:eq(" + parseInt($(this).attr("way")) + ")").attr("selected", "selected");
             // 进行搜索
             getSearchBook();
         });
     });
 }
 
+// 页面加载时根据 url 参数搜索一次
+getSearchBookByURL();
 // 读取并填充搜索历史
 getAllRecord();
 // 获取推荐书籍
