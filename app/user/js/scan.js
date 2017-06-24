@@ -115,15 +115,13 @@ function scanBook (res) {
 }
 
 function addShopping (res) {
-    var result = res.resultStr;
-    var keyword = result // biId
+    var coding = res.resultStr;
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addShopping";
     var data = {
-        "biId": biId
+        "coding": coding
     };
     $.post(post_url, data, function (data, status) {
         // 加入书车成功，改变相应状态
-        $(".mButtonWrap button:eq(6)").hide();
-        $(".mButtonWrap button:eq(7)").show();
+        alert(data);
     });
 }

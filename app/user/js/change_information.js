@@ -2,11 +2,13 @@
 function canBorrow () {
     var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/canBorrow";
     $.get(get_url, function (data, status) {
-        alert(data["res"]);
         if (!data["res"]) {
             // 不能再次修改身份证
             // 给隐藏的身份证框随便设置一个身份证号
             $("input:eq(3)").val("111111111111111111");
+            $(".mTitleHeader:last").after(
+                "<div class=\"mTitleHeader\">您的身份证已成功验证<span>无法再次修改</span></div>"
+            );
         } else {
             // 如果可以再次修改身份证
             $(".mRegisterItemWrap:eq(3)").show();
