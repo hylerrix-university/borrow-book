@@ -6,7 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/search_books.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/jsSHA/src/sha.js"></script>
     <script type="text/javascript" src="js/load_nav_bar.js"></script>
     <script type="text/javascript" src="js/search_books.js"></script>
 </head>
@@ -32,7 +34,7 @@
                             <button onclick="getSearchBook()">搜索</a>
                     </div>
                     <div class="mSearchIcon">
-                            <button onclick=";">扫码</a>
+                            <button onclick="scanBook();">扫码</a>
                     </div>
                 </div>
             </div>
@@ -51,8 +53,8 @@
                 </div>
             </div>
 
-            <div class="mTitleHeader">推荐书籍<span>根据您最近的搜索偏向推荐</span></div>
-            <div class="mSameCategoryWrap">
+            <div class="mTitleHeader">推荐书籍<span></span></div>
+            <div class="mSameCategoryWrap" style="display: none">
                 <!-- 这里将被 ajax 填充推荐书籍信息 -->
             </div>
 
@@ -105,4 +107,3 @@
     </div>
 </body>
 </html>
-
