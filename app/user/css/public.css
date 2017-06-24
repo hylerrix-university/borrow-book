@@ -444,7 +444,7 @@
 .mButtonWrap button {
     height: auto;
     width: auto;
-    font-size: 1rem;
+    font-size: .7rem;
     background-color: #4CAF50;
     border: #bbb solid medium;
     /* 很关键：将默认的select选择框样式清除 */

@@ -75,13 +75,13 @@ function jsSDK (afterScan) {
         });
 
         // 通过ready接口处理成功验证
-        wx.ready(function(){
+        wx.ready(function() {
             // config信息验证后会执行 ready 方法，所有接口调用都必须在 config 接口获得结果之后，config 是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在 ready 函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在 ready 函数中。
             console.log("wx.ready");
         });
 
         // 通过error接口处理失败验证
-        wx.error(function(res){
+        wx.error(function(res) {
             // config信息验证失败会执行 error 函数，如签名过期导致验证失败，具体错误信息可以打开 config 的 debug 模式查看，也可以在返回的 res 参数中查看，对于 SPA 可以在这里更新签名。
             console.log("wx.error");
         });
@@ -121,7 +121,26 @@ function addShopping (res) {
         "coding": coding
     };
     $.post(post_url, data, function (data, status) {
-        // 加入书车成功，改变相应状态
-        alert(data);
+        // 扫入书车成功，改变相应状态
+        $(".mButtonWrap button:eq(6)").hide();
+        $(".mButtonWrap button:eq(7)").show();
+        // 给“移出书车”加入点击事件
+        $(".mButtonWrap button:eq(7)").unbind();
+        $(".mButtonWrap button:eq(7)").click(function () {
+            cancelShoppingByCoding(coding);
+        });
+    });
+}
+
+// 移出书车
+function cancelShoppingByCoding (coding) {
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/cancelShopping";
+    var data = {
+        "coding": coding
+    };
+    $.post(post_url, data, function (data, status) {
+        // 移出书车成功，改变相应状态
+        $(".mButtonWrap button:eq(7)").hide();
+        $(".mButtonWrap button:eq(6)").show();
     });
 }

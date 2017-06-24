@@ -69,7 +69,9 @@ function judgeBook () {
     }
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/judgeBook";
     $.post(post_url, data, function (data, status) {
-        console.log(data);
+        alert("judge");
+        alert(data);
+        alert(JSON.stringify(data));
     });
 }
 
@@ -104,8 +106,19 @@ function cancelScheduleBook () {
 }
 
 // 预约书籍
-
-// 取消预约
+function orderBook () {
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/orderBook";
+    var data = {
+        "bId": bId
+    }
+    $.post(post_url, data, function () {
+        // 预约书籍成功，改变相应状态
+        $(".mButtonWrap button:eq(2)").hide();
+        $(".mButtonWrap button:eq(3)").show();
+    });
+}
 
 // 添加收藏
 function addCollect () {
@@ -137,21 +150,6 @@ function cancelCollect () {
     });
 }
 
-// 加入书车
-function addShopping () {
-    var urlArgs = window.location.search;
-    var bId = urlArgs.split("=")[1];
-    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addShopping";
-    var data = {
-        "bId": bId
-    };
-    $.post(post_url, data, function (data, status) {
-        // 加入书车成功，改变相应状态
-        $(".mButtonWrap button:eq(6)").hide();
-        $(".mButtonWrap button:eq(7)").show();
-    });
-}
-
 // 移出书车
 function cancelShopping () {
     var urlArgs = window.location.search;
@@ -161,7 +159,7 @@ function cancelShopping () {
         "bId": bId
     };
     $.post(post_url, data, function (data, status) {
-        // 加入书车成功，改变相应状态
+        // 移出书车成功，改变相应状态
         $(".mButtonWrap button:eq(7)").hide();
         $(".mButtonWrap button:eq(6)").show();
     });
