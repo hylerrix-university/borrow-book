@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/first_register.css">
     <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="js/change_infomation.js"></script>
+    <script src="js/change_information.js"></script>
 </head>
 <body>
     <div class="userApp">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
 
-                    <div class="mRegisterItemWrap">
+                    <div class="mRegisterItemWrap" style="display: none">
                         <div class="mRegisterPrivacyTitle">身份证号</div>
                         <div class="mRegisterPrivacyInputBox">
                         	<input type="text" name="idcard" placeholder="请输入身份证号(18 位)">
@@ -48,7 +48,7 @@
                     </div>
 	            </div>
 
-	            <div class="mRegisterPrivacyWrap">
+	            <!-- <div class="mRegisterPrivacyWrap">
                     <div class="mRegisterItemWrap">
                         <div class="mRegisterPrivacyTitle">绑定手机</div>
                         <div class="mRegisterPrivacyInputBox">
@@ -65,11 +65,11 @@
                         	<input type="text" name="userAuthCode" placeholder="请输入您获得到的验证码(6 位数字)">
                         </div>
                     </div>
+	            </div> -->
 
-                    <div class="mTitleHeader">
-		            	<button onclick="updateInfo()">确认修改</button>
-		            </div>
-	            </div>
+                <div class="mTitleHeader">
+                    <button onclick="updateInfo()">确认修改</button>
+                </div>
 
 	        </div>
         </div>

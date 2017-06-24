@@ -1,33 +1,61 @@
+// 是否能再次修改身份证，并据此修改相应
+function canBorrow () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/canBorrow";
+    $.get(get_url, function (data, status) {
+        alert(data["res"]);
+        if (!data["res"]) {
+            // 不能再次修改身份证
+            // 给隐藏的身份证框随便设置一个身份证号
+            $("input:eq(3)").val("111111111111111111");
+        } else {
+            // 如果可以再次修改身份证
+            $(".mRegisterItemWrap:eq(3)").show();
+        }
+    });
+}
+
+canBorrow();
+
 function updateInfo () {
-    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/update";
-    var data = {
-        "tel": "",
-        "password": password,
-        // 新密码
-        // 旧密码
-        // 重复密码
-        "identity": identity
-    }
+    var password = $("input:eq(0)").val();
+    var newPassword = $("input:eq(1)").val();
+    var rePassword = $("input:eq(2)").val();
+    var identity = $("input:eq(3)").val();
     var flag = 1; // 1 代表判断通过
 
-    if (!checkAuthCode(authCode)) flag = 0, tips = "不符合正确的验证码格式(6 位数字)";
-    if (!checkPhone(phone)) flag = 0, tips = "请输入正确的手机号(只支持 11 位数字)";
-    if (!checkIDCard(IDCard)) flag = 0, tips = "不符合正确的身份证号格式";
-    if (!compareTwoPassWord(password, rePassword)) flag = 0, tips = "密码与重复密码不一致";
-    if (!checkRePassword(rePassword)) flag = 0, tips = "不符合正确的重复密码格式(6~13位)";
-    if (!checkPassword(password)) flag = 0, tips = "不符合正确的密码格式(6~13位)";
-    if (flag = 0) {
+    if (!checkIDCard(identity)) flag = 0, tips = "不符合正确的身份证号格式";
+    if (!compareTwoPassWord(newPassword, rePassword)) flag = 0, tips = "密码与重复密码不一致";
+    if (!checkPassword(rePassword)) flag = 0, tips = "不符合正确的重复密码格式(6~13位)";
+    if (!checkPassword(newPassword)) flag = 0, tips = "不符合正确的新密码格式(6~13位)";
+    if (!checkPassword(password)) flag = 0, tips = "不符合正确的旧密码格式(6~13位)";
+
+    if (!flag) {
         showTips(tips);
         return;
     }
 
-    // $.post(post_url, data, function (data, status) {
-    //     // 更新成功
-    //     showTips("更新成功！");
-    //     window.setTimeout(function () {
-    //        window.onload.href = "user_information.html";
-    //     }, 2000);
-    // });
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/update";
+
+    var post_data = {
+        "password": password,
+        "newPassword": newPassword,
+        "identity": identity,
+    }
+    console.log(post_data);
+
+    $.post(post_url, post_data, function (data, status) {
+        console.log(data);
+        if (data["res"] == -1) {
+            tips = "密码错误，请重新填写";
+            showTips(tips);
+            return;
+        }
+        // 更新成功
+        showTips("更新成功！");
+        window.setTimeout(function () {
+           window.location.href = "user_information.html";
+        }, 2000);
+    });
 }
 
 function getAuthCode () {
@@ -73,13 +101,6 @@ function checkPassword (password) {
     return true;
 }
 
-function checkRePassword (rePassword) {
-    if (rePassword === "") return false;
-    if (rePassword.length < 6) return false;
-    if (rePassword.length > 13) return false;
-    return true;
-}
-
 function compareTwoPassWord (password, rePassword) {
     if (password !== rePassword) return false;
     return true;
@@ -107,29 +128,6 @@ function checkIDCard (IDCard) {
         return false;
     }
     return true;
-}
-
-function checkPhone (phone) {
-    if (phone === "") return false;
-    if (phone.length !== 11) return false;
-    if (phone.match(/[^\d]/g)) return false;
-    return true;
-}
-
-function checkAuthCode (authCode) {
-    if (authCode === "") return false;
-    if (authCode.length !== 6) return false;
-    if (authCode.match(/[^\d]/g)) return false;
-    return true;
-}
-function showTips (tips) {
-    // 获取提示框 js_hud 和其文本信息框 tips_title
-    $(".tips_title:first").text(tips);
-    $("#js_hud").css("display", "block");
-    // 1.5 s 后跳转页面(缺少一个存 cookie 过程)
-    window.setTimeout(function () {
-       $("#js_hud").css("display", "none");
-    }, 2000);
 }
 
 function showTips (tips) {
