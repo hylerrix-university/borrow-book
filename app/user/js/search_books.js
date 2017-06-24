@@ -138,7 +138,7 @@ function getAllRecord () {
         for (var i = data.length - 1; i >= data.length - dataLength; i--) {
             var templeteDiv = "\
                 <div class=\"mWechatRecordRightItemWrap\">\
-                    <a href=\"search_books.html\">\
+                    <a f_id=\"" + data[i]["f_id"] + "\">\
                         <div class=\"mWechatRecordRightContent\">" + data[i]["value"] + "</div>\
                     </a>\
                     <div class=\"mWechatRecordRightPhoto\">\
@@ -148,6 +148,8 @@ function getAllRecord () {
             ";
             $(".mWechatRecordWrap:first").append(templeteDiv);
         }
+        // 绑定每条搜索记录的点击事件
+        bindRecordEvent();
     });
 }
 
@@ -181,6 +183,23 @@ function getRecommderBooks () {
     });
 }
 
+// 绑定每条搜索记录的点击事件
+function bindRecordEvent () {
+    $(".mWechatRecordRightContent").each(function () {
+        $(this).click(function () {
+            console.log($(this).attr("f_id"));
+            // $("input:first").attr("value", $(this).attr("f_id"));
+            // // 将该记录设置成“书名搜索”方式
+            // $("select:first option:first").attr("selected", "selected");
+            // // 进行搜索
+            // getSearchBook();
+        });
+    });
+}
+
+// 加载搜索书籍
+getSearchBook();
 // 读取并填充搜索历史
 getAllRecord();
+// 获取推荐书籍
 getRecommderBooks();

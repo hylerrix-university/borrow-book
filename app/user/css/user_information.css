@@ -22,7 +22,7 @@
 }
 
 .mUserInfoWrap .mUserInfoItemWrap .mUserInfoItemRightContent {
-	font-size: 1rem;
+	font-size: .8rem;
 	display: inline-block;
 	flex: 1;
 	text-align: right;

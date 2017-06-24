@@ -21,9 +21,10 @@ function getBookDetail () {
         var catalogArr = catalog.split("\n");
         // 清除目录中的“正在加载”
         $(".mBookDetailCatalog:eq(0)").remove();
+        // 填充目录
         for (var i = 0; i < catalogArr.length; i++) {
-            var catalogDiv = "<div class=\"mBookDetailCatalog\">" + catalogArr[i] + "</div>";
-            $(".mBookDetailHeaderTitle:eq(1)").before(catalogDiv);
+            var catalogDiv = "<div class=\"mBookDetailCatalog\" style=\"display: none\">" + catalogArr[i] + "</div>";
+            $(".mBookDetailPartWrap:eq(1)").append(catalogDiv);
         }
         $(".mBookDetailIntro").text(bookDetail["summary"]);
         // 同类书籍
@@ -59,10 +60,15 @@ function bindSameCateEvent() {
 
 // 判断书籍是否已经被用户预订、收藏或加入书车并绑定相应事件
 function judgeBook () {
-    // var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addCollect";
-    // $.post(post_url, function (data, status) {
-        
-    // });
+    var urlArgs = window.location.search;
+    var bId = urlArgs.split("=")[1];
+    var data = {
+        "bId": bId
+    }
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/judgeBook";
+    $.post(post_url, data, function (data, status) {
+        console.log(data);
+    });
 }
 
 // 预订书籍
@@ -152,6 +158,12 @@ function cancelShopping () {
         // 加入书车成功，改变相应状态
         $(".mButtonWrap button:eq(5)").hide();
         $(".mButtonWrap button:eq(4)").show();
+    });
+}
+
+function catalogShow () {
+    $(".mBookDetailCatalog").each(function () {
+        $(this).toggle(1000);
     });
 }
 
