@@ -101,6 +101,10 @@ function cancelScheduleBook () {
     });
 }
 
+// 预约书籍
+
+// 取消预约
+
 // 添加收藏
 function addCollect () {
     var urlArgs = window.location.search;
@@ -111,8 +115,8 @@ function addCollect () {
     };
     $.post(post_url, data, function (data, status) {
         // 加入收藏成功，改变相应状态
-        $(".mButtonWrap button:eq(2)").hide();
-        $(".mButtonWrap button:eq(3)").show();
+        $(".mButtonWrap button:eq(4)").hide();
+        $(".mButtonWrap button:eq(5)").show();
     });
 }
 
@@ -126,8 +130,8 @@ function cancelCollect () {
     };
     $.post(post_url, data, function (data, status) {
         // 取消收藏成功，改变相应状态
-        $(".mButtonWrap button:eq(3)").hide();
-        $(".mButtonWrap button:eq(2)").show();
+        $(".mButtonWrap button:eq(5)").hide();
+        $(".mButtonWrap button:eq(4)").show();
     });
 }
 
@@ -141,8 +145,8 @@ function addShopping () {
     };
     $.post(post_url, data, function (data, status) {
         // 加入书车成功，改变相应状态
-        $(".mButtonWrap button:eq(4)").hide();
-        $(".mButtonWrap button:eq(5)").show();
+        $(".mButtonWrap button:eq(6)").hide();
+        $(".mButtonWrap button:eq(7)").show();
     });
 }
 
@@ -156,8 +160,8 @@ function cancelShopping () {
     };
     $.post(post_url, data, function (data, status) {
         // 加入书车成功，改变相应状态
-        $(".mButtonWrap button:eq(5)").hide();
-        $(".mButtonWrap button:eq(4)").show();
+        $(".mButtonWrap button:eq(7)").hide();
+        $(".mButtonWrap button:eq(6)").show();
     });
 }
 

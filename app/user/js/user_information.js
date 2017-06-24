@@ -4,7 +4,6 @@ function getUserInfo () {
     $.get(get_url, function (data, status) {
         // 一次循环获取 JSON 里的第一个元素内容(不知道名字的情况下)
         for (var obj in data) {
-            alert(data[obj]);
             $(".mUserInfoItemRightContent:first img").attr("src", data[obj]["headimgurl"]);
             $(".mUserInfoItemRightContent:eq(1)").text(data[obj]["nickname"]);
         }

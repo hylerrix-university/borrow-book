@@ -7,10 +7,12 @@
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/search_books.css">
     <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../../bower_components/jsSHA/src/sha.js"></script>
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/js-sha1/build/sha1.min.js"></script>
+    <!-- <script src="../../bower_components/jsSHA/src/sha.js"></script> -->
     <script type="text/javascript" src="js/load_nav_bar.js"></script>
     <script type="text/javascript" src="js/search_books.js"></script>
+    <script type="text/javascript" src="js/scan.js"></script>
 </head>
 <body>
 
@@ -34,7 +36,7 @@
                             <button onclick="getSearchBook()">搜索</a>
                     </div>
                     <div class="mSearchIcon">
-                            <button onclick="scanBook();">扫码</a>
+                            <button onclick="jssdk(scanBook)">扫码</a>
                     </div>
                 </div>
             </div>
