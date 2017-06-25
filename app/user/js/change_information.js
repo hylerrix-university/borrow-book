@@ -4,8 +4,8 @@ function canBorrow () {
     $.get(get_url, function (data, status) {
         if (!data["res"]) {
             // 不能再次修改身份证
-            // 给隐藏的身份证框随便设置一个身份证号
-            $("input:eq(3)").val("111111111111111111");
+            // 给隐藏的身份证框随便设置一个合格的身份证号，根据“陕西省西安市长安区”顺手生成了一个
+            $("input:eq(3)").val("610121199710091210");
             $(".mTitleHeader:last").after(
                 "<div class=\"mTitleHeader\">您的身份证已成功验证<span>无法再次修改</span></div>"
             );
@@ -48,15 +48,15 @@ function updateInfo () {
     $.post(post_url, post_data, function (data, status) {
         console.log(data);
         if (data["res"] == -1) {
-            tips = "密码错误，请重新填写";
+            tips = "旧密码错误，请重新填写";
             showTips(tips);
             return;
         }
         // 更新成功
-        showTips("更新成功！");
+        showTips("更新成功！请谨记您的密码，3s 后返回上一页");
         window.setTimeout(function () {
            window.location.href = "user_information.html";
-        }, 2000);
+        }, 3000);
     });
 }
 

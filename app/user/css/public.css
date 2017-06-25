@@ -168,13 +168,13 @@
 /* 书籍列表简介 public */
 
 .mBookIntroWrap {
-    font-size: .7rem;
+    font-size: .6rem;
     margin: .5rem 0 0 0;
     padding: 0;
     width: 100%;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap {
+.mBookIntroItemWrap {
     margin: .5rem 0 0 0;
     padding: 0;
     border: #bbb solid medium;
@@ -182,37 +182,37 @@
     display: flex;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroItemPhoto {
+.mBookIntroItemWrap .mBookIntroItemPhoto {
     margin: .5rem 0 0 .8rem;
     padding: 0;
     display: inline-block;
     flex: 1;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroItemPhoto img {
+.mBookIntroItemWrap .mBookIntroItemPhoto img {
     margin: 0;
     height: 4rem;
     width: 3rem;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap {
+.mBookIntroItemWrap .mBookIntroCharacterWrap {
     margin: .5rem 0 0 .2rem;
     padding: .5rem 0 .5rem 0;
     display: inline-block;
     flex: 6;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookName {
+.mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookName {
     margin: 0 0 1.2rem 0;
     display: block;
     text-align: left;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookAuthor {
+.mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookAuthor {
     display: inline-block;
 }
 
-.mBookIntroWrap .mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookCount {
+.mBookIntroItemWrap .mBookIntroCharacterWrap .mBookIntroItemBookCount {
     margin: 0 0.4rem 0 0;
     display: inline;
     float: right;

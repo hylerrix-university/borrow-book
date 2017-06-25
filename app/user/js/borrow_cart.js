@@ -13,6 +13,7 @@ function selectShopping () {
         for (var i = 0; i < data.length; i++) {
             var bookInfo = JSON.parse(data[i][0]);
             books = bookInfo["books"][0];
+            // 限制作者名字展示出的长度
             var templeteDiv = "\
                 <div class=\"mBookIntroItemWrap\" biId=\"" + data[i][1] + "\">\
                     <div class=\"mBookIntroItemPhoto\">\
@@ -20,10 +21,10 @@ function selectShopping () {
                     </div>\
                     <div class=\"mBookIntroCharacterWrap\">\
                         <div class=\"mBookIntroItemBookName\">" + books["bName"] + "</div>\
-                        <div class=\"mBookIntroItemBookAuthor\">作者：" + books["author"]; + "</div>\
+                        <div class=\"mBookIntroItemBookAuthor\">作者：" + books["author"] + "</div>\
                     </div>\
                     <div class=\"mDeleteButton\">\
-                        <button>移出书车</button>\
+                        <button onclick=\"cancelShopping(data[i][1])\">移出书车</button>\
                     </div>\
                 </div>\
             ";
@@ -41,8 +42,8 @@ function selectShopping () {
 function bindCancelShoppingEvent () {
     $(".mBookIntroItemWrap").each(function () {
     	$(this).click(function () {
-    		var bId = $(this).attr("bId");
-            cancelShopping(bId);
+    		var biId = $(this).attr("biId");
+            cancelShopping(biId);
     	});
     });
 }
@@ -50,10 +51,10 @@ function bindCancelShoppingEvent () {
 // 把某本书移出书车
 function cancelShopping (biId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/cancelShopping";
-    var data = {
+    var post_data = {
         "biId": biId
     };
-    $.post(post_url, data, function (data, status) {
+    $.post(post_url, post_data, function (data, status) {
         // 移出书车成功，重新加载页面
         window.location.href = "borrow_cart.html";
     });
