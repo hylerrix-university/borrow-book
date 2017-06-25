@@ -6,6 +6,8 @@
 
 > * [“无微不至”的借读伴侣作品提交须知](http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1562)
 
+> * ["第六届大赛作品提交方式说明"](http://www.cnsoftbei.com/bencandy.php?fid=42&id=1564)
+
 ## 开发简介
 
 * Bower 做 JavaScript 的包依赖管理
@@ -55,9 +57,9 @@
 ```
 .
 ├── README.md # 项目说明文档
-├── app # 前端项目正式源码
-│   ├── admin # 管理员界面
-│   └── user # 用户界面
+├── app # 移动端前端项目正式源码
+│   ├── admin # 管理员移动端界面
+│   └── user # 用户移动端界面
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
@@ -67,6 +69,8 @@
 ├── node_modules # Node 安装模块(.gi)
 │   └── 相关配置详见 [package.json](./package.json)
 ├── package.json # Node 配置
+├── pc # 电脑端前端项目正式源代码
+│   └── admin # 管理员电脑端界面
 ├── prototype # 原型图 HTML 版
 ├── unit-test # 前端单元测试
 ├── .yo-rc.json # Yo 隐藏文件
@@ -75,35 +79,37 @@
 
 ## 前端页面及其命名约定
 
-### user 用户页面
+### user 用户移动端页面
 
 ```
-app/user/first_register.html # 首次登陆
-app/user/books_navigation.html # 图书导航
-app/user/search_books.html # 书库搜书
-app/user/borrow_cart.html # 借阅书车
-app/user/user_center.html # 个人中心
 app/user/book_detail.html # 书籍详情
-app/user/categories_detail.html # 类别详情
-app/user/user_information.html # 个人信息
-app/user/user_collection.html # 我的收藏
-app/user/user_reserve.html # 我的预订
-app/user/user_borrow.html # 借阅历史
-app/user/user_search.html # 搜索记录
-app/user/change_information.html # 修改信息
+app/user/books_navigation.html # 图书导航
+app/user/borrow_cart.html # 借阅书车
 app/user/call_us.html # 联系我们
+app/user/categories_detail.html # 类别详情
+app/user/change_information.html # 修改信息
+app/user/first_register.html # 首次登陆
+app/user/help_center.html
+app/user/search_books.html # 书库搜书
+app/user/user_borrow.html # 借阅历史
+app/user/user_center.html # 个人中心
+app/user/user_collection.html # 我的收藏
+app/user/user_information.html # 个人信息
+app/user/user_reserve.html # 我的预订
+app/user/user_search.html # 搜索记录
 ```
 
-### admin 管理员页面
+### admin 管理员移动端页面
 
 ```
 app/admin/admin_login # 登录界面
-app/admin/input_books # 录入书籍
-app/admin/alter_right # 授权验收
 app/admin/admin_center.html # 个人中心
-app/admin/admin_awards.html # 我的授权
-app/admin/admin_receipt.html # 我的验收
 app/admin/call_us.html # 联系我们
+```
+
+### admin 管理员电脑端页面
+```
+正在开发...
 ```
 
 ## 使用指南
