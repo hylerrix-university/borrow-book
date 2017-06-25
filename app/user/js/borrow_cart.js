@@ -5,10 +5,14 @@ function selectShopping () {
     $.get(get_url, function (data, status) {
         // 如果没有书籍信息
         if (data.length === 0) {
-            $(".mTitleHeader:first").html("您的书车暂时为空<span>还可以选借至多 2 本书籍</span>");
+            $(".mTitleHeader:eq(0)").html("您的书车暂时为空<span>还可以选借至多 2 本书籍</span>");
             return;
         }
-        $(".mTitleHeader:first").html("书车已有 " + data.length + " 本<span>还可以选借至多 " + (2-data.length) + " 本书籍</span>");
+        $(".mTitleHeader:eq(0)").html(
+            "书车已有 " + data.length + " 本" + 
+            "<span>还可以选借至多 " + (2-data.length) + " 本书籍</span>" + 
+            "<span>请在俩小时内联系管理员进行借阅</span>"
+        );
         $(".mButtonWrap:first").show();
         for (var i = 0; i < data.length; i++) {
             var bookInfo = JSON.parse(data[i][0]);
@@ -30,9 +34,6 @@ function selectShopping () {
             ";
             $(".mBookIntroWrap:first").append(templeteDiv);
         }
-        // 展示二维码相关信息
-        $(".mTitleHeader:eq(1)").show();
-        $(".mBorrowQRCodeWrap:first").show();
         // 给每个书籍旁的附属按钮绑定“移出书车”事件
         bindCancelShoppingEvent();
     });
@@ -65,6 +66,33 @@ function cancelAllShopping () {
     $(".mBookIntroItemWrap").each(function () {
     	var biId = $(this).attr("biId");
         cancelShopping(biId);
+    });
+}
+
+// 确定借阅后，生成二维码
+function lendBook () {
+    // 展示二维码相关信息
+    $(".mTitleHeader:eq(2)").show();
+    $(".mBorrowQRCodeWrap:first").show();
+    var biIdArr = [];
+    $(".mBookIntroItemWrap").each(function () {
+        biIdArr.push($(this).attr("biId"));
+    });
+    // 请求数据
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/lendBook";
+    var post_data = {};
+    for (var i = 0; i < biIdArr.length; i++) post_data["biId" + (i+1)] = biIdArr[i];
+    $.post(post_url, post_data, function (data ,status) {      
+        var imgBase64 = jrQrcode.getQrBase64(data, {
+          padding       : 10,   // 二维码四边空白（默认为10px）
+          width         : 256,  // 二维码图片宽度（默认为256px）
+          height        : 256,  // 二维码图片高度（默认为256px）
+          correctLevel  : QRErrorCorrectLevel.H,    // 二维码容错level（默认为高）
+          reverse       : false,        // 反色二维码，二维码颜色为上层容器的背景颜色
+          background    : "#ffffff",    // 二维码背景颜色（默认白色）
+          foreground    : "#000000"     // 二维码颜色（默认黑色）
+        });
+        $(".mBorrowQRCode img").attr("src", imgBase64);
     });
 }
 
