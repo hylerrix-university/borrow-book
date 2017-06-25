@@ -4,7 +4,6 @@
     padding: .5rem .5rem .5rem .5rem;
     border: #bbb solid medium;
     background-color: #fff;
-    text-indent: 2rem;
     color: #4CAF50;
 }
 
@@ -14,7 +13,7 @@
 }
 
 .mScanResultWrap .mScanResultContent {
-    ;
+    text-indent: 2rem;
 }
 
 /* 头部 */
@@ -173,6 +172,7 @@
 }
 
 .mUserInfoWrap .mUserName {
+    font-size: .6rem;
     margin: 0 0 0 3.5rem;
     padding: 0;
 }
@@ -181,7 +181,7 @@
     margin: 0 0 0 3.5rem;
     padding: 0;
     font-size: .5rem;
-    color: #dbdbdb;
+    color: #4CAF50;
 }
 
 /* 书籍列表简介 public */
@@ -478,6 +478,6 @@
 /* 带有返回按钮的头部 */
 
 .mBr {
-    margin: .5rem 0 0 0;
+    margin: .5rem 0 3rem 0;
     height: 1.2rem;
 }

@@ -11,20 +11,7 @@
  */
 
 html {
-    /*font-size: 64px; */ /* 最终上线时候使用 */
-    font-size: 20px;
-}
-
-@media screen and (min-width: 569px) {
-    html {
-        font-size: 35px !important;
-    }
-}
-
-@media screen and (min-width: 428px) and (max-width: 569px) {
-    html {
-        font-size: 26.75px!important;
-    }
+    font-size: 71px!important;
 }
 
 blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr, html, input, legend, li, ol, p, pre, td, textarea, th, ul {
