@@ -166,7 +166,7 @@ function getAllRecord () {
                         <div class=\"mWechatRecordRightContent\">" + data[i]["value"] + "</div>\
                     </a>\
                     <div class=\"mWechatRecordRightPhoto\">\
-                        <img src=\"images/icorvoh.jpg\">\
+                        <img src=\"images/anonymity.jpg\">\
                     </div>\
                 </div>\
             ";
@@ -174,6 +174,8 @@ function getAllRecord () {
         }
         // 绑定每条搜索记录的点击事件
         bindRecordEvent();
+        // 设置搜索记录的用户头像
+        getUserInfo();
     });
 }
 
@@ -247,6 +249,20 @@ function bindRecordEvent () {
             // 进行搜索
             getSearchBook();
         });
+    });
+}
+
+// 获取头像和姓名
+function getUserInfo () {
+    // 获取头像和姓名
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/getInfo";
+    $.get(get_url, function (data, status) {
+        // 一次循环获取 JSON 里的第一个元素内容(不知道名字的情况下)
+        for (var obj in data) {
+            $(".mWechatRecordRightPhoto img").each(function () {
+                $(this).attr("src", data[obj]["headimgurl"]);
+            });
+        }
     });
 }
 

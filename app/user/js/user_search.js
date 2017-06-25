@@ -16,12 +16,15 @@ function getAllRecord () {
                         <div class=\"mWechatRecordRightContent\">" + data[i - 1]["value"] + "</div>\
                     </a>\
                     <div class=\"mWechatRecordRightPhoto\">\
-                        <img src=\"images/icorvoh.jpg\">\
+                        <img src=\"images/anonymity.jpg\">\
                     </div>\
                 </div>";
             $(".mWechatRecordWrap").append(templeteDiv);
         }
+        // 绑定搜索记录点击事件
         bindRecordEvent();
+        // 设置搜索记录旁的头像
+        getUserInfo();
     });
 }
 
@@ -43,6 +46,20 @@ function deleteAllRecord () {
         $(".mWechatRecordLeftContent:eq(0)").text("您已成功清除所有搜索记录");
         $(".mWechatRecordLeftContent:eq(1)").text("期待您的再次搜索");
         $(".mWechatRecordRightItemWrap").remove();
+    });
+}
+
+// 获取头像和姓名
+function getUserInfo () {
+    // 获取头像和姓名
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/getInfo";
+    $.get(get_url, function (data, status) {
+        // 一次循环获取 JSON 里的第一个元素内容(不知道名字的情况下)
+        for (var obj in data) {
+            $(".mWechatRecordRightPhoto img").each(function () {
+                $(this).attr("src", data[obj]["headimgurl"]);
+            });
+        }
     });
 }
 
