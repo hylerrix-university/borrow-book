@@ -52,14 +52,26 @@
                 </div>
 
                 <div class="mButtonWrap">
-                    <button onclick="scheduleBook()">预定本书</button>
-                    <button onclick="cancelScheduleBook()" style="display: none; background-color: red">取消预订</button>
-                    <button onclick="orderBook()">预约本书</button>
-                    <button style="display: none">您已预约</button>
-                    <button onclick="addCollect()">收藏本书</button>
+                    <!-- 默认所有按钮全部隐藏，判断显示状态并作出相应改变 -->
+                    <button onclick="scheduleBook()" style="display: none;">预订本书</button>
+                    <button onclick="cancelScheduleBook()" style="display: none; background-color: red!important">取消预订</button>
+                    <button onclick="orderBook()" style="display: none;">预约本书</button>
+                    <button style="display: none; background-color: orange!important">您已预约</button>
+                    <button onclick="addCollect()" style="display: none;">收藏本书</button>
                     <button onclick="cancelCollect()" style="display: none; background-color: red">取消收藏</button>
-                    <button onclick="jsSDK(addShopping)">扫入书车</button>
-                    <button style="display: none; background-color: red">移出书车</button>
+                </div>
+
+                <div class="mMessage" style="display: none;">
+                    <div class="mMessageHeader">状态提示</div>
+                    <p><!-- 这里存放上面按钮点击状态的信息 --></p>
+                </div>
+
+                <div class="mMessage">
+                    <div class="mMessageHeader">友情提示</div>
+                    <p>“预订本书”：当此本书籍当前可借量为空时，您可以预订这本书，当有用户归还书籍时，借阅助手将会从公众号上通知您。</p>
+                    <p>“预约本书”：您可以在家中提前预约一本书，借阅助手将会为您自动分配具体的一本书放入您的书库，请在 2 小时内前往借阅书库联系管理员进行借阅。</p>
+                    <p>“您已预约”：此状态表明，当您的购物车中拥有这本书，请在 2 小时内前往借阅书库联系管理员进行借阅。</p>
+                    <p>“扫入书车”：当您想将这本书扫入自己的书车时，请在“借阅书车”页面中进行扫码操作。</p>
                 </div>
             </div>
 

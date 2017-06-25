@@ -115,15 +115,32 @@ function scanBook (res) {
 }
 
 function addShopping (res) {
+    // 0100200000001
     var coding = res.resultStr;
+    // 如果 coding 不存在
+    if (coding.length != 13) {
+        $(".mMessage:eq(0)").show();
+        var tips = "请扫描正确的书籍内部条形码(Coding)";
+        $(".mMessage:eq(0) p:first").text(tips);
+        return;
+    }
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/addShopping";
     var data = {
         "coding": coding
     };
     $.post(post_url, data, function (data, status) {
+        if (data["succeed"] == false) {
+            $(".mMessage:eq(0)").show();
+            var tips = "加入书车失败，原因：" + data["message"];
+            $(".mMessage:eq(0) p:first").text(tips);
+            return;
+        }
         // 扫入书车成功，改变相应状态
         $(".mButtonWrap button:eq(6)").hide();
         $(".mButtonWrap button:eq(7)").show();
+        $(".mMessage:eq(0)").show();
+        var tips = "加入书车成功，书车内容已更新，请在两小时内联系管理员进行借阅。";
+        $(".mMessage:eq(0) p:first").text(tips);
         // 给“移出书车”加入点击事件
         $(".mButtonWrap button:eq(7)").unbind();
         $(".mButtonWrap button:eq(7)").click(function () {
@@ -142,5 +159,8 @@ function cancelShoppingByCoding (coding) {
         // 移出书车成功，改变相应状态
         $(".mButtonWrap button:eq(7)").hide();
         $(".mButtonWrap button:eq(6)").show();
+        $(".mMessage:eq(0)").show();
+        var tips = "移出书车成功，书车内容已更新。";
+        $(".mMessage:eq(0) p:first").text(tips);
     });
 }

@@ -6,9 +6,12 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/borrow_cart.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/js-sha1/build/sha1.min.js"></script>
     <script type="text/javascript" src="js/load_nav_bar.js"></script>
     <script type="text/javascript" src="js/borrow_cart.js"></script>
+    <script src="js/scan.js"></script>
 </head>
 <body>
 
@@ -16,10 +19,15 @@
         <div class="mHeaderHomeWrap">借阅助手</div>
 
         <div class="mContentWrap">
-            <div class="mTitleHeader"><!-- 已选择 2 本<span>还可以选 0 本</span> --></div>
+            <div class="mTitleHeader">书车加载中...</div>
 
             <div class="mBookIntroWrap">
                 <!-- 这里将被 ajax 动态填充书车书籍信息 -->
+            </div>
+
+            <div class="mButtonWrap" style="display: none">
+                <button onclick="cancelAllShopping();">清空书车</button>
+                <button onclick=";">确定借阅</button>
             </div>
 
             <div class="mTitleHeader" style="display: none">借阅二维码<span>(请联系管理员进行授权)</span></div>
@@ -28,11 +36,6 @@
                 <div class="mBorrowQRCode">
                    <img src="images/qr.jpg">
                 </div>
-            </div>
-
-            <div class="mButtonWrap" style="display: none">
-                <button onclick="cancelAllShopping();">清空书车</button>
-                <button onclick=";">确定借阅</button>
             </div>
 
             <div class="mBorrowCartFooter"></div>

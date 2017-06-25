@@ -117,3 +117,18 @@
             appearance: none;
 }
 
+.mMessage {
+    color: #4CAF50;
+    margin: .5rem 0 0 0;
+    padding: .5rem;
+    background-color: #fff;
+    font-size: .6rem;
+    text-indent: 1.2rem;
+}
+
+.mMessage .mMessageHeader {
+    border: #bbb solid medium;
+    text-align: center;
+    font-size: .8rem;
+}
+

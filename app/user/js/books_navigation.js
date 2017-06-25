@@ -98,7 +98,7 @@ var carouseIndex = 0;
 setInterval(function () {
     turnCarousel(carouseIndex);
     carouseIndex++;
-}, 2500);
+}, 2000);
 getNewBookRecommend();
 getAllStacks();
 
