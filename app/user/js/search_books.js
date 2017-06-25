@@ -33,7 +33,6 @@ function getSearchBook () {
         "keyword": keyword,
         "way": way
     };
-    console.log(way);
     $.post(post_url, data, function (data, status) {
         // 搜索成功，再次读取搜索历史
         getAllRecord();
@@ -47,7 +46,6 @@ function getSearchBook () {
         // 记录本次搜索信息
         var way = $("select option:selected").attr("value");
         recordSearch(keyword, way);
-        console.log(data);
         var booksArr = data["books"];
 
         for (var i = 0; i < booksArr.length; i++) {
@@ -73,8 +71,6 @@ function getSearchBook () {
             ";
             $(".mSearchResultWrap:first").append(templeteDiv);
         }
-        // 给每一本书绑定点击事件
-        bindBookClickEvent();
         // 获取相关书籍，跟本次搜索有关
         searchSameCategory(booksArr[0]["cId"]);
         $(".mTitleHeader:first").hide();
@@ -113,6 +109,8 @@ function searchSameCategory (cId) {
             ";
             $(".mSameCategoryWrap:eq(0)").append(templeteDiv);
         }
+        // 给每一本书绑定点击事件
+        bindBookClickEvent();
     });
 };
 

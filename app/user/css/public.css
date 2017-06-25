@@ -306,13 +306,13 @@
     padding: .1rem .2rem .1rem .2rem;
     text-align: left;
     font-size: .8rem;
-    display: block;
+    display: flex;
 }
 
 .mWechatRecordWrap .mWechatRecordLeftItemWrap .mWechatRecordLeftPhoto {
     width: .8rem;
     height: .8rem;
-    display: inline-block;
+    flex: 1;
 }
 
 .mWechatRecordWrap .mWechatRecordLeftItemWrap .mWechatRecordLeftPhoto img {
@@ -323,9 +323,9 @@
 .mWechatRecordWrap .mWechatRecordLeftItemWrap .mWechatRecordLeftContent {
     margin: 0;
     padding: 0 .4rem 0 .4rem;
-    display: inline-block;
     background-color: #ffffff;
     border-radius: .1rem;
+    flex: 9;
 }
 
 /* 右边（自己的） */
@@ -335,7 +335,6 @@
     padding: .1rem .2rem .1rem .2rem;
     text-align: right;
     font-size: .8rem;
-    display: block;
     clear: right;
 }
 
