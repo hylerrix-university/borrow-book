@@ -5,7 +5,9 @@
     <title>借阅伴侣 - 录入书籍</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/public.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/js-sha1/build/sha1.min.js"></script>
     <script src="js/admin_login.js"></script>
     <script src="js/scan.js"></script>
 </head>
@@ -32,8 +34,8 @@
             </div>
 
             <div class="mButtonWrap">
-                <button onclick="jsSDK(authBorrow)">授权借书</button>
-                <button onclick="jsSDK(authReturn)">还书确认</button>
+                <button onclick="jsSDK('authBorrow')">授权借书</button>
+                <button onclick="jsSDK('authReturn')">还书确认</button>
             </div>
 
             <div class="mScanResultWrap">
