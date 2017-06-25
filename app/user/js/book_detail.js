@@ -39,11 +39,11 @@ function getBookDetail () {
         var isSchedule = $(".mButtonWrap button:eq(0)").attr("isSchedule");
         if (bookDetail["canBorCount"] == 0) {
             if (isSchedule == 1) {
-                // 没有可借书籍，可以预订
+                // 没有可借书籍，可以预订时
                 $(".mButtonWrap button:eq(0)").show();
                 $(".mButtonWrap button:eq(1)").hide();
             } else {
-                // 没有可借书籍，无法预订
+                // 没有可借书籍，无法预订时
                 $(".mButtonWrap button:eq(1)").show();
                 $(".mButtonWrap button:eq(0)").hide();
             }
@@ -137,10 +137,18 @@ function orderBook () {
     var urlArgs = window.location.search;
     var bId = urlArgs.split("=")[1];
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/User/orderBook";
-    var data = {
+    var post_data = {
         "bId": bId
     }
-    $.post(post_url, data, function () {
+    $.post(post_url, post_data, function (data, status) {
+        data = JSON.parse(data);
+        if (!data["succeed"]) {
+            // 预约失败，得到报错信息
+            $(".mMessage:eq(0)").show();
+            var tips = "预约书籍失败，原因：" + data["msg"];
+            $(".mMessage:eq(0) p:first").text(tips);
+            return;
+        }
         // 预约书籍成功，改变相应状态
         $(".mButtonWrap button:eq(2)").hide();
         $(".mButtonWrap button:eq(3)").show();

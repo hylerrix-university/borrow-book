@@ -3,46 +3,35 @@ function selectShopping () {
     // $(".mBookIntroWrap:first").children().remove();
     var get_url = "https://wwwxinle.cn/Book/public/index.php/index/User/selectShopping";
     $.get(get_url, function (data, status) {
-        console.log(data);
-        // [ 
-        //    "0" : { 
-        //         "0" : "{"next":"","count":1,"books":[{"bId":"AVxoaoAWoMlguXEb9gRB","bName":"Java编程思想 （第4版）","sId":1,"cId":1,"spell":"javabianchengsixiang （di4ban）","initial":"javabcsx （d4b）","imgurl":"https://img1.doubanio.com/mpic/s2553047.jpg","isbn":"9787111213826","author":"[美] Bruce Eckel","count":1}]}", 
-        //         "1" : "12", 
-        //    }, 
-        //    "1" : { 
-        //         "0" : "{"next":"","count":0,"books":null}", 
-        //         "1" : "1", 
-        //    },
-        // ]
         // 如果没有书籍信息
         if (data.length === 0) {
             $(".mTitleHeader:first").html("您的书车暂时为空<span>还可以选借至多 2 本书籍</span>");
             return;
         }
-        $(".mTitleHeader:eq(1)").show();
-        $(".mBorrowQRCodeWrap:first").show();
+        $(".mTitleHeader:first").html("书车已有 " + data.length + " 本<span>还可以选借至多 " + (2-data.length) + " 本书籍</span>");
         $(".mButtonWrap:first").show();
         for (var i = 0; i < data.length; i++) {
-            var books = JSON.parse(data[i]["0"]["0"]);
-            console.log(books);
-            var biId = data[i]["1"];
+            var bookInfo = JSON.parse(data[i][0]);
+            books = bookInfo["books"][0];
             var templeteDiv = "\
-                <div class=\"mBookIntroItemWrap\" biId=\"\">\
+                <div class=\"mBookIntroItemWrap\" biId=\"" + data[i][1] + "\">\
                     <div class=\"mBookIntroItemPhoto\">\
-                        <img src=\"images/icorvoh.jpg\">\
+                        <img src=\"" + books["imgurl"] + "\">\
                     </div>\
                     <div class=\"mBookIntroCharacterWrap\">\
-                        <div class=\"mBookIntroItemBookName\">这是一本书的书名</div>\
-                        <div class=\"mBookIntroItemBookAuthor\">作者：韩亦乐</div>\
-                        <div class=\"mBookIntroItemBookCount\">数量：1</div>\
+                        <div class=\"mBookIntroItemBookName\">" + books["bName"] + "</div>\
+                        <div class=\"mBookIntroItemBookAuthor\">作者：" + books["author"]; + "</div>\
                     </div>\
                     <div class=\"mDeleteButton\">\
-                        <button onclick=\"cancelShopping()\">移出书车</button>\
+                        <button>移出书车</button>\
                     </div>\
                 </div>\
             ";
             $(".mBookIntroWrap:first").append(templeteDiv);
         }
+        // 展示二维码相关信息
+        $(".mTitleHeader:eq(1)").show();
+        $(".mBorrowQRCodeWrap:first").show();
         // 给每个书籍旁的附属按钮绑定“移出书车”事件
         bindCancelShoppingEvent();
     });

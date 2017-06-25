@@ -140,7 +140,6 @@ function recordSearch (keyword, way) {
     };
     $.post(post_url, data, function (data, status) {
         // 本次搜索信息保存成功
-        alert(data);
     });
 }
 
