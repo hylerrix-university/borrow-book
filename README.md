@@ -147,9 +147,9 @@ sudo npm install
 
 ## 开发团队
 
-* 韩亦乐 @ 西安邮电大学 CreatShare 互联网实验室
-* 吴昊泽 @ 西安邮电大学 CreatShare 互联网实验室
-* 张昕乐 @ 西安邮电大学 CreatShare 互联网实验室
+* 韩亦乐 [@西安邮电大学 CreatShare 互联网实验室](https://creatshare.com/)
+* 吴昊泽 [@西安邮电大学 CreatShare 互联网实验室](https://creatshare.com/)
+* 张昕乐 [@西安邮电大学 CreatShare 互联网实验室](https://creatshare.com/)
 
 ![](./creatshare-logo-2017.png)
 
