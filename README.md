@@ -10,7 +10,9 @@
 
 ## 开发简介
 
-> [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
+> [项目线上地址 - 请在微信客户端打开链接](https://wwwxinle.cn/Book/public/index.php/index/Index/auth)
+
+> [借阅助手 - 线上接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
 
 > [“无微不至”的借阅助手-源代码说明项目](http://42.123.127.93:10080/icorvoh/borrow-book-intro)
 
@@ -78,9 +80,7 @@
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
 ├── creatshare-logo-2017.png
-├── gruntfile.js # Grunt 构建流配置
 ├── karma.conf.js # Karma 自动化完成单元测试配置
-├── library.sql # 后端 SQL 源码
 ├── node_modules # Node 安装模块(.gi)
 │   └── 相关配置详见 [package.json](./package.json)
 ├── package.json # Node 配置
@@ -88,7 +88,6 @@
 │   └── admin # 管理员电脑端界面
 ├── prototype # 原型图 HTML 版
 ├── unit-test # 前端单元测试
-├── .yo-rc.json # Yo 隐藏文件
 └── .gitignore # Git 版本管理忽略信息说明文件
 ```
 
