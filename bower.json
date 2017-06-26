@@ -18,6 +18,6 @@
     "jquery": "https://github.com/jquery/jquery.git",
     "jrQrcode": "https://github.com/diamont1001/jrQrcode.git",
     "jasmine-core": "https://github.com/jasmine/jasmine.git#^2.6.2",
-    "jsSHA": "https://github.com/Caligatio/jsSHA.git"
+    "js-sha1": "https://github.com/emn178/js-sha1.git#^0.4.1"
   }
 }
