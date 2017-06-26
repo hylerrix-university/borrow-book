@@ -10,7 +10,7 @@
 
 ## 开发简介
 
-> [项目线上地址 - 请在微信客户端打开链接](https://wwwxinle.cn/Book/public/index.php/index/Index/auth)
+> [项目线上地址 - 请关注该测试号并在微信客户端打开链接](https://wwwxinle.cn/Book/public/index.php/index/Index/auth)
 
 ![](./images/borrow-book-wechat-qrcode.jpg)
 
