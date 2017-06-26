@@ -10,27 +10,38 @@
 
 ## 开发简介
 
+> [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
+
+### 前端开发简介
+
+#### V1.0 初赛提交时的项目技能点
+
 * Bower 做 JavaScript 的包依赖管理
+* JQuery 封装 DOM 操作并进行跨域请求
+
+#### V2.0 初赛作品提交后将尝试使用以下技术点重构项目
+
+* NPM 做 Node.js 的包依赖管理(没用上)
 * ESLint 做代码风格规范检测(未实现)
 * Grunt 启动 Karma 统一项目管理(未实现)
 * Istanbul 检查单元测试代码覆盖率(有问题)
 * Jasmine 做单元测试(有问题)
-* JQuery 封装 DOM 操作
 * JSDoc 规范代码注释风格(未实现)
 * Karma 自动化完成单元测试(有问题)
-* NPM 做 Node.js 的包依赖管理
 * Webpack 最终打包整个项目文件(未实现)
 * Yeoman 最后封装成一个项目原型模板(未实现)
 
-> [借阅助手 - 接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
+### 后端开发简介
 
-## 任务场景
+> 正在编写中...
+
+## 用户场景
 
 * 首次登陆
 
 > 场景.1: 用户被微信授权后跳转图书导航页。
 
-> 场景.2: 管理员直接登录、登录界面下方提示发邮件申请账号
+> 场景.2: 管理员直接登录
 
 * 借阅书籍
 
@@ -108,6 +119,7 @@ app/admin/call_us.html # 联系我们
 ```
 
 ### admin 管理员电脑端页面
+
 ```
 正在开发...
 ```
@@ -116,7 +128,7 @@ app/admin/call_us.html # 联系我们
 
 ### 克隆项目至本地
 
-> git clone https://git.oschina.net/CreatShare/borrow-book.git
+> git clone http://42.123.127.93:10080/icorvoh/borrow-book.git
 
 ### 使用 bower 安装项目依赖的前端库
 
@@ -125,32 +137,21 @@ sudo npm install -g bower
 bower install
 ```
 
-### 使用 npm 构建环境
+### 使用 npm 构建环境(V1.0 初赛版本暂不需要此步骤)
 
 ```
 sudo npm install
 ```
 
-需要使用的全局 npm 依赖库
+## 开发团队
 
-```
-sudo npm install phantomjs -g # 下载很慢，推荐使用其他下载方式
-```
+* 韩亦乐 @ 西安邮电大学 CreatShare 互联网实验室
+* 吴昊泽 @ 西安邮电大学 CreatShare 互联网实验室
+* 张昕乐 @ 西安邮电大学 CreatShare 互联网实验室
 
-```
-sudo npm install -g yo
-```
+![](./creatshare-logo-2017.png)
 
-### 执行单元测试并查看结果
+## 开源协议
 
-1. 使用 karma 自动化测试(请定制相关配置 karma.conf.js)
+本项目采用 [MIT](./LICENSE) 许可证进行许可。
 
-```
-karma start karma.conf.js
-```
-
-2. 在浏览器中查看自动化测试结果(具体目录视操作系统而定)
-
-```
-open unit-test/coverage/Chrome\ 58.0.3029\ \(Mac\ OS\ X\ 10.12.5\)/index.html
-```
