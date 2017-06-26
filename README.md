@@ -12,6 +12,10 @@
 
 > [项目线上地址 - 请在微信客户端打开链接](https://wwwxinle.cn/Book/public/index.php/index/Index/auth)
 
+![](./images/borrow-book-wechat-qrcode.jpg)
+
+> [项目产品原型](https://wwwxinle.cn/borrow-book/prototype/)
+
 > [借阅助手 - 线上接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
 
 > [“无微不至”的借阅助手-源代码说明项目](http://42.123.127.93:10080/icorvoh/borrow-book-intro)
@@ -79,7 +83,7 @@
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
-├── creatshare-logo-2017.png
+├── images
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── node_modules # Node 安装模块(.gi)
 │   └── 相关配置详见 [package.json](./package.json)
@@ -152,7 +156,7 @@ sudo npm install
 * 吴昊泽 [@西安邮电大学 CreatShare 互联网实验室](https://creatshare.com/)
 * 张昕乐 [@西安邮电大学 CreatShare 互联网实验室](https://creatshare.com/)
 
-![](./creatshare-logo-2017.png)
+![](./images/creatshare-logo-2017.png)
 
 ## 开源协议
 
