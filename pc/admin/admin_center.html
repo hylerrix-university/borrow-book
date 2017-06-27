@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>借阅助手 - 管理员平台</title>
-	<link href="css/admin_center.css" rel="stylesheet" type="text/css" media="all"/>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>借阅助手 - 管理员平台</title>
+    <link href="css/admin_center.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-    div.
+    <div class="pMianBody">
+        <div class="pNavigation">
+            <div class="pNavigationItem">
+                <img src="images/group.png">
+            </div>
+            <div class="pNavigationItem">
+                <button>录入书籍</button>
+            </div>
+            <div class="pNavigationItem">
+                <button>管理员账号管理</button>
+            </div>
+            <div class="pNavigationItem">
+            </div>
+        </div>
+        <div class="pContentWrap_1">
+            <!-- 录入书籍选项卡 -->
+            <div class="pContentISBNWrap">
+                <div class="pContentISBN">ISBN: </div>
+                <div class="pContentISBNInput">
+                    <input type="text" name="isbn">
+                </div>
+                <div class="pContentISBNSearch">
+                    <button>搜索</button>
+                </div>
+            </div>
+
+            <div class="pContentDetailWrap">
+                <div class="pContentDetailLeftWrap">
+                    <img src="images/group.png">
+                </div>
+                <div class="pContentDetailRightWrap">
+                    <div class="pContentDetailItemWrap">
+                        <span>书名：</span>
+                        <input type="text" name="bName">
+                    </div>
+                    <div class="pContentDetailItemWrap">
+                        <span>所属书库：</span>
+                        <input type="text" name="bName">
+                    </div>
+                    <div class="pContentDetailItemWrap">
+                        <span>所属类别：</span>
+                        <input type="text" name="bName">
+                    </div>
+                    <div class="pContentDetailItemWrap">
+                        <span>作者：</span>
+                        <input type="text" name="bName">
+                    </div>
+                    <div class="pContentDetailItemWrap">
+                        <span>数量：</span>
+                        <input type="text" name="bName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pContentSubmitWrap">
+                <button>确认录入</button>
+            </div>
+        </div>
+
+        <div class="pContentWrap_2" style="display: none">
+            <!-- 管理员登录选项卡 -->
+            <table id="pTableNew">
+                <tr>
+                    <td>管理员邮箱号</td>
+                    <td>管理员密码</td>
+                    <td>状态</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="email"></td>
+                    <td><input type="password" name="password"></td>
+                    <td><button>新增</button></td>
+                </tr>
+            </table>
+            <div class="mTableMessage">欢迎您的使用</div>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>管理员邮箱号</td>
+                    <td>管理员密码</td>
+                    <td>状态</td>
+                    <td>状态</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>icorvoh@qq.com</td>
+                    <td>123456</td>
+                    <td><button>修改</button></td>
+                    <td><button>删除</button></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>icorvoh@qq.com</td>
+                    <td>123456</td>
+                    <td><button>修改</button></td>
+                    <td><button>删除</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
