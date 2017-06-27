@@ -25,20 +25,106 @@ function saveBook () {
 function getAllStacks () {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/getAllStacks";
     $.post(post_url, function (data, status) {
-        console.log(data);
-        setStacks_0();
-        setStacks_1();
+        data = JSON.parse(data);
+        setStacks_0(data);
+        setStacks_1(data);
+        $(".pHiddenWrap").text(JSON.stringify(data));
     });
 }
 
 // 设置录入书籍选项卡下的单选框二级联动
-function setStacks_0 () {
+function setStacks_0 (data) {
+    for (var i = 0; i < data.length; i++) {
+        // 一级单选框
+        var templeteDiv = "<option value=\"" + data[i]["sId"] + "\">"  + data[i]["sName"] + "</option>";
+        $(".pContentDetailItemWrap:eq(1) select").append(templeteDiv);
+    }
+    for (var j = 0; j < data[0]["categories"].length; j++) {
+        $(".pContentDetailItemWrap:eq(2) select").append("\
+            <option value=\"" + data[0]["categories"][j]["cId"] + "\">" + data[0]["categories"][j]["cName"] + "</option>\
+        ");
+    }
+}
 
+function changeCategories () {
+    $(".pContentDetailItemWrap:eq(2) select").children().remove();
+    var sId = $(".pContentDetailItemWrap:eq(1) option:selected").val();
+    var data = JSON.parse($(".pHiddenWrap").text());
+    for (var i = 0; i < data.length; i++) {
+        if (sId == data[i]["sId"]) {
+            // 找到了概述库下的类
+            var categories = data[i]["categories"];
+            for (var j = 0; j < categories.length; j++) {
+                $(".pContentDetailItemWrap:eq(2) select").append("\
+                    <option value=\"" + categories[j]["cId"] + "\">" + categories[j]["cName"] + "</option>\
+                ");
+            }
+            break;
+        }
+    }
 }
 
 // 设置书库管理选项卡下的单选框二级联动
-function setStacks_1 () {
+function setStacks_1 (data) {
+    for (var i = 0; i < data.length; i++) {
+        var templeteDiv = "\
+        <div class=\"pContentStackItem\">\
+            <button sId=" + data[i]["sId"] + " style=\"background-color: rgba(255, 51, 102, 1);\">\
+                " + data[i]["sName"] + "\
+            </button>\
+            <button onclick=\"deleteStack(" + data[i]["sId"] + ")\">删除</button>\
+        </div>"
+        $(".pContentStackWrap").append(templeteDiv);
+    }
+    bindStackEvent(data);
+}
 
+function showStack (sId, data) {
+    $(".pContentCategoriesItem").remove();
+    for (var i = 0; i < data.length; i++) {
+        if (sId == data[i]["sId"]) {
+            // 找到了该书库
+            var cateArr = data[i]["categories"];
+            for (var i = 0; i < cateArr.length; i++) {
+                // 增加每个类别
+                var templeteDiv = "\
+                    <div class=\"pContentCategoriesItem\">\
+                        <button disabled=\"disabled\">" + cateArr[i]["cName"] + "</button>\
+                        <button cId=" + cateArr[i]["cId"] + ">删除</button>\
+                    </div>\
+                "
+                $(".pContentCategoriesHeader").after(templeteDiv);
+            }
+            bindCateEvent();
+            break;
+        }
+    }
+}
+
+function bindStackEvent (data) {
+    $(".pContentStackItem button").each(function () {
+        $(this).click(function () {
+            var sId = $(this).attr("sId");
+            showStack(sId, data);
+        });
+    });
+}
+
+function bindCateEvent () {
+    $(".pContentCategoriesItem").each(function (index) {
+        $(".pContentCategoriesItem:eq(" + index + ") button:eq(1)").click(function () {
+            var cId = $(this).attr("cId");
+            console.log(cId);
+        });
+    });
+}
+
+function deleteStack (sId) {
+    console.log(sId);
+}
+
+function deleteCategories (cId) {
+    console.log(cId);
 }
 
 getAllStacks();

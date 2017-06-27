@@ -135,7 +135,7 @@ body {
 
 /* 书库管理选项卡 */
 .pContentWrap_1 {
-    min-height: 30rem;
+    min-height: 20rem;
     text-align: center;
     padding: 2rem;
     background-color: rgba(0, 0, 0, .2);
@@ -149,7 +149,7 @@ body {
 }
 
 .pContentWrap_1 .pStackCategoriesWrap {
-    min-height: 30rem;
+    min-height: 20rem;
     display: flex;
     height: 100%;
 }
@@ -159,6 +159,7 @@ body {
     margin: .5rem;
     flex: 1;
     position: relative;
+    padding: 0 0 5rem 0;
 }
 
 .pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackHeader {
