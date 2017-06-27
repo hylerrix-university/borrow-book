@@ -41,88 +41,88 @@ body {
     background-color: rgba(0, 0, 0, .2);
 }
 
-.pContentWrap_1 {
+.pContentWrap_0 {
 	padding: .5rem;
 	background-color: rgba(0, 0, 0, .2);
 }
 
-.pContentWrap_1 .pContentISBNWrap {
+.pContentWrap_0 .pContentISBNWrap {
 	margin: 2rem 0 2rem 0;
 	display: flex;
 }
 
-.pContentWrap_1 .pContentISBNWrap span {
+.pContentWrap_0 .pContentISBNWrap span {
 	text-align: center;
 	flex: 1;
 }
 
-.pContentWrap_1 .pContentISBNWrap input {
+.pContentWrap_0 .pContentISBNWrap input {
 	margin: 0 .5rem 0 .5rem;
 	flex: 5;
 }
 
-.pContentWrap_1 .pContentISBNWrap button {
+.pContentWrap_0 .pContentISBNWrap button {
 	color: #fff;
     flex: 1;
     border: none;
 	background-color: #ff005b;
 }
 
-.pContentWrap_1 .pContentMessage {
+.pContentWrap_0 .pContentMessage {
 	margin: 1rem 0 1rem 0;
 	font-size: .8rem;
 	text-align: center;
 }
 
-.pContentWrap_1 .pContentDetailWrap {
+.pContentWrap_0 .pContentDetailWrap {
 	margin: .5rem 0 0 0;
 	display: flex;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailLeftWrap {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailLeftWrap {
 	padding: 0 0 0 2rem;
 	flex: 2;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailLeftWrap img {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailLeftWrap img {
 	height: 100%;
 	width: 100%;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap {
     flex: 5;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap {
     display: flex;
     margin: 1rem 0 0 0;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap span {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap span {
     flex: 3;
     text-align: center;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap input {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap input {
 	flex: 4;
 }
 
-.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap select {
+.pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap select {
 	flex: 4;
 }
 
-.pContentWrap_1 .pContentSubmitWrap {
+.pContentWrap_0 .pContentSubmitWrap {
 	margin: 2rem 0 0 0;
     padding: .5rem 0 0 0;
 	text-align: right;
 	display: flex;
 }
 
-.pContentWrap_1 .pContentSubmitWrap .pContentSubmitItem {
+.pContentWrap_0 .pContentSubmitWrap .pContentSubmitItem {
     flex: 1;
 }
 
-.pContentWrap_1 .pContentSubmitWrap .pContentSubmitItem button {
+.pContentWrap_0 .pContentSubmitWrap .pContentSubmitItem button {
 	color: #fff;
 	height: 100%;
 	width: 100%;

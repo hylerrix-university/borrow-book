@@ -4,18 +4,20 @@
     <title>借阅助手 - 管理员平台</title>
     <link href="css/admin_center.css" rel="stylesheet" type="text/css" media="all"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="js/admin_center.js" async="async"></script>
 </head>
 <body>
     <div class="pMianBody">
         <div class="pNavigation">
             <div class="pNavigationItem">
-                <button style="border: none; background-color: rgba(0, 0, 0, 0);">录入书籍</button>
+                <button value="0" onclick="changeNaviContent(this.value)">录入书籍</button>
             </div>
             <div class="pNavigationItem">
-                <button>管理员账号管理</button>
+                <button value="1" onclick="changeNaviContent(this.value)" >管理员账号管理</button>
             </div>
         </div>
-        <div class="pContentWrap_1">
+        <div class="pContentWrap_0" style="display: none">
             <!-- 录入书籍选项卡 -->
             <div class="pContentISBNWrap">
                 <span>ISBN</span>
@@ -67,7 +69,7 @@
             </div>
         </div>
 
-        <div class="pContentWrap_2" style="display: none">
+        <div class="pContentWrap_1" style="display: none">
             <!-- 管理员登录选项卡 -->
             <table id="pTableNew">
                 <tr>
