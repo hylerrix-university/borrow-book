@@ -20,17 +20,17 @@
                 <button value="2" onclick="changeNaviContent(this.value)" >管理员账号管理</button>
             </div>
         </div>
-        <div class="pContentWrap_0" style="display: none">
+        <div class="pContentWrap_0">
             <!-- 录入书籍选项卡 -->
             <div class="pContentISBNWrap">
                 <span>ISBN</span>
                 <input type="text" name="isbn">
-                <button>搜索</button>
+                <button onclick="finishBook()">搜索</button>
             </div>
 
             <div class="pContentMessage">欢迎您的使用</div>
 
-            <div class="pContentDetailWrap">
+            <div class="pContentDetailWrap" style="display: none">
                 <div class="pContentDetailLeftWrap">
                     <img src="images/bbb.jpg">
                 </div>
@@ -64,7 +64,7 @@
                 </div>
             </div>
 
-            <div class="pContentSubmitWrap">
+            <div class="pContentSubmitWrap" style="display: none">
                 <div class="pContentSubmitItem"><button>重置数据</button></div>
                 <div class="pContentSubmitItem"></div>
                 <div class="pContentSubmitItem"></div>
