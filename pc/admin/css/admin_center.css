@@ -11,13 +11,13 @@ body {
 }
 
 .pMianBody {
-	color: #fff;
+    color: #fff;
     margin: 4rem 2rem 0 2rem;
     font-size: 1rem;
 }
 
 .pNavigation {
-	background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .2);
     display: flex;
     height: 2rem;
 }
@@ -33,60 +33,62 @@ body {
 }
 
 .pNavigation .pNavigationItem button {
-	color: #ff0050;
-	font-size: 1rem;
-	height: 100%;
-	width: 100%;
-	border: none;
+    color: #ff0050;
+    font-size: 1rem;
+    height: 100%;
+    width: 100%;
+    border: none;
     background-color: rgba(0, 0, 0, .2);
 }
 
+/* 录入书籍选项卡 */
+
 .pContentWrap_0 {
-	padding: .5rem;
-	background-color: rgba(0, 0, 0, .2);
+    padding: .5rem;
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .pContentWrap_0 .pContentISBNWrap {
-	margin: 2rem 0 2rem 0;
-	display: flex;
+    margin: 2rem 0 2rem 0;
+    display: flex;
 }
 
 .pContentWrap_0 .pContentISBNWrap span {
-	text-align: center;
-	flex: 1;
+    text-align: center;
+    flex: 1;
 }
 
 .pContentWrap_0 .pContentISBNWrap input {
-	margin: 0 .5rem 0 .5rem;
-	flex: 5;
+    margin: 0 .5rem 0 .5rem;
+    flex: 5;
 }
 
 .pContentWrap_0 .pContentISBNWrap button {
-	color: #fff;
+    color: #fff;
     flex: 1;
     border: none;
-	background-color: #ff005b;
+    background-color: #ff3366;
 }
 
 .pContentWrap_0 .pContentMessage {
-	margin: 1rem 0 1rem 0;
-	font-size: .8rem;
-	text-align: center;
+    margin: 1rem 0 1rem 0;
+    font-size: .8rem;
+    text-align: center;
 }
 
 .pContentWrap_0 .pContentDetailWrap {
-	margin: .5rem 0 0 0;
-	display: flex;
+    margin: 2rem 0 0 0;
+    display: flex;
 }
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailLeftWrap {
-	padding: 0 0 0 2rem;
-	flex: 2;
+    padding: 0 0 0 2rem;
+    flex: 2;
 }
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailLeftWrap img {
-	height: 100%;
-	width: 100%;
+    height: 100%;
+    width: 12rem;
 }
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap {
@@ -95,7 +97,7 @@ body {
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap {
     display: flex;
-    margin: 1rem 0 0 0;
+    margin: 1.5rem 0 0 0;
 }
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap span {
@@ -104,18 +106,18 @@ body {
 }
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap input {
-	flex: 4;
+    flex: 4;
 }
 
 .pContentWrap_0 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap select {
-	flex: 4;
+    flex: 4;
 }
 
 .pContentWrap_0 .pContentSubmitWrap {
-	margin: 2rem 0 0 0;
+    margin: 2rem 0 0 0;
     padding: .5rem 0 0 0;
-	text-align: right;
-	display: flex;
+    text-align: right;
+    display: flex;
 }
 
 .pContentWrap_0 .pContentSubmitWrap .pContentSubmitItem {
@@ -123,12 +125,222 @@ body {
 }
 
 .pContentWrap_0 .pContentSubmitWrap .pContentSubmitItem button {
-	color: #fff;
-	height: 100%;
-	width: 100%;
-	background-color: #ff005b;
-	border: none;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    background-color: #ff3366;
+    border: none;
 }
+
+/* 书库管理选项卡 */
+.pContentWrap_1 {
+    min-height: 30rem;
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, .2);
+    display: flex;
+}
+
+.pContentWrap_1 .pContentStackWrap {
+    background-color: rgba(0, 0, 0, .2);
+    margin: .5rem;
+    flex: 1;
+    position: relative;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackHeader {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackItem {
+    margin: 1rem 0 1rem 0;
+    padding: 0 .5rem 0 .5rem;
+    font-size: 1rem;
+    display: flex;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackItem button:nth-child(1) {
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    background-color: rgba(255, 255, 255, 1);
+    flex: 6;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackItem button:nth-child(2) {
+    margin: 0 0 0 .5rem;
+    font-size: 1rem;
+    width: 2rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    background-color: rgba(255, 51, 102, .8);
+    flex: 1;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackFooter {
+    width: 100%;
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackFooter {
+    margin: 0 0 .5rem 0;
+    height: 2rem;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    font-size: 1rem;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackFooter input {
+    margin: 0 0 0 .5rem;
+    flex: 6;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1rem;
+}
+
+.pContentWrap_1 .pContentStackWrap .pContentStackFooter button {
+    margin: 0 .5rem 0 .5rem;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 51, 102, .8);
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    flex: 1;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap {
+    background-color: rgba(0, 0, 0, .2);
+    margin: .5rem;
+    flex: 1;
+    position: relative;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesHeader {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesItem {
+    margin: 1rem 0 1rem 0;
+    padding: 0 .5rem 0 .5rem;
+    display: flex;
+    font-size: 1rem;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesItem button:nth-child(1) {
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    background-color: rgba(255, 255, 255, 1);
+    flex: 6;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesItem button:nth-child(2) {
+    margin: 0 0 0 .5rem;
+    font-size: 1rem;
+    width: 2rem;
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    background-color: rgba(255, 51, 102, .8);
+    flex: 1;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesFooter {
+    margin: 0 0 .5rem 0;
+    height: 2rem;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    font-size: 1rem;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesFooter input {
+    margin: 0 0 0 .5rem;
+    flex: 6;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1rem;
+}
+
+.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesFooter button {
+    margin: 0 .5rem 0 .5rem;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 51, 102, .8);
+    border: 2px solid #fff;
+    border-radius: .5rem;
+    flex: 1;
+}
+
+
+/* 管理员账号管理选项卡 */
+
+.pContentWrap_2 {
+    text-align: center;
+	padding: .5rem;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+#pTableNew {
+    margin: 2rem 0 2rem 0;
+}
+
+#pTableList {
+    margin: 2rem 0 2rem 0;
+}
+
+table {
+    width: 100%;
+    vertical-align: center;
+    text-align: center;
+}
+
+th, td {
+    border: 2px solid #fff;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.pContentWrap_2 .mTableMessage {
+    margin: 1rem 0 1rem 0;
+    font-size: .8rem;
+    text-align: center;
+}
+
+#pTableNew button {
+    height: 100%;
+    width: 100%;
+    background-color: #ff3366;
+    border: 2px solid fff;
+}
+
+#pTableNew input {
+    height: 100%;
+}
+
+#pTableList button {
+    height: 100%;
+    width: 100%;
+    background-color: #ff3366;
+    border: 2px solid fff;
+}
+
+#pTableList input {
+    height: 100%;
+}
+
+
+
+
+
+
+
 
 
 

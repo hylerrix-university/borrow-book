@@ -14,7 +14,10 @@
                 <button value="0" onclick="changeNaviContent(this.value)">录入书籍</button>
             </div>
             <div class="pNavigationItem">
-                <button value="1" onclick="changeNaviContent(this.value)" >管理员账号管理</button>
+                <button value="1" onclick="changeNaviContent(this.value)">书库管理</button>
+            </div>
+            <div class="pNavigationItem">
+                <button value="2" onclick="changeNaviContent(this.value)" >管理员账号管理</button>
             </div>
         </div>
         <div class="pContentWrap_0" style="display: none">
@@ -39,15 +42,15 @@
                     <div class="pContentDetailItemWrap">
                         <span>所属书库</span>
                         <select>
-                        	<option>1</option>
-                        	<option>2</option>
+                            <option>1</option>
+                            <option>2</option>
                         </select>
                     </div>
                     <div class="pContentDetailItemWrap">
                         <span>所属类别</span>
                         <select>
-                        	<option>1</option>
-                        	<option>2</option>
+                            <option>1</option>
+                            <option>2</option>
                         </select>
                     </div>
                     <div class="pContentDetailItemWrap">
@@ -70,12 +73,50 @@
         </div>
 
         <div class="pContentWrap_1" style="display: none">
+            <!-- 书库管理选项卡 -->
+            <div class="pContentStackWrap">
+                <div class="pContentStackHeader">书库列表</div>
+                <div class="pContentStackItem selected">
+                    <button style="background-color: rgba(255, 51, 102, 1);">通信与计算机书库</button>
+                    <button>删除</button>
+                </div>
+                <div class="pContentStackItem">
+                    <button>文艺书库</button>
+                    <button>删除</button>
+                </div>
+                <div class="pContentStackItem">
+                    <button>社会科学书库</button>
+                    <button>删除</button>
+                </div>
+                <div class="pContentStackFooter">
+                    <input type="text" name="stackname">
+                    <button>新增</button>
+                </div>
+            </div>
+            <div class="pContentCategoriesWrap">
+                <div class="pContentCategoriesHeader">类别列表</div>
+                <div class="pContentCategoriesItem">
+                    <button disabled="disabled">编程语言</button>
+                    <button>删除</button>
+                </div>
+                <div class="pContentCategoriesItem">
+                    <button disabled="disabled">网站架构</button>
+                    <button>删除</button>
+                </div>
+                <div class="pContentCategoriesFooter">
+                    <input type="text" name="stackname">
+                    <button>新增</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pContentWrap_2" style="display: none">
             <!-- 管理员登录选项卡 -->
             <table id="pTableNew">
                 <tr>
-                    <td>管理员邮箱号</td>
-                    <td>管理员密码</td>
-                    <td>状态</td>
+                    <th>管理员邮箱号</td>
+                    <th>管理员密码</td>
+                    <th>状态</td>
                 </tr>
                 <tr>
                     <td><input type="text" name="email"></td>
@@ -84,25 +125,25 @@
                 </tr>
             </table>
             <div class="mTableMessage">欢迎您的使用</div>
-            <table>
+            <table id="pTableList">
                 <tr>
-                    <td>ID</td>
-                    <td>管理员邮箱号</td>
-                    <td>管理员密码</td>
-                    <td>状态</td>
-                    <td>状态</td>
+                    <th>ID</td>
+                    <th>管理员邮箱号</td>
+                    <th>管理员密码</td>
+                    <th>状态</td>
+                    <th>状态</td>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>icorvoh@qq.com</td>
-                    <td>123456</td>
+                    <td>******</td>
                     <td><button>修改</button></td>
                     <td><button>删除</button></td>
                 </tr>
                 <tr>
-                    <td>1</td>
-                    <td>icorvoh@qq.com</td>
-                    <td>123456</td>
+                    <td>2</td>
+                    <td>icorvoh@gmail.com</td>
+                    <td>******</td>
                     <td><button>修改</button></td>
                     <td><button>删除</button></td>
                 </tr>
