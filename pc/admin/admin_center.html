@@ -9,59 +9,61 @@
     <div class="pMianBody">
         <div class="pNavigation">
             <div class="pNavigationItem">
-                <img src="images/group.png">
-            </div>
-            <div class="pNavigationItem">
-                <button>录入书籍</button>
+                <button style="border: none; background-color: rgba(0, 0, 0, 0);">录入书籍</button>
             </div>
             <div class="pNavigationItem">
                 <button>管理员账号管理</button>
-            </div>
-            <div class="pNavigationItem">
             </div>
         </div>
         <div class="pContentWrap_1">
             <!-- 录入书籍选项卡 -->
             <div class="pContentISBNWrap">
-                <div class="pContentISBN">ISBN: </div>
-                <div class="pContentISBNInput">
-                    <input type="text" name="isbn">
-                </div>
-                <div class="pContentISBNSearch">
-                    <button>搜索</button>
-                </div>
+                <span>ISBN</span>
+                <input type="text" name="isbn">
+                <button>搜索</button>
             </div>
+
+            <div class="pContentMessage">欢迎您的使用</div>
 
             <div class="pContentDetailWrap">
                 <div class="pContentDetailLeftWrap">
-                    <img src="images/group.png">
+                    <img src="images/bbb.jpg">
                 </div>
                 <div class="pContentDetailRightWrap">
                     <div class="pContentDetailItemWrap">
-                        <span>书名：</span>
+                        <span>书名</span>
                         <input type="text" name="bName">
                     </div>
                     <div class="pContentDetailItemWrap">
-                        <span>所属书库：</span>
+                        <span>所属书库</span>
+                        <select>
+                        	<option>1</option>
+                        	<option>2</option>
+                        </select>
+                    </div>
+                    <div class="pContentDetailItemWrap">
+                        <span>所属类别</span>
+                        <select>
+                        	<option>1</option>
+                        	<option>2</option>
+                        </select>
+                    </div>
+                    <div class="pContentDetailItemWrap">
+                        <span>作者</span>
                         <input type="text" name="bName">
                     </div>
                     <div class="pContentDetailItemWrap">
-                        <span>所属类别：</span>
-                        <input type="text" name="bName">
-                    </div>
-                    <div class="pContentDetailItemWrap">
-                        <span>作者：</span>
-                        <input type="text" name="bName">
-                    </div>
-                    <div class="pContentDetailItemWrap">
-                        <span>数量：</span>
+                        <span>数量</span>
                         <input type="text" name="bName">
                     </div>
                 </div>
             </div>
 
             <div class="pContentSubmitWrap">
-                <button>确认录入</button>
+                <div class="pContentSubmitItem"><button>重置数据</button></div>
+                <div class="pContentSubmitItem"></div>
+                <div class="pContentSubmitItem"></div>
+                <div class="pContentSubmitItem"><button>确认录入</button></div>
             </div>
         </div>
 

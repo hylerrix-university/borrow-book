@@ -1,8 +1,135 @@
+html {
+    font-size: 20px!important;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
     font-size: 100%;
     background-image: url(../images/bbb.jpg);
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
 }
+
+.pMianBody {
+	color: #fff;
+    margin: 4rem 2rem 0 2rem;
+    font-size: 1rem;
+}
+
+.pNavigation {
+	background-color: rgba(0, 0, 0, .2);
+    display: flex;
+    height: 2rem;
+}
+
+.pNavigation .pNavigationItem {
+    flex: 1;
+    text-align: center;
+}
+
+.pNavigation .pNavigationItem img {
+    height: 2rem;
+    width: 2rem;
+}
+
+.pNavigation .pNavigationItem button {
+	color: #ff0050;
+	font-size: 1rem;
+	height: 100%;
+	width: 100%;
+	border: none;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.pContentWrap_1 {
+	padding: .5rem;
+	background-color: rgba(0, 0, 0, .2);
+}
+
+.pContentWrap_1 .pContentISBNWrap {
+	margin: 2rem 0 2rem 0;
+	display: flex;
+}
+
+.pContentWrap_1 .pContentISBNWrap span {
+	text-align: center;
+	flex: 1;
+}
+
+.pContentWrap_1 .pContentISBNWrap input {
+	margin: 0 .5rem 0 .5rem;
+	flex: 5;
+}
+
+.pContentWrap_1 .pContentISBNWrap button {
+	color: #fff;
+    flex: 1;
+    border: none;
+	background-color: #ff005b;
+}
+
+.pContentWrap_1 .pContentMessage {
+	margin: 1rem 0 1rem 0;
+	font-size: .8rem;
+	text-align: center;
+}
+
+.pContentWrap_1 .pContentDetailWrap {
+	margin: .5rem 0 0 0;
+	display: flex;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailLeftWrap {
+	padding: 0 0 0 2rem;
+	flex: 2;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailLeftWrap img {
+	height: 100%;
+	width: 100%;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap {
+    flex: 5;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap {
+    display: flex;
+    margin: 1rem 0 0 0;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap span {
+    flex: 3;
+    text-align: center;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap input {
+	flex: 4;
+}
+
+.pContentWrap_1 .pContentDetailWrap .pContentDetailRightWrap .pContentDetailItemWrap select {
+	flex: 4;
+}
+
+.pContentWrap_1 .pContentSubmitWrap {
+	margin: 2rem 0 0 0;
+    padding: .5rem 0 0 0;
+	text-align: right;
+	display: flex;
+}
+
+.pContentWrap_1 .pContentSubmitWrap .pContentSubmitItem {
+    flex: 1;
+}
+
+.pContentWrap_1 .pContentSubmitWrap .pContentSubmitItem button {
+	color: #fff;
+	height: 100%;
+	width: 100%;
+	background-color: #ff005b;
+	border: none;
+}
+
+
+
+
