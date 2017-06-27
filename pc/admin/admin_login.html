@@ -9,8 +9,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<title>借阅助手 - 管理员平台</title>
 		<link href="css/admin_login.css" rel="stylesheet" type="text/css" media="all"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="js/admin_login.js" async="async"></script>
 	</head>
 	<body>
 	    <!--header start here-->
@@ -20,23 +20,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	        </div>
 	        <h1>欢迎您的回来，请先登录</h1>
 	        <div class="login-top">
-	        <form>
-	            <div class="login-ic">
-	                <i ></i>
-	                <input type="text"  value="您的邮箱" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '您的邮箱';}"/>
-	                <div class="clear"> </div>
-	            </div>
-	            <div class="login-ic">
+		        <!-- <form> -->
+		            <div class="login-ic">
+		                <i ></i>
+		                <input type="text"  value="您的邮箱" onFocus="this.value = ''"/>
+		                <div class="clear"> </div>
+		            </div>
+		            <div class="login-ic">
+		                <i class="icon"></i>
+		                <input type="password"  value="123456" onFocus="this.value = ''"/>
+		                <div class="clear"> </div>
+		            </div>
+		        
+		            <div class="log-bwn">
+		                <input type="submit" value="Login" onclick="login()">
+		            </div>
+		        <!-- </form> -->
+		        <div class="login-ic" style="margin: 1.5em 0 0 0; display: none">
 	                <i class="icon"></i>
-	                <input type="password"  value="您的密码" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'password';}"/>
+	                <input type="text"  value="提示信息">
 	                <div class="clear"> </div>
 	            </div>
-	        
-	            <div class="log-bwn">
-	                <input type="submit"  value="Login" >
-	            </div>
-	            </form>
 	        </div>
+		            
 	        <p class="copy">© CreatShare 2017</p>
 	    </div>        
 	    <!--header start here-->

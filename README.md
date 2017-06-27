@@ -121,14 +121,15 @@ app/user/user_search.html # 搜索记录
 
 ```
 app/admin/admin_login # 登录界面
-app/admin/admin_center.html # 个人中心
+app/admin/admin_center.html # 操作界面
 app/admin/call_us.html # 联系我们
 ```
 
 ### admin 管理员电脑端页面
 
 ```
-正在开发...
+admin_login.html # 登录界面
+admin_center.html # 操作界面
 ```
 
 ## 使用指南
