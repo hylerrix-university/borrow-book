@@ -71,6 +71,7 @@ body {
 }
 
 .pContentWrap_0 .pContentMessage {
+    color: #f36;
     margin: 1rem 0 1rem 0;
     font-size: .8rem;
     text-align: center;
@@ -142,6 +143,7 @@ body {
 }
 
 .pContentWrap_1 .pStackMessage {
+    color: #f36;
     margin: 1rem 0 1rem 0;
     font-size: .8rem;
     text-align: center;
@@ -322,6 +324,7 @@ th, td {
 }
 
 .pContentWrap_2 .mTableMessage {
+    color: #f36;
     margin: 1rem 0 1rem 0;
     font-size: .8rem;
     text-align: center;

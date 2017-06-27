@@ -119,16 +119,90 @@ function bindCateEvent () {
     });
 }
 
-function deleteStack (sId) {
-    console.log(sId);
+function addStatck () {
+    var stack = "";
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/addStack";
+    var post_data = {
+        "stack": stack
+    }
+    $.post(post_url, post_data, function (data, status) {
+        console.log(data);
+    });
+}
+
+function deleteStack () {
+    var sId = "";
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/deleteStack";
+    var post_data = {
+        "sId": sId
+    };
+    $.post(post_url, post_data, function (data, status) {
+        console.log(data);
+    });
+}
+
+function addCategories () {
+    var sId = "";
+    var category = "";
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/addCategory";
+    var post_data = {
+        "sId": sId,
+        "category": category
+    };
+    $.post(post_url, post_data, function (data, status) {
+        console.log(data);
+    });
 }
 
 function deleteCategories (cId) {
-    console.log(cId);
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/deleteCategory";
+    var post_data = {
+        "cId": cId
+    };
+    $.post(post_url, post_data, function (data, status) {
+        console.log(data);
+    });
+}
+
+function registerManager () {
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/register";
+    var admin_name = $("#pTableNew input:eq(0)").val();
+    var admin_password = $("#pTableNew input:eq(1)").val();
+    var post_data = {
+        "admin_name": admin_name,
+        "admin_password": admin_password
+    };
+    $.post(post_url, post_data, function (data, status) {
+        if(data["res"] == 0) {
+            $(".mTableMessage:eq(0)").text("新增管理员失败，请检查您的邮箱格式");
+        } else {
+            $(".mTableMessage:eq(0)").text("新增管理员成功");
+            setTimeOut(function () {
+                window.location.href = "admin_center.html?tab=2";
+            }, 1500);
+        }
+    });
+}
+
+function selectAllManager () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/select";
+    $.get(get_url, function (data, status) {
+        for (var i = 0; i < data.length; i++) {
+            var templeteDiv = "\
+                <tr>\
+                    <td>" + i + "</td>\
+                    <td>" + data[i]["admin_name"] + "</td>\
+                    <td>" + data[i]["admin_password"] + "</td>\
+                    <td><button>删除</button></td>\
+                </tr>\
+            ";
+            $("#pTableList").append(templeteDiv);
+        }
+    });
 }
 
 getAllStacks();
-
+selectAllManager();
 
 function changeNaviContent (index) {
     if (index == 0) {
