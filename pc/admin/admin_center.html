@@ -74,38 +74,41 @@
 
         <div class="pContentWrap_1" style="display: none">
             <!-- 书库管理选项卡 -->
-            <div class="pContentStackWrap">
-                <div class="pContentStackHeader">书库列表</div>
-                <div class="pContentStackItem selected">
-                    <button style="background-color: rgba(255, 51, 102, 1);">通信与计算机书库</button>
-                    <button>删除</button>
+            <div class="pStackMessage">欢迎您的使用</div>
+            <div class="pStackCategoriesWrap">
+                <div class="pContentStackWrap">
+                    <div class="pContentStackHeader">书库列表</div>
+                    <div class="pContentStackItem selected">
+                        <button style="background-color: rgba(255, 51, 102, 1);">通信与计算机书库</button>
+                        <button>删除</button>
+                    </div>
+                    <div class="pContentStackItem">
+                        <button>文艺书库</button>
+                        <button>删除</button>
+                    </div>
+                    <div class="pContentStackItem">
+                        <button>社会科学书库</button>
+                        <button>删除</button>
+                    </div>
+                    <div class="pContentStackFooter">
+                        <input type="text" name="stackname">
+                        <button>新增</button>
+                    </div>
                 </div>
-                <div class="pContentStackItem">
-                    <button>文艺书库</button>
-                    <button>删除</button>
-                </div>
-                <div class="pContentStackItem">
-                    <button>社会科学书库</button>
-                    <button>删除</button>
-                </div>
-                <div class="pContentStackFooter">
-                    <input type="text" name="stackname">
-                    <button>新增</button>
-                </div>
-            </div>
-            <div class="pContentCategoriesWrap">
-                <div class="pContentCategoriesHeader">类别列表</div>
-                <div class="pContentCategoriesItem">
-                    <button disabled="disabled">编程语言</button>
-                    <button>删除</button>
-                </div>
-                <div class="pContentCategoriesItem">
-                    <button disabled="disabled">网站架构</button>
-                    <button>删除</button>
-                </div>
-                <div class="pContentCategoriesFooter">
-                    <input type="text" name="stackname">
-                    <button>新增</button>
+                <div class="pContentCategoriesWrap">
+                    <div class="pContentCategoriesHeader">类别列表</div>
+                    <div class="pContentCategoriesItem">
+                        <button disabled="disabled">编程语言</button>
+                        <button>删除</button>
+                    </div>
+                    <div class="pContentCategoriesItem">
+                        <button disabled="disabled">网站架构</button>
+                        <button>删除</button>
+                    </div>
+                    <div class="pContentCategoriesFooter">
+                        <input type="text" name="stackname">
+                        <button>新增</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,7 +140,8 @@
                     <td>1</td>
                     <td>icorvoh@qq.com</td>
                     <td>******</td>
-                    <td><button>修改</button></td>
+                    <td style="display: block"><button>修改</button></td>
+                    <td style="display: none"><button>确认</button></td>
                     <td><button>删除</button></td>
                 </tr>
                 <tr>

@@ -74,6 +74,7 @@ body {
     margin: 1rem 0 1rem 0;
     font-size: .8rem;
     text-align: center;
+    background-color: rgba(0, 0, 0, .2);
 }
 
 .pContentWrap_0 .pContentDetailWrap {
@@ -138,28 +139,40 @@ body {
     text-align: center;
     padding: 2rem;
     background-color: rgba(0, 0, 0, .2);
-    display: flex;
 }
 
-.pContentWrap_1 .pContentStackWrap {
+.pContentWrap_1 .pStackMessage {
+    margin: 1rem 0 1rem 0;
+    font-size: .8rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.pContentWrap_1 .pStackCategoriesWrap {
+    min-height: 30rem;
+    display: flex;
+    height: 100%;
+}
+
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap {
     background-color: rgba(0, 0, 0, .2);
     margin: .5rem;
     flex: 1;
     position: relative;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackHeader {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackHeader {
     background-color: rgba(0, 0, 0, .2);
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackItem {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackItem {
     margin: 1rem 0 1rem 0;
     padding: 0 .5rem 0 .5rem;
     font-size: 1rem;
     display: flex;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackItem button:nth-child(1) {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackItem button:nth-child(1) {
     font-size: 1rem;
     border: 2px solid #fff;
     border-radius: .5rem;
@@ -167,7 +180,7 @@ body {
     flex: 6;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackItem button:nth-child(2) {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackItem button:nth-child(2) {
     margin: 0 0 0 .5rem;
     font-size: 1rem;
     width: 2rem;
@@ -177,7 +190,7 @@ body {
     flex: 1;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackFooter {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackFooter {
     width: 100%;
     font-size: 1rem;
     position: absolute;
@@ -185,7 +198,7 @@ body {
     bottom: 0;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackFooter {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackFooter {
     margin: 0 0 .5rem 0;
     height: 2rem;
     width: 100%;
@@ -196,7 +209,7 @@ body {
     font-size: 1rem;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackFooter input {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackFooter input {
     margin: 0 0 0 .5rem;
     flex: 6;
     border: none;
@@ -204,7 +217,7 @@ body {
     font-size: 1rem;
 }
 
-.pContentWrap_1 .pContentStackWrap .pContentStackFooter button {
+.pContentWrap_1 .pStackCategoriesWrap .pContentStackWrap .pContentStackFooter button {
     margin: 0 .5rem 0 .5rem;
     height: 100%;
     width: 100%;
@@ -214,25 +227,25 @@ body {
     flex: 1;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap {
     background-color: rgba(0, 0, 0, .2);
     margin: .5rem;
     flex: 1;
     position: relative;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesHeader {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesHeader {
     background-color: rgba(0, 0, 0, .2);
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesItem {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesItem {
     margin: 1rem 0 1rem 0;
     padding: 0 .5rem 0 .5rem;
     display: flex;
     font-size: 1rem;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesItem button:nth-child(1) {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesItem button:nth-child(1) {
     font-size: 1rem;
     border: 2px solid #fff;
     border-radius: .5rem;
@@ -240,7 +253,7 @@ body {
     flex: 6;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesItem button:nth-child(2) {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesItem button:nth-child(2) {
     margin: 0 0 0 .5rem;
     font-size: 1rem;
     width: 2rem;
@@ -250,7 +263,7 @@ body {
     flex: 1;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesFooter {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesFooter {
     margin: 0 0 .5rem 0;
     height: 2rem;
     width: 100%;
@@ -261,7 +274,7 @@ body {
     font-size: 1rem;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesFooter input {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesFooter input {
     margin: 0 0 0 .5rem;
     flex: 6;
     border: none;
@@ -269,7 +282,7 @@ body {
     font-size: 1rem;
 }
 
-.pContentWrap_1 .pContentCategoriesWrap .pContentCategoriesFooter button {
+.pContentWrap_1 .pStackCategoriesWrap .pContentCategoriesWrap .pContentCategoriesFooter button {
     margin: 0 .5rem 0 .5rem;
     height: 100%;
     width: 100%;
@@ -311,6 +324,7 @@ th, td {
     margin: 1rem 0 1rem 0;
     font-size: .8rem;
     text-align: center;
+    background-color: rgba(0, 0, 0, .2);
 }
 
 #pTableNew button {
