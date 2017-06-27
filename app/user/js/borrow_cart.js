@@ -27,7 +27,7 @@ function selectShopping () {
                         <div class=\"mBookIntroItemBookName\">" + books["bName"] + "</div>\
                         <div class=\"mBookIntroItemBookAuthor\">作者：" + books["author"] + "</div>\
                     </div>\
-                    <div class=\"mDeleteButton\">\
+                    <div class=\"mDeleteButton\" biId=\"" + data[i][1] + "\">\
                         <button onclick=\"cancelShopping(data[i][1])\">移出书车</button>\
                     </div>\
                 </div>\
@@ -41,7 +41,7 @@ function selectShopping () {
 
 // 给每个书籍旁的附属按钮绑定“移出书车”事件
 function bindCancelShoppingEvent () {
-    $(".mBookIntroItemWrap").each(function () {
+    $(".mDeleteButton").each(function () {
     	$(this).click(function () {
     		var biId = $(this).attr("biId");
             cancelShopping(biId);
@@ -63,7 +63,7 @@ function cancelShopping (biId) {
 
 // 把所有书籍移出书车
 function cancelAllShopping () {
-    $(".mBookIntroItemWrap").each(function () {
+    $(".mDeleteButton").each(function () {
     	var biId = $(this).attr("biId");
         cancelShopping(biId);
     });
@@ -93,6 +93,9 @@ function lendBook () {
           foreground    : "#000000"     // 二维码颜色（默认黑色）
         });
         $(".mBorrowQRCode img").attr("src", imgBase64);
+        // 不能再次借阅
+        $(".mButtonWrap button:eq(1)").hide();
+        $(".mButtonWrap button:eq(2)").show();
     });
 }
 

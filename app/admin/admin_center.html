@@ -9,7 +9,7 @@
     <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../../bower_components/js-sha1/build/sha1.min.js"></script>
     <script src="js/admin_login.js"></script>
-    <script src="js/scan.js"></script>
+    <script src="js/wx_jssdk.js"></script>
 </head>
 <body>
     <div class="userApp">
@@ -20,8 +20,9 @@
                 <div class="mUserPhoto">
                     <img src="images/admin.jpeg">
                 </div>
-                <div class="mUserName">管理员 韩亦乐，欢迎回来</div>
-                <div class="mUserWelcome">我的工号(邮箱号): icorvoh@qq.com</div>
+                <!-- <div class="mUserName">管理员 韩亦乐，欢迎回来</div>
+                <div class="mUserWelcome">我的工号(邮箱号): icorvoh@qq.com</div> -->
+                <div class="mUserWelcome" style="font-size: 1rem">管理员，欢迎回来</div>
             </div>
 
             <div class="mListWrap">
@@ -29,8 +30,8 @@
             </div>
 
             <div class="mButtonWrap">
-                <button onclick="jsSDK('authBorrow')">授权借书</button>
-                <button onclick="jsSDK('authReturn')">还书确认</button>
+                <button onclick="jsSDK(authBorrow)">授权借书</button>
+                <button onclick="jsSDK(authReturn)">还书确认</button>
             </div>
 
             <div class="mScanResultWrap">

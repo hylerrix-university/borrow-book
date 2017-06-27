@@ -98,12 +98,13 @@ function jsSDK (afterScan) {
 }
 
 function authBorrow (res) {
+    var check = res.resultStr;
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/authBorrow"
     var post_data = {
-        check: "check"
+        check: check
     }
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        console.log();
     });
 }
 

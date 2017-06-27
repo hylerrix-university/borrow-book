@@ -31,10 +31,12 @@
 
             <div class="mButtonWrap" style="display: none">
                 <button onclick="cancelAllShopping();">清空书车</button>
-                <button onclick="lendBook()">确定借阅</button>
+                <button onclick="lendBook()">生成条码</button>
+                <button style="display: none; background-color: orange">尚未确认</button>
+                <button style="display: none; background-color: orange">您已借阅</button>
             </div>
 
-            <div class="mTitleHeader" style="display: none">借阅二维码<span>(请联系管理员进行授权)</span></div>
+            <div class="mTitleHeader" style="display: none">借阅二维码<span>(请在两小时内联系管理员进行授权)</span></div>
 
             <div class="mBorrowQRCodeWrap" style="display: none">
                 <div class="mBorrowQRCode">
