@@ -334,6 +334,8 @@ function changeNaviContent (index) {
     }
 }
 
+if (!document.cookie) window.location.href = "admin_login.html";
+
 var urlArgs = window.location.search;
 var tabIndex = urlArgs.split("=")[1];
 if(!tabIndex) tabIndex = 0;
