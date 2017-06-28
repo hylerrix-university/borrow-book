@@ -7,7 +7,6 @@ function login () {
 		"admin_password": admin_password,
 		"admin_pid": 1
 	}
-	console.log(post_data);
 	$.post(post_url, post_data, function (data, status) {
 		if (data["res"] == 1) {
 			window.location.href = "admin_center.html";

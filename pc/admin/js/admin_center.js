@@ -3,12 +3,12 @@ function finishBook () {
     var post_data = {
         "isbn": isbn
     };
-    var post_url = "https://corefuture.cn/lib_api/book/finishBook.action";
-    // $.post(post_url, post_data, function (data, status) {
-        // alert(data);
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
+    $.post(post_url, post_data, function (data, status) {
+        console.log(data);
         $(".pContentDetailWrap:eq(0)").show();
         $(".pContentSubmitWrap:eq(0)").show();
-    // });
+    });
 }
 
 function saveBook () {
@@ -16,7 +16,7 @@ function saveBook () {
     var post_data = {
         "isbn": isbn
     };
-    var post_url = "https://corefuture.cn/lib_api/book/finishBook.action";
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
     $.post(post_url, post_data, function (data, status) {
         alert(data);
     });
@@ -174,13 +174,26 @@ function registerManager () {
     };
     $.post(post_url, post_data, function (data, status) {
         if(data["res"] == 0) {
-            $(".mTableMessage:eq(0)").text("新增管理员失败，请检查您的邮箱格式");
+            $(".mTableMessage:eq(0)").text("新增管理员 " + admin_name + " 失败，请检查您的邮箱格式");
         } else {
-            $(".mTableMessage:eq(0)").text("新增管理员成功");
-            setTimeOut(function () {
+            $(".mTableMessage:eq(0)").text("新增管理员 " + admin_name + " 成功，正在重新加载");
+            setTimeout(function () {
                 window.location.href = "admin_center.html?tab=2";
-            }, 1500);
+            }, 2000);
         }
+    });
+}
+
+function deleteManager (admin_name) {
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/cancel";
+    var post_data = {
+        "admin_name": admin_name
+    };
+    $.post(post_url, post_data, function (data, status) {
+        $(".mTableMessage:eq(0)").text("删除管理员 " + admin_name + " 成功，正在重新加载");
+        setTimeout(function () {
+            window.location.href = "admin_center.html?tab=2";
+        }, 2000);
     });
 }
 
@@ -190,16 +203,27 @@ function selectAllManager () {
         for (var i = 0; i < data.length; i++) {
             var templeteDiv = "\
                 <tr>\
-                    <td>" + i + "</td>\
+                    <td>" + data[i]["admin_id"] + "</td>\
                     <td>" + data[i]["admin_name"] + "</td>\
                     <td>" + data[i]["admin_password"] + "</td>\
-                    <td><button>删除</button></td>\
+                    <td><button admin_name=\"" + data[i]["admin_name"] + "\">删除</button></td>\
                 </tr>\
             ";
             $("#pTableList").append(templeteDiv);
         }
+        bindManagerEvent();
     });
 }
+
+function bindManagerEvent () {
+    $("#pTableList button").each(function () {
+        $(this).click(function () {
+            deleteManager($(this).attr("admin_name"));
+        });
+    })
+}
+
+// function 
 
 getAllStacks();
 selectAllManager();
