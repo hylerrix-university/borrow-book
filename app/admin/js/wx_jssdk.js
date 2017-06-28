@@ -104,16 +104,28 @@ function authBorrow (res) {
         check: check
     }
     $.post(post_url, post_data, function (data, status) {
-        console.log();
+        if(data["res"]){
+            // 授权借书成功
+            $(".mScanResultContent").text("授权借书成功");
+        } else {
+            $(".mScanResultContent").text("授权借书失败或已进行过借书授权");
+        }
     });
 }
 
-function authRetrun (res) {
+function authReturn (res) {
+    var check = res.resultStr;
+    alert(check);
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/authReturn"
     var post_data = {
-        check: "check"
-    }
+        "check": check
+    };
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        if(data["res"]){
+            // 授权还书成功
+            $(".mScanResultContent").text("授权还书成功");
+        } else {
+            $(".mScanResultContent").text("授权还书失败或已进行过还书授权");
+        }
     });
 }
