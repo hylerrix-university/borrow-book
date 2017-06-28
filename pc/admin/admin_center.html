@@ -57,16 +57,19 @@
                     </div>
                     <div class="pContentDetailItemWrap">
                         <span>数量</span>
-                        <input type="text" name="bName">
+                        <input type="text" name="bName" value="1">
                     </div>
+                </div>
+                <div class="pContentDetailHiddenWrap" style="display: none">
+                    <!-- 用来隐藏存储通过 isbn 获取到的信息 -->
                 </div>
             </div>
 
             <div class="pContentSubmitWrap" style="display: none">
-                <div class="pContentSubmitItem"><button>重置数据</button></div>
+                <div class="pContentSubmitItem"><button onclick="resetBook()">重置数据</button></div>
                 <div class="pContentSubmitItem"></div>
                 <div class="pContentSubmitItem"></div>
-                <div class="pContentSubmitItem"><button>确认录入</button></div>
+                <div class="pContentSubmitItem"><button onclick="saveBook()">确认录入</button></div>
             </div>
         </div>
 

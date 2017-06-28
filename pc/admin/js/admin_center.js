@@ -1,29 +1,63 @@
 function finishBook () {
+    // 隐藏详情页
+    $(".pContentDetailWrap:eq(0)").hide();
+    $(".pContentSubmitWrap:eq(0)").hide();
     var isbn = $("input:eq(0)").val();
     var post_data = {
         "isbn": isbn
     };
+    if (!isbn) {
+        $(".pContentMessage").text("请重新检查您输入的 ISBN 号: " + isbn);
+        return;
+    }
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
-        console.log(typeof data);
-        // if (data === false) {
-        //     $(".pContentMessage").text("请重新检查您输入的 ISBN 号: " + isbn);
-        //     return;
-        // }
+        data = JSON.parse(data);
+        if (data["count"] == 0) {
+            $(".pContentMessage").text("没有找到相关信息");
+            return;
+        }
+        var book = data["books"][0];
+        $(".pContentDetailLeftWrap img").attr("src", book["imgurl"])
+        $(".pContentDetailItemWrap:eq(0) input").val(book["bName"]);
+        $(".pContentDetailItemWrap:eq(3) input").val(book["author"]);
+        $(".pContentDetailItemWrap:eq(4) input").val(1);
+        $(".pContentDetailHiddenWrap").text(JSON.stringify(book));
         $(".pContentDetailWrap:eq(0)").show();
         $(".pContentSubmitWrap:eq(0)").show();
     });
 }
 
+// 重置到 isbn 刚查询的样子
+function resetBook () {
+    var data = JSON.parse($(".pContentDetailHiddenWrap").text());
+    $(".pContentDetailItemWrap:eq(0) input").val(data["bName"]);
+    $(".pContentDetailItemWrap:eq(3) input").val(data["author"]);
+    $(".pContentDetailItemWrap:eq(4) input").val(1);
+    $(".pContentMessage").text("重置数据成功，请填写其他信息");
+}
+
 function saveBook () {
-    var isbn = $("input:eq(0)").val();
+    var data = JSON.parse($(".pContentDetailHiddenWrap").text());
     var post_data = {
-        "isbn": isbn
+        "bName": $(".pContentDetailItemWrap:eq(0) input").val(),
+        "sId": $(".pContentDetailItemWrap:eq(1) option:selected").val(),
+        "cId": $(".pContentDetailItemWrap:eq(2) option:selected").val(),
+        "imgurl": data["imgurl"],
+        "isbn": data["isbn"],
+        "author": $(".pContentDetailItemWrap:eq(3) input").val(),
+        "count": parseInt($(".pContentDetailItemWrap:eq(4) input").val())
     };
-    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
+    if (!post_data["bName"] || !post_data["author"] || !post_data["count"]) {
+        $(".pContentMessage").text("数据不能为空，请重新填写");
+        return;
+    }
+    var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/saveBook";
     $.post(post_url, post_data, function (data, status) {
-        alert(data);
+        data = JSON.parse(data);
+        if (data["IsSuccess"]) {
+            $(".pContentMessage").text("录入成功！正在重新加载");
+        }
     });
 }
 
