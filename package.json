@@ -22,15 +22,14 @@
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-karma": "^2.0.0",
+    "jasmine-ajax": "^3.3.1",
     "jasmine-core": "^2.6.2",
+    "jasmine-jquery": "^2.1.1",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.1.1",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.0",
     "load-grunt-tasks": "^3.5.2"
   },
-  "dependencies": {
-    "jasmine-ajax": "^3.3.1",
-    "jasmine-jquery": "^2.1.1"
-  }
+  "dependencies": {}
 }
