@@ -5,6 +5,8 @@ function finishBook () {
     };
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
     $.post(post_url, post_data, function (data, status) {
+        console.log(data);
+        console.log(typeof data);
         // if (data === false) {
         //     $(".pContentMessage").text("请重新检查您输入的 ISBN 号: " + isbn);
         //     return;
@@ -49,7 +51,7 @@ function setStacks_0 (data) {
     }
 }
 
-function changeCategories () {
+function changeCategory () {
     $(".pContentDetailItemWrap:eq(2) select").children().remove();
     var sId = $(".pContentDetailItemWrap:eq(1) option:selected").val();
     var data = JSON.parse($(".pHiddenWrap").text());
@@ -82,6 +84,15 @@ function setStacks_1 (data) {
     bindStackEvent(data);
 }
 
+function bindStackEvent (data) {
+    $(".pContentStackItem button").each(function () {
+        $(this).click(function () {
+            var sId = $(this).attr("sId");
+            showStack(sId, data);
+        });
+    });
+}
+
 function showStack (sId, data) {
     $(".pContentCategoriesItem").remove();
     for (var i = 0; i < data.length; i++) {
@@ -93,31 +104,25 @@ function showStack (sId, data) {
                 var templeteDiv = "\
                     <div class=\"pContentCategoriesItem\">\
                         <button disabled=\"disabled\">" + cateArr[i]["cName"] + "</button>\
-                        <button cId=" + cateArr[i]["cId"] + ">删除</button>\
+                        <button sId=" + sId + " cId=" + cateArr[i]["cId"] + ">删除</button>\
                     </div>\
                 "
                 $(".pContentCategoriesHeader").after(templeteDiv);
             }
+            // 显示类别列表中的新增按钮并给其绑定 sId
+            $(".pContentCategoriesFooter").show();
+            $(".pContentCategoriesFooter button").attr("sId", sId);
             bindCateEvent();
             break;
         }
     }
 }
 
-function bindStackEvent (data) {
-    $(".pContentStackItem button").each(function () {
-        $(this).click(function () {
-            var sId = $(this).attr("sId");
-            showStack(sId, data);
-        });
-    });
-}
-
 function bindCateEvent () {
     $(".pContentCategoriesItem").each(function (index) {
         $(".pContentCategoriesItem:eq(" + index + ") button:eq(1)").click(function () {
             var cId = $(this).attr("cId");
-            console.log(cId);
+            deleteCategory(cId);
         });
     });
 }
@@ -159,29 +164,47 @@ function deleteStack (sId) {
     });
 }
 
-function addCategories () {
-    var sId = "";
+function addCategory () {
+    var sId = $(".pContentCategoriesFooter button").attr("sId");
     var category = $(".pContentCategoriesFooter input").val();
-    console.log(sId);
-    console.log(category);
-    return;
+    if (!category) {
+        // 输入框为空时
+        $(".pStackMessage").text("类别列表输入框内容为空，请重新检查");
+        return;
+    }
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/addCategory";
     var post_data = {
         "sId": sId,
         "category": category
     };
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        data = JSON.parse(data);
+        if (data["succeed"]) {
+            // 新增类别成功
+            $(".pStackMessage").text("该书库新增类别成功，正在重新加载");
+            setTimeout(function () {
+                window.location.href = "admin_center.html?tab=1";
+            }, 2000);
+        } else {
+            $(".pStackMessage").text("该书库新增类别失败，原因: " + data["msg"]);
+        }
     });
 }
 
-function deleteCategories (cId) {
+function deleteCategory (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/deleteCategory";
     var post_data = {
         "cId": cId
     };
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        data = JSON.parse(data);
+        if (data["succeed"]) {
+            $(".pStackMessage").text("删除类别成功，正在重新加载");setTimeout(function () {
+                window.location.href = "admin_center.html?tab=1";
+            }, 2000);
+        } else {
+            $(".pStackMessage").text("删除类别失败，原因：" + data["msg"]);
+        }
     });
 }
 

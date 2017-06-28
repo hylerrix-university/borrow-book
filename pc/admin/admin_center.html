@@ -41,7 +41,7 @@
                     </div>
                     <div class="pContentDetailItemWrap">
                         <span>所属书库</span>
-                        <select onchange="changeCategories()">
+                        <select onchange="changeCategory()">
                             <!-- 这里将被填充 -->
                         </select>
                     </div>
@@ -85,7 +85,7 @@
                 <div class="pContentCategoriesWrap">
                     <div class="pContentCategoriesHeader">类别列表</div>
                     <!-- 这里将被 ajax 填充 -->
-                    <div class="pContentCategoriesFooter">
+                    <div class="pContentCategoriesFooter" style="display: none">
                         <input type="text" name="stackname">
                         <button onclick="addCategory()">新增</button>
                     </div>
