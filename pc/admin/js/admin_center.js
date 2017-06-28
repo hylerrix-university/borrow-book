@@ -7,7 +7,7 @@ function finishBook () {
         "isbn": isbn
     };
     if (!isbn) {
-        $(".pContentMessage").text("请重新检查您输入的 ISBN 号: " + isbn);
+        $(".pContentMessage").text("ISBN 号不能为空");
         return;
     }
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
