@@ -5,7 +5,10 @@ function finishBook () {
     };
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/infoBook";
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        // if (data === false) {
+        //     $(".pContentMessage").text("请重新检查您输入的 ISBN 号: " + isbn);
+        //     return;
+        // }
         $(".pContentDetailWrap:eq(0)").show();
         $(".pContentSubmitWrap:eq(0)").show();
     });
@@ -120,30 +123,48 @@ function bindCateEvent () {
 }
 
 function addStatck () {
-    var stack = "";
+    var stack = $(".pContentStackFooter input").val();
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/addStack";
     var post_data = {
         "stack": stack
-    }
+    };
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        data = JSON.parse(data);
+        if (data["succeed"]) {
+            $(".pStackMessage").text("新增书库成功，正在重新加载");
+            setTimeout(function () {
+                window.location.href = "admin_center.html?tab=1";
+            }, 2000);
+        }else {
+            $(".pStackMessage").text("新增书库失败，请检查相关内容");
+        }
     });
 }
 
-function deleteStack () {
-    var sId = "";
+function deleteStack (sId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/deleteStack";
     var post_data = {
         "sId": sId
     };
     $.post(post_url, post_data, function (data, status) {
-        console.log(data);
+        data = JSON.parse(data);
+        if (data["succeed"]) {
+            $(".pStackMessage").text("删除书库成功，正在重新加载");
+            setTimeout(function () {
+                window.location.href = "admin_center.html?tab=1";
+            }, 2000);
+        } else {
+            $(".pStackMessage").text("删除书库失败，请检查子类是否已经清空");
+        }
     });
 }
 
 function addCategories () {
     var sId = "";
-    var category = "";
+    var category = $(".pContentCategoriesFooter input").val();
+    console.log(sId);
+    console.log(category);
+    return;
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/addCategory";
     var post_data = {
         "sId": sId,
