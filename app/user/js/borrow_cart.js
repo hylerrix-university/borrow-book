@@ -84,13 +84,13 @@ function lendBook () {
     for (var i = 0; i < biIdArr.length; i++) post_data["biId" + (i+1)] = biIdArr[i];
     $.post(post_url, post_data, function (data ,status) {      
         var imgBase64 = jrQrcode.getQrBase64(data, {
-          padding       : 10,   // 二维码四边空白（默认为10px）
-          width         : 256,  // 二维码图片宽度（默认为256px）
-          height        : 256,  // 二维码图片高度（默认为256px）
-          correctLevel  : QRErrorCorrectLevel.H,    // 二维码容错level（默认为高）
-          reverse       : false,        // 反色二维码，二维码颜色为上层容器的背景颜色
-          background    : "#ffffff",    // 二维码背景颜色（默认白色）
-          foreground    : "#000000"     // 二维码颜色（默认黑色）
+            padding       : 10,   // 二维码四边空白（默认为10px）
+            width         : 256,  // 二维码图片宽度（默认为256px）
+            height        : 256,  // 二维码图片高度（默认为256px）
+            correctLevel  : QRErrorCorrectLevel.H,    // 二维码容错level（默认为高）
+            reverse       : false,        // 反色二维码，二维码颜色为上层容器的背景颜色
+            background    : "#ffffff",    // 二维码背景颜色（默认白色）
+            foreground    : "#000000"     // 二维码颜色（默认黑色）
         });
         $(".mBorrowQRCode img").attr("src", imgBase64);
         // 不能再次借阅
@@ -99,4 +99,31 @@ function lendBook () {
     });
 }
 
-selectShopping();
+function checkStatus () {
+    var get_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/checkStatus";
+    $.get(get_url, function (data, status) {
+        if (!data["status"] || !data["check"]) {
+            // ("还没有借阅，正常进入购物车");
+            selectShopping();
+        } else {
+            // ("已经借阅，直接显示二维码");
+            var imgBase64 = jrQrcode.getQrBase64(data["check"], {
+                padding       : 10,   // 二维码四边空白（默认为10px）
+                width         : 256,  // 二维码图片宽度（默认为256px）
+                height        : 256,  // 二维码图片高度（默认为256px）
+                correctLevel  : QRErrorCorrectLevel.H,    // 二维码容错level（默认为高）
+                reverse       : false,        // 反色二维码，二维码颜色为上层容器的背景颜色
+                background    : "#ffffff",    // 二维码背景颜色（默认白色）
+                foreground    : "#000000"     // 二维码颜色（默认黑色）
+            });
+            $(".mBorrowQRCode img").attr("src", imgBase64);
+            $(".mTitleHeader:eq(0)").html("您的书籍正在借阅中<span>请及时联系管理员归还</sapn>");
+            $(".mTitleHeader:eq(1)").hide();
+            // 展示二维码
+            $(".mTitleHeader:eq(2)").show();
+            $(".mBorrowQRCodeWrap").show();
+        }
+    });
+}
+
+checkStatus();
