@@ -42,6 +42,10 @@ public class CategoryServiceImpl implements CategoryService{
         if(bookPageVo.getCount() > 0){
             throw new CategoryException("分类下还有书籍，无法删除!");
         }else {
+            SerialNumExample serialNumExample = new SerialNumExample();
+            SerialNumExample.Criteria criteria = serialNumExample.createCriteria();
+            criteria.andCIdEqualTo(cId);
+            serialNumMapper.deleteByExample(serialNumExample);
             categoryMapper.deleteByPrimaryKey(cId);
         }
     }

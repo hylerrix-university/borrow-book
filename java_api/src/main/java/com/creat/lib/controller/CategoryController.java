@@ -40,7 +40,7 @@ public class CategoryController {
             return message;
         }
     }
-
+    //删除分类
     @RequestMapping(value ="/deleteCategory")
     public @ResponseBody Message deleteCategory(Integer cId){
         Message message = new Message();
@@ -53,6 +53,7 @@ public class CategoryController {
                 message.setSucceed(false);
                 message.setMsg(e.getMessage());
             }else {
+                e.printStackTrace();
                 message.setSucceed(false);
                 message.setMsg("未知错误");
             }
