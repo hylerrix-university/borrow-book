@@ -78,8 +78,8 @@
 ├── LICENSE # 开源许可证书
 ├── README.md # 项目说明文档
 ├── app # 移动端前端项目正式源码
-│   ├── admin # 管理员移动端界面
-│   └── user # 用户移动端界面
+│   ├── admin # 移动端管理 APP 源代码
+│   └── user # 移动端用户借阅官网源代码
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
@@ -89,9 +89,10 @@
 │   └── 相关配置详见 [package.json](./package.json)
 ├── package.json # Node 配置
 ├── pc # 电脑端前端项目正式源代码
-│   └── admin # 管理员电脑端界面
+│   └── admin # 桌面端管理系统源代码
 ├── prototype # 原型图 HTML 版
 ├── unit-test # 前端单元测试
+├── wechat # 微信端源代码
 └── .gitignore # Git 版本管理忽略信息说明文件
 ```
 
