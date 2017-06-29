@@ -3,13 +3,13 @@
 .mSlideShowWrap {
     margin: 0;
     padding: .2rem 0 0 0;
-    height: 10.6rem;
+    height: 8.6rem;
     width: 100%;
     display: block;
 }
 
 .mSlideShowWrap .mNewBooksSideBar {
-    height: 10.6rem;
+    height: 8.6rem;
     width: 1.4rem;
     border: #bbb solid medium;
     display: block;
@@ -19,8 +19,8 @@
 
 .mSlideShowWrap .mNewBooksSideBar .mSideBarTitle {
     margin: 0;
-    padding: 0 0 .4rem .1rem;
-    height: 2.65rem;
+    padding: 0 0 .2rem .1rem;
+    height: 2.15rem;
     width: auto;
     display: block;
     color: #000;
@@ -29,7 +29,7 @@
 .mSlideShowWrap .mCarousel {
     margin: 0 0 0 2rem;
     padding: 0;
-    height: 10.6rem;
+    height: 8.6rem;
     width: auto;
     border: #bbb solid medium;
     display: block;
@@ -41,7 +41,7 @@
 }
 
 .mSlideShowWrap .mCarousel .imgBox img {
-    height: 9rem;
+    height: 7rem;
     width: 100%;
 }
 

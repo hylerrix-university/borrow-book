@@ -28,7 +28,7 @@ function getCategoryBookById (cId) {
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Book/searchBookByCid";
     var post_data = {
         "cId": cId,
-        "rows": 10 // 每页返回 rows 条结果
+        "rows": 5 // 每页返回 rows 条结果
     };
     
     // 获取书籍类别下的书籍
