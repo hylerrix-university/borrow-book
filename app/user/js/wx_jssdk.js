@@ -66,7 +66,7 @@ function jsSDK (afterScan) {
         console.log("jsapi_ticket.signature: " + jsapi_ticket.signature);
 
         wx.config({
-            debug: true, // 开启调试模式,调用的所有api的返回值会在客户端 alert 出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端 alert 出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
             appId: 'wx1a474de918181499', // 必填，公众号的唯一标识
             timestamp: jsapi_ticket.timestamp, // 必填，生成签名的时间戳
             nonceStr: jsapi_ticket.nonceStr, // 必填，生成签名的随机串
@@ -89,7 +89,7 @@ function jsSDK (afterScan) {
                 link: 'https://baidu.com', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                 imgUrl: 'https://www.baidu.com/img/bd_logo1.png', // 分享图标
                 trigger: function (res) {
-                    alert('用户点击分享到朋友圈');
+                    console.log('用户点击分享到朋友圈');
                 },
                 success: function () { 
                     // 用户确认分享后执行的回调函数
@@ -166,7 +166,7 @@ function addShopping (res) {
     $.post(post_url, data, function (data, status) {
         data = JSON.parse(data);
         if (data["succeed"] == false) {
-            alert(data["msg"]);
+            // alert(data["msg"]);
         }
         // 扫入书车成功，重新加载页面
         window.location.href = "borrow_cart.html";

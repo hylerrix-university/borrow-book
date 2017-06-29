@@ -54,9 +54,13 @@ function saveBook () {
     }
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/saveBook";
     $.post(post_url, post_data, function (data, status) {
+        $(".pContentMessage").text(data);
         data = JSON.parse(data);
         if (data["IsSuccess"]) {
             $(".pContentMessage").text("录入成功！正在重新加载");
+            setTimeout(function () {
+                window.location.href = "admin_center.html?tab=0";
+            }, 1000);
         }
     });
 }
@@ -173,7 +177,7 @@ function addStatck () {
             $(".pStackMessage").text("新增书库成功，正在重新加载");
             setTimeout(function () {
                 window.location.href = "admin_center.html?tab=1";
-            }, 2000);
+            }, 1000);
         }else {
             $(".pStackMessage").text("新增书库失败，请检查相关内容");
         }
@@ -191,7 +195,7 @@ function deleteStack (sId) {
             $(".pStackMessage").text("删除书库成功，正在重新加载");
             setTimeout(function () {
                 window.location.href = "admin_center.html?tab=1";
-            }, 2000);
+            }, 1000);
         } else {
             $(".pStackMessage").text("删除书库失败，请检查子类是否已经清空");
         }
@@ -218,7 +222,7 @@ function addCategory () {
             $(".pStackMessage").text("该书库新增类别成功，正在重新加载");
             setTimeout(function () {
                 window.location.href = "admin_center.html?tab=1";
-            }, 2000);
+            }, 1000);
         } else {
             $(".pStackMessage").text("该书库新增类别失败，原因: " + data["msg"]);
         }
@@ -235,7 +239,7 @@ function deleteCategory (cId) {
         if (data["succeed"]) {
             $(".pStackMessage").text("删除类别成功，正在重新加载");setTimeout(function () {
                 window.location.href = "admin_center.html?tab=1";
-            }, 2000);
+            }, 1000);
         } else {
             $(".pStackMessage").text("删除类别失败，原因：" + data["msg"]);
         }
@@ -257,7 +261,7 @@ function registerManager () {
             $(".mTableMessage:eq(0)").text("新增管理员 " + admin_name + " 成功，正在重新加载");
             setTimeout(function () {
                 window.location.href = "admin_center.html?tab=2";
-            }, 2000);
+            }, 1000);
         }
     });
 }
@@ -271,7 +275,7 @@ function deleteManager (admin_name) {
         $(".mTableMessage:eq(0)").text("删除管理员 " + admin_name + " 成功，正在重新加载");
         setTimeout(function () {
             window.location.href = "admin_center.html?tab=2";
-        }, 2000);
+        }, 1000);
     });
 }
 

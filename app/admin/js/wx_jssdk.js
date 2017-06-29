@@ -115,7 +115,6 @@ function authBorrow (res) {
 
 function authReturn (res) {
     var check = res.resultStr;
-    alert(check);
     var post_url = "https://wwwxinle.cn/Book/public/index.php/index/Manager/authReturn"
     var post_data = {
         "check": check
