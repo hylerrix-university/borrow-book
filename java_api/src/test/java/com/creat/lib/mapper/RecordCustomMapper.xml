@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.creat.lib.mapper.RecordCustomMapper" >
+    <resultMap id="customMap" type="com.creat.lib.po.RecordCustom">
+        <result column="u_id" javaType="java.lang.Integer" property="uId"/>
+        <collection property="isbn" column="u_id" select="com.creat.lib.mapper.RecordCustomMapper.selectIsbnByUid"></collection>
+    </resultMap>
+    <select id="selectAllRecordCustom" resultMap="customMap">
+      SELECT u_id FROM `user`
+    </select>
+    <select id="selectIsbnByUid" parameterType="java.lang.Integer" resultType="java.lang.Long">
+        SELECT isbn FROM record WHERE u_id=#{uId}
+    </select>
+    <select id="selectIsbnCountByUid" parameterType="java.lang.Integer" resultType="com.creat.lib.po.IsbnCount">
+        SELECT `count`,isbn FROM record WHERE u_id=#{uId}
+    </select>
+</mapper>

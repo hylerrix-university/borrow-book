@@ -1,0 +1,74 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/task
+http://www.springframework.org/schema/task/spring-task.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 使用spring组件扫描 -->
+	<context:component-scan base-package="com.creat.lib.controller" />
+	<!-- 通过annotation-driven可以替代下边的处理器映射器和适配器 -->
+	<!-- 	<mvc:annotation-driven conversion-service="conversionService">
+	</mvc:annotation-driven>
+		-->
+	<!-- 注解处理器映射器 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+	</bean>
+
+
+	<!-- 注解适配器 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<!-- 在webBindingInitializer中注入自定义属性编辑器、自定义转换器 -->
+		<!--<property name="webBindingInitializer" ref="customBinder"></property>-->
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 自定义webBinder -->
+	<!--<bean id="customBinder"-->
+		<!--class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">-->
+		<!--<property name="validator" ref="validator" />-->
+	<!--</bean>-->
+	
+	<!--<bean id="validator"-->
+		<!--class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+		<!--<property name="providerClass" value="org.hibernate.validator.HibernateValidator" />-->
+		<!--&lt;!&ndash; 如果不指定则默认使用classpath下的ValidationMessages.properties &ndash;&gt;-->
+		<!--<property name="validationMessageSource" ref="messageSource" />-->
+	<!--</bean>-->
+		
+	<!-- 校验错误信息配置文件 -->
+	<!--<bean id="messageSource"-->
+		<!--class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
+		<!--<property name="basenames">   -->
+       	 <!--<list>    -->
+            <!--<value>classpath:CustomValidationMessages</value>   -->
+       	 <!--</list>   -->
+    	<!--</property>-->
+		<!--<property name="fileEncodings" value="utf-8" />-->
+		<!--<property name="cacheSeconds" value="120" />-->
+	<!--</bean>-->
+	<task:annotation-driven/>
+	<!--定时任务-->
+	<task:scheduled-tasks>
+		<task:scheduled ref="recommenderSystem" method="init" cron="0 1 2 * * ?"/>
+		<task:scheduled ref="recommenderSystem" method="getSimilarityMatrix" cron="0 5 2 * * ?"/>
+		<task:scheduled ref="recommenderSystem" method="saveNewBooks" cron="0 1 1 * * ?"/>
+		<task:scheduled ref="timeTask" method="cleanBookCart" cron="0 10 1 * * ?"/>
+	</task:scheduled-tasks>
+</beans>

@@ -84,6 +84,7 @@
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
 ├── images
+├── java_api # 服务端搜索引擎接口源码
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── node_modules # Node 安装模块(.gi)
 │   └── 相关配置详见 [package.json](./package.json)
@@ -92,7 +93,7 @@
 │   └── admin # 桌面端管理系统源代码
 ├── prototype # 原型图 HTML 版
 ├── unit-test # 前端单元测试
-├── wechat # 微信端源代码
+├── php_wechat # 微信端源代码
 └── .gitignore # Git 版本管理忽略信息说明文件
 ```
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.creat.lib.mapper.CategoryCustomMapper" >
+    <resultMap id="customMap" type="com.creat.lib.po.CategoryCustom">
+        <id column="c_id" property="cId" jdbcType="INTEGER" />
+        <result column="c_name" property="cName" jdbcType="VARCHAR" />
+        <result column="s_id" property="stack.sId" jdbcType="INTEGER" />
+        <result column="s_name" property="stack.sName" jdbcType="VARCHAR" />
+    </resultMap>
+    <resultMap id="baseMap" type="com.creat.lib.po.Category">
+        <id column="c_id" property="cId" jdbcType="INTEGER" />
+        <result column="c_name" property="cName" jdbcType="VARCHAR" />
+        <result column="s_id" property="sId" jdbcType="INTEGER" />
+    </resultMap>
+    <select id="selectByCid" resultMap="customMap" parameterType="java.lang.Integer">
+        SELECT s.*,c.* FROM category c,stack s WHERE c_id=#{cId,jdbcType=INTEGER} AND c.s_id=s.s_id;
+    </select>
+    <select id="selectBySid" resultMap="baseMap" parameterType="java.lang.Integer">
+        SELECT c_id,c_name,s_id FROM category WHERE s_id=#{sId}
+    </select>
+</mapper>
