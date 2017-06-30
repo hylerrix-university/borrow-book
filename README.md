@@ -1,13 +1,5 @@
 # “无微不至”的借阅助手-源代码项目
 
-## 竞赛场景页
-
-> * [第六届“中国软件杯”大学生软件设计大赛赛题](http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1532)
-
-> * [“无微不至”的借读伴侣作品提交须知](http://www.cnsoftbei.com/bencandy.php?fid=148&aid=1562)
-
-> * ["第六届大赛作品提交方式说明"](http://www.cnsoftbei.com/bencandy.php?fid=42&id=1564)
-
 ## 开发简介
 
 > [项目线上地址 - 请关注该测试号并在微信客户端打开链接](https://wwwxinle.cn/Book/public/index.php/index/Index/auth)
@@ -38,10 +30,6 @@
 * Karma 自动化完成单元测试(有问题)
 * Webpack 最终打包整个项目文件(未实现)
 * Yeoman 最后封装成一个项目原型模板(未实现)
-
-### 后端开发简介
-
-> 正在编写中...
 
 ## 用户场景
 
@@ -83,7 +71,7 @@
 ├── bower.json # Bower 前端库依赖关系
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
-├── images
+├── images # 公用图片库
 ├── java_api # 服务端搜索引擎接口源码
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── node_modules # Node 安装模块(.gi)
