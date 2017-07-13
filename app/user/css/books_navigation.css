@@ -31,9 +31,8 @@
     padding: 0;
     height: 8.6rem;
     width: auto;
-    border: #bbb solid medium;
     display: block;
-    background-color: #fff;
+    text-align: center;
 }
 
 .mSlideShowWrap .mCarousel .imgBox {
@@ -42,13 +41,15 @@
 
 .mSlideShowWrap .mCarousel .imgBox img {
     height: 7rem;
-    width: 100%;
+    width: 5.5rem;
 }
 
 .mSlideShowWrap .mCarousel .imgBox .mCarouselBookName {
     text-align: center;
     font-size: .8rem;
     width: 100%;
+    border: #bbb solid medium;
+    background-color: #fff;
 }
 
 .mSlideShowWrap .nextSlid {
