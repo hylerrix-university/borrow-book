@@ -10,8 +10,6 @@
 
 > [借阅助手 - 线上接口文档](https://www.showdoc.cc/1633265?page_id=15011363)
 
-> [“无微不至”的借阅助手-源代码说明项目](http://42.123.127.93:10080/icorvoh/borrow-book-intro)
-
 ### 前端开发简介
 
 #### V1.0 初赛提交时的项目技能点
@@ -57,6 +55,10 @@
 
 > 场景.2: 管理员在自己的“还书验收”页面扫码确认还书
 
+## 真实系统演示视频及功能详解
+
+> 链接：[中软杯初赛-真实系统演示视频及功能详解-CreatShare](https://v.qq.com/x/page/g05205t2545.html)
+
 ## 项目目录
 
 > 说明：(.gi) 寓意为 (使用 .gitignore 忽略上传)
@@ -72,6 +74,7 @@
 ├── bower_components # Bower 前端依赖库(.gi)
 │   └── 相关配置详见 [bower.json](./bower.json)
 ├── images # 公用图片库
+├── intro # 项目总结报告(包含 ppt 与 word)
 ├── java_api # 服务端搜索引擎接口源码
 ├── karma.conf.js # Karma 自动化完成单元测试配置
 ├── node_modules # Node 安装模块(.gi)
